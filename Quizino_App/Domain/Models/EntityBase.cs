@@ -2,7 +2,7 @@
 
 namespace Domain.Models
 {
-    public class EntityBase : IEntityBase
+    public abstract class EntityBase : IEntityBase
     {
         public long Key { get; set; }
     }

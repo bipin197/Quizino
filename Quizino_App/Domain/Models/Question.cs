@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces;
+using System.Collections.Generic;
 
 namespace Domain.Models
 {
@@ -9,5 +10,6 @@ namespace Domain.Models
         public AnswerOptions OptionB { get; set; }
         public AnswerOptions OptionC { get; set; }
         public AnswerOptions OptionD { get; set; }
+        public IList<IQuestion> Questions { get; set; }
     }
 }

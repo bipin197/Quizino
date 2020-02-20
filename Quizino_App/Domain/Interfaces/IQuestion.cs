@@ -11,5 +11,7 @@ namespace Domain.Interfaces
         AnswerOptions OptionB { get; set; }
         AnswerOptions OptionC { get; set; }
         AnswerOptions OptionD { get; set; }
+
+        IList<IQuestion> Questions { get; set; }
     }
 }
