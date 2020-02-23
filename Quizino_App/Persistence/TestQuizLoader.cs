@@ -1,11 +1,14 @@
 ﻿using Common.Loaders;
 using Domain.Interfaces;
-using Domain.Models;
-using Persistence;
+using Newtonsoft.Json;
+using Persistence.DataTransferObjects;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 
-namespace Test
+namespace Persistence
 {
     public class TestQuizLoader : IQuizLoader
     {
@@ -16,12 +19,12 @@ namespace Test
 
         public IList<IQuiz> GetAllActiveQuizForPeriod(DateTime start, DateTime end)
         {
-           return TestQuizRepository.GetInstance().GetAllActiveQuizForAPeriod(start, end);
+            return TestQuizRepository.GetInstance().GetAllActiveQuizForAPeriod(start, end);
         }
 
         public IQuiz GetQuiz(int key)
         {
-            return TestQuizRepository.GetInstance().GetQuiz(key);
+           return TestQuizRepository.GetInstance().GetQuiz(key);
         }
     }
 }

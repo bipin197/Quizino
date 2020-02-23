@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{441F054A-B31A-43B4-964C-BAABF6EDE145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{441F054A-B31A-43B4-964C-BAABF6EDE145}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{37D6D688-A386-4198-9E81-550946EF5523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{37D6D688-A386-4198-9E81-550946EF5523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apis", "Apis\Apis.csproj", "{BAC3AD37-0E78-48B1-A35A-0F9E09C39E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{37D6D688-A386-4198-9E81-550946EF5523}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37D6D688-A386-4198-9E81-550946EF5523}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37D6D688-A386-4198-9E81-550946EF5523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC3AD37-0E78-48B1-A35A-0F9E09C39E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC3AD37-0E78-48B1-A35A-0F9E09C39E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC3AD37-0E78-48B1-A35A-0F9E09C39E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC3AD37-0E78-48B1-A35A-0F9E09C39E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

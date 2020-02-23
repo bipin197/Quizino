@@ -2,7 +2,6 @@
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Application.Quiz
 {
@@ -16,7 +15,17 @@ namespace Application.Quiz
 
         public IQuiz GetQuiz(int key)
         {
-            return _quizLoader.GetQuiz(key);
+            return _quizLoader?.GetQuiz(key);
+        }
+
+        public IList<IQuiz> GetAllActiveQuiz()
+        {
+            return _quizLoader?.GetAllActiveQuiz();
+        }
+
+        public IList<IQuiz> GetAllActiveQuizForPeriod(DateTime start, DateTime end)
+        {
+            return _quizLoader?.GetAllActiveQuiz();
         }
     }
 }
