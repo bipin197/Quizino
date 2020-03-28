@@ -7,11 +7,9 @@ namespace Domain.Interfaces
     public interface IQuestion : IEntityBase
     {
         string Text { get; set; }
-        AnswerOptions OptionA { get; set; }
-        AnswerOptions OptionB { get; set; }
-        AnswerOptions OptionC { get; set; }
-        AnswerOptions OptionD { get; set; }
-
-        IList<IQuestion> Questions { get; set; }
+        string OptionA { get; set; }
+        string OptionB { get; set; }
+        string OptionC { get; set; }
+        string OptionD { get; set; }
     }
 }

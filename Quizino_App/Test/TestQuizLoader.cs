@@ -19,6 +19,11 @@ namespace Test
            return TestQuizRepository.GetInstance().GetAllActiveQuizForAPeriod(start, end);
         }
 
+        public IQuestion GetQuestion(long quizKey, int questionNumber)
+        {
+            throw new NotImplementedException();
+        }
+
         public IQuiz GetQuiz(int key)
         {
             return TestQuizRepository.GetInstance().GetQuiz(key);

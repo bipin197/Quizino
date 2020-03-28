@@ -27,5 +27,10 @@ namespace Application.Quiz
         {
             return _quizLoader?.GetAllActiveQuiz();
         }
+
+        public IQuestion GetQuestion(long quizKey, int questionNumber)
+        {
+            return _quizLoader?.GetQuestion(quizKey, questionNumber);
+        }
     }
 }

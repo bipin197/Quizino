@@ -3,7 +3,6 @@ using Persistence.DataTransferObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Persistence
 {
@@ -11,6 +10,7 @@ namespace Persistence
     {
         private static TestQuizRepository _instance;
         private static IList<IQuiz> _repository;
+        private Dictionary<long, IEnumerable<IQuestion>> _cachedQuestions;
         public static TestQuizRepository GetInstance()
         {
             if(_instance == null)
@@ -20,6 +20,11 @@ namespace Persistence
             }
 
             return _instance;
+        }
+
+        internal IQuestion GetQuestion(long quizKey, int questionNumber)
+        {
+            return _cachedQuestions[quizKey].ElementAt(questionNumber);
         }
 
         public IQuiz GetQuiz(int key)
@@ -37,11 +42,12 @@ namespace Persistence
             return _repository.Where(z => z.IsActive && z.CreationTime >= start && z.DeactivationTime <= end ).ToList();
         }
 
-
         private void Initialize()
         {
             _repository = new List<IQuiz>();
-            for(int i = 0; i < 100; i++)
+            var questionRepository = TestQuestionRepository.GetInstance();
+            _cachedQuestions = new Dictionary<long, IEnumerable<IQuestion>>();
+            for (int i = 0; i < 100; i++)
             {
                 var quiz = new QuizDto
                 {
@@ -52,7 +58,9 @@ namespace Persistence
                     DeactivationTime = DateTime.Now.AddMinutes(60 + i)
                 };
 
+                var questions = questionRepository.GetQuestions(25);
                 _repository.Add(quiz);
+                _cachedQuestions.Add(quiz.Key, questions);
             }
         }
     }

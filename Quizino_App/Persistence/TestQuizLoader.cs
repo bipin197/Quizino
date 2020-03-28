@@ -17,6 +17,11 @@ namespace Persistence
             return TestQuizRepository.GetInstance().GetAllActiveQuiz();
         }
 
+        public IQuestion GetQuestion(long quizKey, int questionNumber)
+        {
+            return TestQuizRepository.GetInstance().GetQuestion(quizKey, questionNumber);
+        }
+
         public IList<IQuiz> GetAllActiveQuizForPeriod(DateTime start, DateTime end)
         {
             return TestQuizRepository.GetInstance().GetAllActiveQuizForAPeriod(start, end);

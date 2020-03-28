@@ -6,7 +6,7 @@ namespace Domain.Interfaces
 {
     public interface IAnswer
     {
-        IQuestion Question { get; set; }
+        long QuestionKey { get; set; }
         AnswerOptions CorrectAnswer { get; set; }
     }
 }

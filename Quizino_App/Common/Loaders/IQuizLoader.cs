@@ -11,5 +11,7 @@ namespace Common.Loaders
         IList<IQuiz> GetAllActiveQuiz();
 
         IList<IQuiz> GetAllActiveQuizForPeriod(DateTime start, DateTime end);
+
+        IQuestion GetQuestion(long quizKey, int questionNumber);
     }
 }

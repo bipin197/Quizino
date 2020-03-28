@@ -1,11 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Interfaces
 {
     public interface IQuiz : IEntityBase
     {
         string Id { get; set; }
+
+        bool IsActive { get; set; }
+
+        DateTime CreationTime { get; set; }
+
+        DateTime DeactivationTime { get; set; }
     }
 }
