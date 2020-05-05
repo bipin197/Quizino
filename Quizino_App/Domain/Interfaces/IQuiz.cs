@@ -11,5 +11,7 @@ namespace Domain.Interfaces
         DateTime CreationTime { get; set; }
 
         DateTime DeactivationTime { get; set; }
+
+        Categories Category { get; set; }
     }
 }

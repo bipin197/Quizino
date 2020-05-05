@@ -9,5 +9,6 @@ namespace Domain.Models
         public bool IsActive { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime DeactivationTime { get; set; }
+        public Categories Category { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,5 +12,7 @@ namespace Domain.Interfaces
         string OptionB { get; set; }
         string OptionC { get; set; }
         string OptionD { get; set; }
+        IEnumerable<Categories> ApplicableCategories { get; set; }
+        AnswerOptions Answer { get; set; }
     }
 }
