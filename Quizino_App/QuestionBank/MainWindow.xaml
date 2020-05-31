@@ -11,6 +11,18 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding Path=Questions}" Name="questionGrid" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsReadOnly}" Value="True">
+                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="IsEnabled"  Value="False"/>
+                        <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
+                        <Setter Property="ToolTip" Value="Disabled in ViewModel"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Text" Binding="{Binding Path=Text}" Width="300"></DataGridTextColumn>
                 <DataGridTextColumn Header="OptionA" Binding="{Binding Path=OptionA}" Width="80"></DataGridTextColumn>

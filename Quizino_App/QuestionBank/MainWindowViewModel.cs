@@ -19,7 +19,7 @@ namespace QuestionBank
             var questions = DataStore.LoadQuestions();
             foreach(var question in questions)
             {
-                Questions.Add(new QuestionViewModel(question));
+                Questions.Add(new QuestionViewModel(question) { IsReadOnly = true});
             }
         }
 

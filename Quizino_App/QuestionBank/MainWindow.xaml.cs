@@ -35,7 +35,7 @@ namespace QuestionBank
 
         private void SaveQuesButtonClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.DataStore.SaveQuestions(_viewModel.Questions.Select(x => x.EntityBase).ToList());
+            _viewModel.DataStore.SaveQuestions(_viewModel.Questions.Where(x => !x.IsReadOnly).Select(x => x.EntityBase).ToList());
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

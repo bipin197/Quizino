@@ -10,6 +10,8 @@ namespace QuestionBank
         {
         }
 
+        public bool IsReadOnly { get; set; }
+
         public string Text
         {
             get => EntityBase.Text;

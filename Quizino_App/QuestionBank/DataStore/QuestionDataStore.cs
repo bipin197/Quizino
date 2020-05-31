@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace QuestionBank.DataStore
 {
@@ -11,16 +12,16 @@ namespace QuestionBank.DataStore
     {
         public IList<IQuestion> LoadQuestions()
         {
-            var questionRepos = JsonQuestionRepository.GetInstance();
+            var questionRepos = CosmoDBQuestionRepository.GetInstance();
 
-            return questionRepos.GetQuestions();
+            return questionRepos.GetQuestions().Result;
         }
 
-        public void SaveQuestions(IList<IQuestion> questions)
+        public async Task SaveQuestions(IList<IQuestion> questions)
         {
-            var questionRepos = JsonQuestionRepository.GetInstance();
+            var questionRepos = CosmoDBQuestionRepository.GetInstance();
 
-            questionRepos.SaveData(questions.ToArray());
+            await questionRepos.SaveData(questions.ToArray());
         }
     }
 }
