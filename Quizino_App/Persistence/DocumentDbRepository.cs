@@ -9,19 +9,21 @@ using Microsoft.Azure.Documents.Linq;
 
 namespace Persistence
 {
-    public  class DocumentDBRepository<T> where T : class
+    public class DocumentDBRepository<T> where T : class
     {
-        private static readonly string Endpoint = "https://localhost:8081";
-        private static readonly string Key = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
-        private static readonly string DatabaseId = "MyTestDb";
-        private static readonly string CollectionId = "MyDocCollection";
         private static DocumentClient client;
+        protected DbConnectionBundle DbConnectionBundle { get; set; }
 
-        internal  async Task<T> GetItemAsync(string id)
+        public DocumentDBRepository()
+        {
+ 
+        }
+
+        internal async Task<T> GetItemAsync(string id)
         {
             try
             {
-                Document document = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
+                Document document = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId, id));
                 return (T)(dynamic)document;
             }
             catch (DocumentClientException e)
@@ -39,11 +41,11 @@ namespace Persistence
 
         internal async Task<IEnumerable<string>> GetAllItemsAsStringAsync()
         {
-            var documents = client.CreateDocumentQuery<dynamic>(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),
+            var documents = client.CreateDocumentQuery<dynamic>(UriFactory.CreateDocumentCollectionUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId),
             "SELECT * FROM c").AsEnumerable().Select(x => x);
-           
+
             var results = new List<string>();
-            foreach(var document in documents)
+            foreach (var document in documents)
             {
                 var content = document.ToString();
                 results.Add(content);
@@ -52,10 +54,10 @@ namespace Persistence
             return results;
         }
 
-        internal  async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
+        internal async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
         {
             IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
-                UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),
+                UriFactory.CreateDocumentCollectionUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId),
                 new FeedOptions { MaxItemCount = -1 })
                 .Where(predicate)
                 .AsDocumentQuery();
@@ -69,39 +71,44 @@ namespace Persistence
             return results;
         }
 
-        internal async Task<Document> CreateItemAsync(T item)
+        public async Task DeleteDatabase()
         {
-            return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
+            await client.DeleteDatabaseAsync(DbConnectionBundle.DatabaseId);
         }
 
-        internal  async Task<Document> UpdateItemAsync(string id, T item)
+        internal async Task<Document> CreateItemAsync(T item)
         {
-            return await client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id), item);
+            return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId), item);
+        }
+
+        internal async Task<Document> UpdateItemAsync(string id, T item)
+        {
+            return await client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId, id), item);
         }
 
         internal async Task DeleteItemAsync(string id)
         {
-            await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
+            await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId, id));
         }
 
         protected virtual void Initialize()
         {
-            client = new DocumentClient(new Uri(Endpoint), Key);
-            //CreateDatabaseIfNotExistsAsync().Wait();
-            //CreateCollectionIfNotExistsAsync().Wait();
+            client = new DocumentClient(new Uri(DbConnectionBundle.EndpointConnection.Endpoint), DbConnectionBundle.EndpointConnection.Key);
+            CreateDatabaseIfNotExistsAsync().Wait();
+            CreateCollectionIfNotExistsAsync().Wait();
         }
 
         private async Task CreateDatabaseIfNotExistsAsync()
         {
             try
             {
-                await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(DatabaseId));
+                await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(DbConnectionBundle.DatabaseId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await client.CreateDatabaseAsync(new Database { Id = DatabaseId });
+                    await client.CreateDatabaseAsync(new Database { Id = DbConnectionBundle.DatabaseId });
                 }
                 else
                 {
@@ -114,15 +121,15 @@ namespace Persistence
         {
             try
             {
-                await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId));
+                await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
                     await client.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(DatabaseId),
-                        new DocumentCollection { Id = CollectionId },
+                        UriFactory.CreateDatabaseUri(DbConnectionBundle.DatabaseId),
+                        new DocumentCollection { Id = DbConnectionBundle.CollectionId },
                         new RequestOptions { OfferThroughput = 1000 });
                 }
                 else

@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Persistence.DataTransferObjects;
 using Persistence.Tools;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Persistence
     {
         private static CosmoDBQuestionRepository _instance;
         private static List<QuestionDto> _repository;
+
         public static CosmoDBQuestionRepository GetInstance()
         {
             if (_instance == null)
@@ -24,8 +26,20 @@ namespace Persistence
 
         protected override void Initialize()
         {
-            base.Initialize();
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            DbConnectionBundle = new DbConnectionBundle
+            {
+                EndpointConnection = new EndpointConnection
+                {
+                    Endpoint = config["EndPoint"],
+                    Key = config["Key"]
+                },
+                DatabaseId = config["DatabaseId"],
+                CollectionId = config["CollectionId"]
+            };
+
             _repository = new List<QuestionDto>();
+            base.Initialize();
         }
 
         public async Task<IList<IQuestion>> GetQuestions()
