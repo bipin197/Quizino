@@ -1,8 +1,6 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Persistence.DataTransferObjects
 {
@@ -13,5 +11,6 @@ namespace Persistence.DataTransferObjects
         public DateTime CreationTime { get; set; }
         public DateTime DeactivationTime { get; set; }
         public Categories Category { get; set; }
+        public long[] QuestionKeys { get; set; }
     }
 }

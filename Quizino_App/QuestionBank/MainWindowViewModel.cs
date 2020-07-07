@@ -1,9 +1,9 @@
-﻿
-using Domain.Interfaces;
+﻿using Domain.Interfaces;
 using Domain.Models;
 using QuestionBank.DataStore;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace QuestionBank
 {
@@ -16,10 +16,23 @@ namespace QuestionBank
         {
             Questions = new ObservableCollection<QuestionViewModel>();
             DataStore = new QuestionDataStore();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             var questions = DataStore.LoadQuestions();
-            foreach(var question in questions)
+            foreach (var question in questions)
             {
-                Questions.Add(new QuestionViewModel(question) { IsReadOnly = true});
+                var viewModel = QuestionViewModelFactory.CreateQuestionViewModel(question);
+                viewModel.IsReadOnly = true;
+                Questions.Add(viewModel);
+            }
+
+            if(questions.Any())
+            {
+                var maxKey = questions.Max(x => x.Key);
+                QuestionViewModelFactory.SetHighestKey(maxKey);
             }
         }
 
@@ -29,11 +42,11 @@ namespace QuestionBank
             { 
                 Domain.Interfaces.Categories.GeneralAwareness,
                 Domain.Interfaces.Categories.Politics,
-                Domain.Interfaces.Categories.Entraitement,
+                Domain.Interfaces.Categories.Entertainment,
                 Domain.Interfaces.Categories.History,
                 Domain.Interfaces.Categories.Sports,
                 Domain.Interfaces.Categories.Science,
-                Domain.Interfaces.Categories.Reasearch,
+                Domain.Interfaces.Categories.Research,
                 Domain.Interfaces.Categories.Technology,
                 Domain.Interfaces.Categories.Geography
             };

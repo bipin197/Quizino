@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 using Persistence;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebApis.DataStore;
 
 namespace Apis.Controllers
 {
@@ -13,10 +15,12 @@ namespace Apis.Controllers
     public class QuizController
     {
         private readonly ILogger<QuizController> _logger;
+        private readonly QuizDataStore _quizDataStore;
 
         public QuizController(ILogger<QuizController> logger)
         {
             _logger = logger;
+            _quizDataStore = new QuizDataStore();
         }
 
         [HttpGet("active")]
@@ -41,6 +45,14 @@ namespace Apis.Controllers
             var quizQuery = new QuizQueries(new TestQuizLoader());
 
             return quizQuery.GetQuestion(quizKey, questionNumber);
+        }
+
+        [HttpGet("Create")]
+        public async Task<IQuiz> Create()
+        {
+            var quiz = await _quizDataStore.CreateQuiz(DateTime.Now);
+            
+            return quiz;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Domain.Interfaces
 
         DateTime DeactivationTime { get; set; }
 
-        Categories Category { get; set; }
+        Categories Category { get; set; } 
+
+        long[] QuestionKeys { get; set; }
     }
 }

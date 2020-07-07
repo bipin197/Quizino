@@ -4,7 +4,13 @@ namespace QuestionBank
 {
     public static class QuestionViewModelFactory
     {
-        private static int _id = 1;
+        private static long _id = 1;
+
+        public static void SetHighestKey(long key)
+        {
+            _id = key + 1 ;
+        }
+
         public static QuestionViewModel CreateQuestionViewModel(IQuestion question)
         {
             if(question.Key == 0)

@@ -1,14 +1,14 @@
 ﻿using Domain.Interfaces;
-using Microsoft.Extensions.Configuration;
 using Persistence.DataTransferObjects;
 using Persistence.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Persistence
 {
-    public class CosmoDBQuestionRepository : DocumentDBRepository<QuestionSet>
+    public class CosmoDBQuestionRepository : DocumentDBRepository<QuestionSet>, IHasGetNextKey
     {
         private static CosmoDBQuestionRepository _instance;
         private static List<QuestionDto> _repository;
@@ -18,31 +18,19 @@ namespace Persistence
             if (_instance == null)
             {
                 _instance = new CosmoDBQuestionRepository();
-                _instance.Initialize();
+                _instance.Initialize("CollectionId");
             }
 
             return _instance;
         }
 
-        protected override void Initialize()
-        {
-            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            DbConnectionBundle = new DbConnectionBundle
-            {
-                EndpointConnection = new EndpointConnection
-                {
-                    Endpoint = config["EndPoint"],
-                    Key = config["Key"]
-                },
-                DatabaseId = config["DatabaseId"],
-                CollectionId = config["CollectionId"]
-            };
-
+        protected override void Initialize(string collectionId)
+        {        
             _repository = new List<QuestionDto>();
-            base.Initialize();
+            base.Initialize(collectionId);
         }
 
-        public async Task<IList<IQuestion>> GetQuestions()
+        public async Task<IList<IQuestion>> GetQuestions(Func<IQuestion, bool> predicate)
         {
             if(!_repository.Any())
             {
@@ -51,7 +39,7 @@ namespace Persistence
                 _repository.AddRange(questionSets.Where(x => x.Questions != null).SelectMany(x => x.Questions));
             }
 
-            return _repository.Cast<IQuestion>().ToList();
+            return _repository.Cast<IQuestion>().Where(predicate).ToList();
         }
 
         public async Task CreateQuestionAsync(QuestionSet question)
@@ -85,7 +73,13 @@ namespace Persistence
                 Questions = questionDtos.ToArray()
             };
 
+            _repository.AddRange(questionDtos);
             await _instance.CreateItemAsync(questionSet);
+        }
+
+        public long GetNextKey()
+        {
+            return _repository.Max(x => x.Key) + 1;
         }
     }
 }

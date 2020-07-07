@@ -14,7 +14,7 @@ namespace QuestionBank.DataStore
         {
             var questionRepos = CosmoDBQuestionRepository.GetInstance();
 
-            return questionRepos.GetQuestions().Result;
+            return questionRepos.GetQuestions(x => x != null).Result;
         }
 
         public async Task SaveQuestions(IList<IQuestion> questions)

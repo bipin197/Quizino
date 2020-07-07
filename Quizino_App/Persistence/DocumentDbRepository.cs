@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace Persistence
 {
@@ -42,7 +43,7 @@ namespace Persistence
         internal async Task<IEnumerable<string>> GetAllItemsAsStringAsync()
         {
             var documents = client.CreateDocumentQuery<dynamic>(UriFactory.CreateDocumentCollectionUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId),
-            "SELECT * FROM c").AsEnumerable().Select(x => x);
+            "SELECT * FROM c", new FeedOptions { EnableCrossPartitionQuery=true}).AsEnumerable().Select(x => x);
 
             var results = new List<string>();
             foreach (var document in documents)
@@ -91,11 +92,24 @@ namespace Persistence
             await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DbConnectionBundle.DatabaseId, DbConnectionBundle.CollectionId, id));
         }
 
-        protected virtual void Initialize()
+        protected virtual void Initialize(string collectionId)
         {
-            client = new DocumentClient(new Uri(DbConnectionBundle.EndpointConnection.Endpoint), DbConnectionBundle.EndpointConnection.Key);
-            CreateDatabaseIfNotExistsAsync().Wait();
-            CreateCollectionIfNotExistsAsync().Wait();
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            DbConnectionBundle = new DbConnectionBundle
+            {
+                EndpointConnection = new EndpointConnection
+                {
+                    Endpoint = config["EndPoint"],
+                    Key = config["Key"]
+                },
+                DatabaseId = config["DatabaseId"],
+                CollectionId = config[collectionId]
+            };
+
+            if (client == null)
+            {
+                client = new DocumentClient(new Uri(DbConnectionBundle.EndpointConnection.Endpoint), DbConnectionBundle.EndpointConnection.Key);
+            }
         }
 
         private async Task CreateDatabaseIfNotExistsAsync()

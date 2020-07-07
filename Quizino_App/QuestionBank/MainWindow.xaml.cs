@@ -1,27 +1,21 @@
 ﻿using Domain.Models;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace QuestionBank
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private MainWindowViewModel _viewModel;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public bool HasChanges { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,16 +25,38 @@ namespace QuestionBank
         private void AddQuesButtonClick(object sender, RoutedEventArgs e)
         {
             _viewModel.Questions.Add(QuestionViewModelFactory.CreateQuestionViewModel(new Question()));
+            HasChanges = true;
+            NotifyPropertyChanged(nameof(HasChanges));
         }
 
         private void SaveQuesButtonClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.DataStore.SaveQuestions(_viewModel.Questions.Where(x => !x.IsReadOnly).Select(x => x.EntityBase).ToList());
+            var dataToSave = _viewModel.Questions.Where(x => !x.IsReadOnly);
+            if (!dataToSave.Any())
+            {
+                MessageBox.Show("Data is up to date", "No Unsaved Data", MessageBoxButton.OK);
+                return;
+            }
+
+            _ = _viewModel.DataStore.SaveQuestions(dataToSave.Select(x => x.EntityBase).ToList());
+
+            foreach(var data in dataToSave)
+            {
+                data.IsReadOnly = true;
+            }
+
+            HasChanges = false;
+            NotifyPropertyChanged(nameof(HasChanges));
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

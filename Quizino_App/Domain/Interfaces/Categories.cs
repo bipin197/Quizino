@@ -4,12 +4,13 @@
     {
         GeneralAwareness,
         Sports,
-        Entraitement,
+        Entertainment,
         Politics,
-        Reasearch,
+        Research,
         Science,
         History,
         Geography,
-        Technology
+        Technology,
+        All
     }
 }

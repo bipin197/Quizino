@@ -1,12 +1,7 @@
 ﻿using Common.Loaders;
 using Domain.Interfaces;
-using Newtonsoft.Json;
-using Persistence.DataTransferObjects;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Persistence
 {
