@@ -2,6 +2,7 @@
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Application.Quiz
 {
@@ -13,7 +14,7 @@ namespace Application.Quiz
             _quizLoader = loader;
         }
 
-        public IQuiz GetQuiz(int key)
+        public Task<IQuiz> GetQuiz(int key)
         {
             return _quizLoader?.GetQuiz(key);
         }

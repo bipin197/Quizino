@@ -1,4 +1,5 @@
 ﻿using Application.Quiz;
+using Common.Loaders;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,15 +13,17 @@ namespace Apis.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class QuizController
+    public class QuizController : Controller
     {
         private readonly ILogger<QuizController> _logger;
         private readonly QuizDataStore _quizDataStore;
+        private readonly IQuizLoader _quizLoader;
 
         public QuizController(ILogger<QuizController> logger)
         {
             _logger = logger;
             _quizDataStore = new QuizDataStore();
+            _quizLoader = new CosmoDbQuizLoader();
         }
 
         [HttpGet("active")]
@@ -34,12 +37,12 @@ namespace Apis.Controllers
         [HttpGet("{key}")]
         public IQuiz GetQuiz(int key)
         {
-            var quizQuery = new QuizQueries(new TestQuizLoader());
+            var quizQuery = new QuizQueries(_quizLoader);
 
-            return quizQuery.GetQuiz(key);
+            return quizQuery.GetQuiz(key).Result;
         }
 
-        [HttpGet("{quizKey}/{questionNumber}")]
+        [HttpGet("question/{quizKey}/{questionNumber}")]
         public IQuestion GetQuestion(long quizKey, int questionNumber)
         {
             var quizQuery = new QuizQueries(new TestQuizLoader());
@@ -47,10 +50,10 @@ namespace Apis.Controllers
             return quizQuery.GetQuestion(quizKey, questionNumber);
         }
 
-        [HttpGet("Create")]
-        public async Task<IQuiz> Create()
+        [HttpPost("create/{category}")]
+        public async Task<IQuiz> Create(int category)
         {
-            var quiz = await _quizDataStore.CreateQuiz(DateTime.Now);
+            var quiz = await _quizDataStore.CreateQuiz(DateTime.Now, 0);
             
             return quiz;
         }

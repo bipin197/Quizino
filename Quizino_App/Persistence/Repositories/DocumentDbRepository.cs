@@ -8,7 +8,7 @@ using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 using Microsoft.Extensions.Configuration;
 
-namespace Persistence
+namespace Persistence.Repositories
 {
     public class DocumentDBRepository<T> where T : class
     {

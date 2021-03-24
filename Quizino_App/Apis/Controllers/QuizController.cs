@@ -32,7 +32,7 @@ namespace Apis.Controllers
         {
             var quizQuery = new QuizQueries(new TestQuizLoader());
 
-            return quizQuery.GetQuiz(key);
+            return quizQuery.GetQuiz(key).Result;
         }
     }
 }

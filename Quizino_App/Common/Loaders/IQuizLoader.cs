@@ -1,12 +1,13 @@
 ﻿using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Common.Loaders
 {
     public interface IQuizLoader
     {
-        IQuiz GetQuiz(int id);
+        Task<IQuiz> GetQuiz(int key);
 
         IList<IQuiz> GetAllActiveQuiz();
 

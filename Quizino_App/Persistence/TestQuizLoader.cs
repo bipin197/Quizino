@@ -2,6 +2,7 @@
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Persistence
 {
@@ -22,7 +23,7 @@ namespace Persistence
             return TestQuizRepository.GetInstance().GetAllActiveQuizForAPeriod(start, end);
         }
 
-        public IQuiz GetQuiz(int key)
+        public async Task<IQuiz> GetQuiz(int key)
         {
            return TestQuizRepository.GetInstance().GetQuiz(key);
         }

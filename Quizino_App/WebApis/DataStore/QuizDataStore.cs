@@ -1,10 +1,10 @@
 ﻿using Domain.Interfaces;
-using Persistence;
+using Persistence.Repositories;
 using Persistence.DataTransferObjects;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Common.Utilities;
 
 namespace WebApis.DataStore
 {
@@ -12,20 +12,21 @@ namespace WebApis.DataStore
     {
         private readonly CosmoDBQuestionRepository _cosmoDBQuestionRepository;
         private readonly CosmoDbQuizRepository _cosmoDBQuizRepository;
+        private const int NumberQuestionsForPerQuiz = 15;
+        private const int HighestQuestionKey = 47;
         public QuizDataStore()
         {
             _cosmoDBQuestionRepository = CosmoDBQuestionRepository.GetInstance();
             _cosmoDBQuizRepository = CosmoDbQuizRepository.GetInstance();
         }
 
-        public async Task<IQuiz> CreateQuiz(DateTime startTime)
+        public async Task<IQuiz> CreateQuiz(DateTime startTime, int category)
         {
-            var randomKeys = GenerateRandomKeys();
+            var randomKeys = NumberHandler.GenerateRandomKeys(NumberQuestionsForPerQuiz, 1, HighestQuestionKey);
             var questions = await _cosmoDBQuestionRepository.GetQuestions(x => randomKeys.Contains(x.Key));
 
             var quiz = new QuizDto
             {
-                Key = _cosmoDBQuizRepository.GetNextKey(),
                 Id = Guid.NewGuid().ToString(),
                 IsActive = true,
                 CreationTime = startTime,
@@ -34,15 +35,6 @@ namespace WebApis.DataStore
             };
 
             return await _cosmoDBQuizRepository.CreateQuiz(quiz);
-        }
-
-        //TODO: make it random
-        private IEnumerable<long> GenerateRandomKeys()
-        {
-            for (long key = 15; key < 31; key++)
-            {
-                yield return key;
-            }
-        }
+        }  
     }
 }

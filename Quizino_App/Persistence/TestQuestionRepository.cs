@@ -1,12 +1,13 @@
 ﻿using Domain.Interfaces;
 using Persistence.DataTransferObjects;
+using Common.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Persistence
 {
-    public class TestQuestionRepository
+    public class TestQuestionRepository : IRepository<IQuestion>
     {
         private static TestQuestionRepository _instance;
         private static IList<QuestionDto> _repository;
@@ -21,10 +22,17 @@ namespace Persistence
             return _instance;
         }
 
-        public IQuestion GetQuestion(int key)
+        public IQuestion GetItem(int key)
         {
             return _repository.FirstOrDefault(z => z.Key == key);
         }
+
+        public IQuestion GetItem(Func<IQuestion, bool> filter)
+        {
+            return _repository.FirstOrDefault(filter);
+        }
+
+        public IEnumerable<IQuestion> GetItems() => _repository;
 
         public IEnumerable<IQuestion> GetQuestions(int numberOfQuestions)
         {
