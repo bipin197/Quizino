@@ -51,8 +51,7 @@ namespace Persistence
             {
                 var quiz = new QuizDto
                 {
-                    Key = i + 1,
-                    Id = "Test Quiz " + i + 1,
+                    Name = "test quiz " + i,
                     IsActive = i > 90,
                     CreationTime = DateTime.Now.AddMinutes(i),
                     DeactivationTime = DateTime.Now.AddMinutes(60 + i)

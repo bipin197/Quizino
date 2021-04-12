@@ -27,7 +27,7 @@ namespace WebApis.DataStore
 
             var quiz = new QuizDto
             {
-                Id = Guid.NewGuid().ToString(),
+                Name = Guid.NewGuid().ToString(),
                 IsActive = true,
                 CreationTime = startTime,
                 Category = Categories.All,

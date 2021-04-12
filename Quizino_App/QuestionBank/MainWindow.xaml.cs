@@ -24,21 +24,21 @@ namespace QuestionBank
 
         private void AddQuesButtonClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Questions.Add(QuestionViewModelFactory.CreateQuestionViewModel(new Question()));
+            _viewModel.Questions.Add(QuestionViewModelFactory.CreateQuestionViewModel(new Question() { IsNew = true }));
             HasChanges = true;
             NotifyPropertyChanged(nameof(HasChanges));
         }
 
         private void SaveQuesButtonClick(object sender, RoutedEventArgs e)
         {
-            var dataToSave = _viewModel.Questions.Where(x => !x.IsReadOnly);
+            var dataToSave = _viewModel.Questions.Where(x => !x.IsReadOnly || _viewModel.DataLoadingMode == DataLoadingModes.JsonFiles);
             if (!dataToSave.Any())
             {
                 MessageBox.Show("Data is up to date", "No Unsaved Data", MessageBoxButton.OK);
                 return;
             }
 
-            _ = _viewModel.DataStore.SaveQuestions(dataToSave.Select(x => x.EntityBase).ToList());
+            _viewModel.SaveQuestions(dataToSave.Select(x => x.EntityBase));
 
             foreach(var data in dataToSave)
             {
@@ -57,6 +57,11 @@ namespace QuestionBank
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void LoadQuestions(object sender, RoutedEventArgs e)
+        {
+            _viewModel.LoadData();
         }
     }
 }

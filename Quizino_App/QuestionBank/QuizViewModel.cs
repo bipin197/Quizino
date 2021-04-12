@@ -13,8 +13,8 @@ namespace QuestionBank
 
         public string Id
         {
-            get => EntityBase.Id;
-            set => EntityBase.Id = value;
+            get => EntityBase.Name;
+            set => EntityBase.Name = value;
         }
 
         public bool IsActive

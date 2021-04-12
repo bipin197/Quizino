@@ -35,7 +35,7 @@ namespace Persistence.Repositories
             if(!_repository.Any())
             {
                 var result = await _instance.GetAllItemsAsStringAsync();
-                var questionSets = JsonParser<QuestionSet>.Parse(result);
+                var questionSets = new JsonParser<QuestionSet>().Parse(result);
                 _repository.AddRange(questionSets.Where(x => x.Questions != null).SelectMany(x => x.Questions));
             }
 

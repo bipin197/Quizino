@@ -1,21 +1,41 @@
 ﻿using Domain.Interfaces;
-using System.Collections.Generic;
+using Domain.Validators;
+using Newtonsoft.Json;
 
 namespace Domain.Models
 {
     public class Question : EntityBase, IQuestion
     {
-        public Question()
-        {
-            ApplicableCategories = new List<Categories>();
-        }
+        private QuestionValidator _validator;
+        public long Id { get; set; }
+
+        [JsonProperty("question")]
         public string Text { get; set; }
+
+        [JsonProperty("A")]
         public string OptionA { get; set; }
+
+        [JsonProperty("B")]
         public string OptionB { get; set; }
+
+        [JsonProperty("C")]
         public string OptionC { get; set; }
+
+        [JsonProperty("D")]
         public string OptionD { get; set; }
 
-        public IEnumerable<Categories> ApplicableCategories { get; set; }
-        public AnswerOptions Answer { get; set; }
+        public string ApplicableCategories { get; set; }
+
+        public int Answer { get; set; }
+
+        public override bool IsValid()
+        {
+            if(_validator == null)
+            {
+                _validator = new QuestionValidator();
+            }
+
+            return _validator.Validate(this).IsValid;
+        }
     }
 }

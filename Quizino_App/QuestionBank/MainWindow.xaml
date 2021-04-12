@@ -7,10 +7,16 @@
         Title="MainWindow" Height="1000" Width="1500" Name="mainWindow" Margin="10,20,20,20">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Path=Questions}" Name="questionGrid" AutoGenerateColumns="False">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10,10,0,10">
+            <Label Content="Data Source"/>
+            <ComboBox Height="30" Width="200" Margin="20,0,0,0" ItemsSource="{Binding AvailableDataLoadingModes}" SelectedItem="{Binding Path=DataLoadingMode}"/>
+            <Button Content="Load Data" Height="30" Margin="20,0,0,0" Width="100" Click="LoadQuestions"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Path=Questions}" Name="questionGrid" AutoGenerateColumns="False" Margin="20,20,20,55">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridRow}">
                     <Style.Triggers>

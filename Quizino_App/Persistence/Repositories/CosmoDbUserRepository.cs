@@ -25,7 +25,7 @@ namespace Persistence.Repositories
                     return new List<IUser>();
                 }
 
-                var users = JsonParser<UserDto>.Parse(result);
+                var users = new JsonParser<UserDto>().Parse(result);
                 _repository.AddRange(users);
             }
 

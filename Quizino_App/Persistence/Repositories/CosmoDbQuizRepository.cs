@@ -31,7 +31,7 @@ namespace Persistence.Repositories
             if (!_repository.Any())
             {
                 var result = await _instance.GetAllItemsAsStringAsync();
-                var quizzes = JsonParser<QuizDto>.Parse(result);
+                var quizzes = new JsonParser<QuizDto>().Parse(result);
                 _repository.AddRange(quizzes);
             }
 
@@ -43,7 +43,7 @@ namespace Persistence.Repositories
             if (!_repository.Any())
             {
                 var result = await _instance.GetAllItemsAsStringAsync();
-                var quizzes = JsonParser<QuizDto>.Parse(result);
+                var quizzes = new JsonParser<QuizDto>().Parse(result);
                 _repository.AddRange(quizzes);
             }
 

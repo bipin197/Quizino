@@ -4,7 +4,7 @@ namespace Domain.Interfaces
 {
     public interface IQuiz : IEntityBase
     {
-        string Id { get; set; }
+        string Name { get; set; }
 
         bool IsActive { get; set; }
 

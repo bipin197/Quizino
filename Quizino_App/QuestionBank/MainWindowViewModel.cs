@@ -10,19 +10,24 @@ namespace QuestionBank
     public class MainWindowViewModel
     {
         public ObservableCollection<QuestionViewModel> Questions { get; }
-        public QuestionDataStore DataStore { get; }
+        private readonly IDictionary<DataLoadingModes, IDataStore> _dataStores;
+        public DataLoadingModes DataLoadingMode { get; set; }
 
         public MainWindowViewModel()
         {
             Questions = new ObservableCollection<QuestionViewModel>();
-            DataStore = new QuestionDataStore();
-            LoadData();
+            _dataStores = new Dictionary<DataLoadingModes, IDataStore>
+            {
+                { DataLoadingModes.CloudDataBase, new CosmoDBQuestionDataStore()},
+                { DataLoadingModes.JsonFiles, new JsonQuestionDataStore()}
+            };
         }
 
-        private void LoadData()
+        internal void LoadData()
         {
-            var questions = DataStore.LoadQuestions();
-            foreach (var question in questions)
+            var questions = new List<IQuestion>();
+            var dataStore = _dataStores[DataLoadingMode];
+            foreach (var question in dataStore.LoadQuestions())
             {
                 var viewModel = QuestionViewModelFactory.CreateQuestionViewModel(question);
                 viewModel.IsReadOnly = true;
@@ -34,6 +39,12 @@ namespace QuestionBank
                 var maxKey = questions.Max(x => x.Key);
                 QuestionViewModelFactory.SetHighestKey(maxKey);
             }
+        }
+
+        internal void SaveQuestions(IEnumerable<IQuestion> questions)
+        {
+            var dataStore = _dataStores[DataLoadingMode];
+            dataStore.SaveQuestions(questions.Cast<Question>());
         }
 
         public List<Categories> Categories
@@ -62,5 +73,12 @@ namespace QuestionBank
                 new Answer{ CorrectAnswer = AnswerOptions.D }
             };
         }
+
+        public List<DataLoadingModes> AvailableDataLoadingModes => new List<DataLoadingModes>()
+            {
+                DataLoadingModes.None,
+                DataLoadingModes.JsonFiles,
+                DataLoadingModes.CloudDataBase
+            };
     }
 }

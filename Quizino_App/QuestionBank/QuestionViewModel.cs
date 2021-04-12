@@ -53,15 +53,17 @@ namespace QuestionBank
             set
             {
                 var enums = value.Split(',');
-                foreach(var e in enums)
+                var catTypes = EntityBase.ApplicableCategories.Split(',');
+                foreach (var e in enums)
                 {
                     Categories category;
-                    if (Enum.TryParse<Categories>(e, out category))
+                    if (Enum.TryParse(e, out category))
                     {
-                        if (!EntityBase.ApplicableCategories.Contains(category))
+                        var catAsInt = ((int)category).ToString();
+                        if (!catTypes.Contains(catAsInt))
                         {
-                            var list = EntityBase.ApplicableCategories.ToList();
-                            list.Add(category);
+                            var list = EntityBase.ApplicableCategories;
+                            list = list + "," + catAsInt;
                             EntityBase.ApplicableCategories = list;
                         }
                     }
@@ -77,19 +79,19 @@ namespace QuestionBank
                 var val = value.ToUpper();
                 if(val == "A")
                 {
-                    EntityBase.Answer = AnswerOptions.A;
+                    EntityBase.Answer = (int)AnswerOptions.A;
                 }
                 if (val == "B")
                 {
-                    EntityBase.Answer = AnswerOptions.B;
+                    EntityBase.Answer = (int)AnswerOptions.B;
                 }
                 if (val == "C")
                 {
-                    EntityBase.Answer = AnswerOptions.C;
+                    EntityBase.Answer = (int)AnswerOptions.C;
                 }
                 if (val == "D")
                 {
-                    EntityBase.Answer = AnswerOptions.D;
+                    EntityBase.Answer = (int)AnswerOptions.D;
                 }
             }
         }
