@@ -14,7 +14,7 @@ namespace Persistence.Test
         [Test]
         public async Task TestCreateDeleteEntity()
         {
-            var cosmoDbContext = new CosmoDBQuestionRepository1<Question>(GetDbConnectionBundle());
+            var cosmoDbContext = new CosmoDBRepository<Question>(GetDbConnectionBundle());
             await cosmoDbContext.EnsureDeletedAsync();
             await cosmoDbContext.EnsureCreatedAsync();
             var question = GetMockQuestion(1);
@@ -29,7 +29,7 @@ namespace Persistence.Test
         [Test]
         public async Task TestMultiCreateDeleteEntity()
         {
-            var cosmoDbContext = new CosmoDBQuestionRepository1<Question>(GetDbConnectionBundle());
+            var cosmoDbContext = new CosmoDBRepository<Question>(GetDbConnectionBundle());
             await cosmoDbContext.EnsureDeletedAsync();
             await cosmoDbContext.EnsureCreatedAsync();
             var questions = new List<Question>();
@@ -50,7 +50,7 @@ namespace Persistence.Test
         [Test]
         public async Task TestMultiUpdateEntity()
         {
-            var cosmoDbContext = new CosmoDBQuestionRepository1<Question>(GetDbConnectionBundle());
+            var cosmoDbContext = new CosmoDBRepository<Question>(GetDbConnectionBundle());
             await cosmoDbContext.EnsureDeletedAsync();
             await cosmoDbContext.EnsureCreatedAsync();
 
@@ -79,7 +79,7 @@ namespace Persistence.Test
         [Test]
         public async Task TestUpdateEntity()
         {
-            var cosmoDbContext = new CosmoDBQuestionRepository1<Question>(GetDbConnectionBundle());
+            var cosmoDbContext = new CosmoDBRepository<Question>(GetDbConnectionBundle());
             await cosmoDbContext.EnsureDeletedAsync();
             await cosmoDbContext.EnsureCreatedAsync();
             var question = GetMockQuestion(1);
@@ -95,7 +95,7 @@ namespace Persistence.Test
             Assert.AreEqual(foundQuestion.Answer, 1);
         }
 
-        private async Task ClearDataAsync(CosmoDBQuestionRepository1<Question> cosmoDbRepository, IEnumerable<Question> questions)
+        private async Task ClearDataAsync(CosmoDBRepository<Question> cosmoDbRepository, IEnumerable<Question> questions)
         {
             foreach (var question in questions)
             {

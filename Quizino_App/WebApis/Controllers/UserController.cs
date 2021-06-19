@@ -12,12 +12,10 @@ namespace Apis.Controllers
     public class UserController
     {
         private readonly ILogger<QuizController> _logger;
-        private readonly QuizDataStore _quizDataStore;
 
         public UserController(ILogger<QuizController> logger)
         {
             _logger = logger;
-            _quizDataStore = new QuizDataStore();
         }
 
         [HttpGet("Email/{emailId}")]

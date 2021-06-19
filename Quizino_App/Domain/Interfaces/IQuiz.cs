@@ -4,6 +4,7 @@ namespace Domain.Interfaces
 {
     public interface IQuiz : IEntityBase
     {
+        long Id { get; set; }
         string Name { get; set; }
 
         bool IsActive { get; set; }
@@ -14,6 +15,6 @@ namespace Domain.Interfaces
 
         Categories Category { get; set; } 
 
-        long[] QuestionKeys { get; set; }
+        string QuestionKeys { get; set; }
     }
 }

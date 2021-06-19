@@ -3,7 +3,6 @@ using Common.Loaders;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Persistence;
 using Persistence.CosmoDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +29,7 @@ namespace Apis.Controllers
         [HttpGet("active")]
         public IEnumerable<IQuiz> Get()
         {
-            var quizQuery = new QuizQueries(new TestQuizLoader());
+            var quizQuery = new QuizQueries(_quizLoader);
 
             return quizQuery.GetAllActiveQuizForPeriod(DateTime.Now, DateTime.Now.AddHours(1));
         }
@@ -46,15 +45,15 @@ namespace Apis.Controllers
         [HttpGet("question/{quizKey}/{questionNumber}")]
         public IQuestion GetQuestion(long quizKey, int questionNumber)
         {
-            var quizQuery = new QuizQueries(new TestQuizLoader());
+            var quizQuery = new QuizQueries(_quizLoader);
 
             return quizQuery.GetQuestion(quizKey, questionNumber);
         }
 
-        [HttpPost("create/{category}")]
+        [HttpPost("create")]
         public async Task<IQuiz> Create(int category)
         {
-            var quiz = await _quizDataStore.CreateQuiz(DateTime.Now, 0);
+            var quiz = await _quizDataStore.CreateQuiz(DateTime.Now, category);
             
             return quiz;
         }

@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\CosmoDBQuestionRepository.cs" />
+    <Compile Remove="Repositories\CosmoDbQuizRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.8.1" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.13.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Cosmos" Version="5.0.5" />

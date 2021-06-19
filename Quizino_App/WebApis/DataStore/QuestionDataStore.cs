@@ -9,10 +9,15 @@ namespace WebApis.DataStore
 {
     public class QuestionDataStore
     {
-        private readonly CosmoDBQuestionRepository1<Question> _cosmoDBQuestionRepository;
+        private readonly CosmoDBRepository<Question> _cosmoDBQuestionRepository;
         public QuestionDataStore()
         {
-            _cosmoDBQuestionRepository = CosmoDBQuestionRepository1<Question>.GetInstance();
+            _cosmoDBQuestionRepository = CosmoDBRepository<Question>.GetInstance();
+        }
+
+        internal Question GetQuestions(long id)
+        {
+            return _cosmoDBQuestionRepository.GetItem(x => x.Id == id);
         }
 
         internal async Task<bool> ProcessQuestions(IEnumerable<Question> questions)
@@ -32,7 +37,7 @@ namespace WebApis.DataStore
         {
             await _cosmoDBQuestionRepository.EnsureCreatedAsync();
             var allItems = _cosmoDBQuestionRepository.GetItems(x => x.Id > 0);
-            var maxId = 0l;
+            var maxId = 0L;
             if(allItems.Any())
             {
                 maxId = allItems.Max(x => x.Id);

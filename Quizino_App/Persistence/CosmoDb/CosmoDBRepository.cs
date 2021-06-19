@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CosmoDBQuestionRepository1<T> : IRepository<T> where T : class
+    public class CosmoDBRepository<T> : IRepository<T> where T : class
     {
         private readonly CosmoDbContext<T> _dbContext;
-        private static CosmoDBQuestionRepository1<T> _instance;
+        private static CosmoDBRepository<T> _instance;
 
-        public static CosmoDBQuestionRepository1<T> GetInstance()
+        public static CosmoDBRepository<T> GetInstance()
         {
             if (_instance == null)
             {
-                _instance = new CosmoDBQuestionRepository1<T>(GetDbConnectionBundle());
+                _instance = new CosmoDBRepository<T>(GetDbConnectionBundle());
             }
 
             return _instance;
         }
-        public CosmoDBQuestionRepository1(DbConnectionBundle dbConnectionBundle)
+        public CosmoDBRepository(DbConnectionBundle dbConnectionBundle)
         {
             _dbContext = new CosmoDbContext<T>(dbConnectionBundle);          
         }

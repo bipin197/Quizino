@@ -11,14 +11,14 @@ namespace QuestionBank.DataStore
     {
         public IEnumerable<IQuestion> LoadQuestions()
         {
-            var questionRepos = CosmoDBQuestionRepository1<Question>.GetInstance();
+            var questionRepos = CosmoDBRepository<Question>.GetInstance();
 
             return questionRepos.GetItems(x => x != null);
         }
 
         public async Task SaveQuestions(IEnumerable<IQuestion> questions)
         {
-            var questionRepos = CosmoDBQuestionRepository1<Question>.GetInstance();
+            var questionRepos = CosmoDBRepository<Question>.GetInstance();
             await questionRepos.AddItemsAsync(questions.Cast<Question>()).ConfigureAwait(false);
             await questionRepos.SaveAsync().ConfigureAwait(false);
         }

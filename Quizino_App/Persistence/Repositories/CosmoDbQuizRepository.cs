@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CosmoDbQuizRepository : DocumentDBRepository<IQuiz>, IHasGetNextKey
+    public class CosmoDbQuizRepository : CosmoDBRepository<IQuiz>, IHasGetNextKey
     {
         private static CosmoDbQuizRepository _instance;
         private static List<IQuiz> _repository;
