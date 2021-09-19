@@ -1,6 +1,7 @@
 ﻿using Application.Quiz;
 using Common.Loaders;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Persistence.CosmoDb;
@@ -13,6 +14,7 @@ namespace Apis.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class QuizController : Controller
     {
         private readonly ILogger<QuizController> _logger;

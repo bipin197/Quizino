@@ -28,22 +28,22 @@ namespace Persistence.Repositories
 
         public async Task AddItemAsync(T item)
         {
-            await _dbContext.Items.AddAsync(item);
+            await _dbContext.Items.AddAsync(item).ConfigureAwait(false);
         }
 
         public async Task EnsureDeletedAsync()
         {
-            await _dbContext.Database.EnsureDeletedAsync();
+            await _dbContext.Database.EnsureDeletedAsync().ConfigureAwait(false);
         }
 
         public async Task EnsureCreatedAsync()
         {
-            await _dbContext.Database.EnsureCreatedAsync();
+            await _dbContext.Database.EnsureCreatedAsync().ConfigureAwait(false);
         }
 
         public async Task AddItemsAsync(IEnumerable<T> items)
         {
-            await _dbContext.Items.AddRangeAsync(items);
+            await _dbContext.Items.AddRangeAsync(items).ConfigureAwait(false);
         }
 
         public T GetItem(Func<T, bool> predicate)
@@ -68,7 +68,7 @@ namespace Persistence.Repositories
 
         public async Task SaveAsync()
         {
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
         }
 
         public void UpdateItem(T item)

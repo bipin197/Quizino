@@ -21,7 +21,11 @@ namespace Persistence.CosmoDb
             => optionsBuilder.UseCosmos(
                 _dbConnectionBundle.EndpointConnection.Endpoint,
                 _dbConnectionBundle.EndpointConnection.Key,
-                databaseName: _dbConnectionBundle.DatabaseId);
+                databaseName: _dbConnectionBundle.DatabaseId, 
+                options => 
+                {
+                    
+                });
 
     }
 }

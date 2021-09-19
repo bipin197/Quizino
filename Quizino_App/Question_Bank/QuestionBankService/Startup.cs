@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace WebApis
+namespace QuestionBankService
 {
     public class Startup
     {
@@ -19,26 +24,6 @@ namespace WebApis
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", options =>
-                {
-                    options.Authority = "https://localhost:44397/";
-                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-                    {
-                        ValidateAudience = true,
-                        ValidTypes = new[] { "at+jwt" }
-                    };
-                    options.Audience = "WeatherApiResource";
-                });
-
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("ApiScope", policy =>
-                {
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "WeatherApi");
-                });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,11 +45,12 @@ namespace WebApis
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireAuthorization("ApiScope");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
