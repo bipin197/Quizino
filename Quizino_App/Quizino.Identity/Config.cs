@@ -18,7 +18,8 @@ namespace Quizino.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
-                new ApiScope("WeatherApi", "Weather Api")
+                new ApiScope("WeatherApi", "Weather Api"),
+                new ApiScope("QuestionApi", "Question Api")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -38,7 +39,7 @@ namespace Quizino.Identity
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "WeatherApi" }
+                    AllowedScopes = { "WeatherApi", "QuestionApi" }
                 }
             };
 
@@ -50,6 +51,13 @@ namespace Quizino.Identity
                     DisplayName = "Weather API Resource",
                     Enabled = true,
                     Scopes = new []{ "WeatherApi" }
+                },
+                new ApiResource
+                {
+                    Name = "QuestionApiResource",
+                    DisplayName = "Question API Resource",
+                    Enabled = true,
+                    Scopes = new []{ "QuestionApi" }
                 }
             };
     }
