@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizino.Identity", "Quizino.Identity\Quizino.Identity.csproj", "{57FE4459-1A61-4564-AF07-ABBB70DE880B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Test", "Persistence.Test\Persistence.Test.csproj", "{39429B31-E8CE-473F-AE71-C1AF9C5883FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{57FE4459-1A61-4564-AF07-ABBB70DE880B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57FE4459-1A61-4564-AF07-ABBB70DE880B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57FE4459-1A61-4564-AF07-ABBB70DE880B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39429B31-E8CE-473F-AE71-C1AF9C5883FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39429B31-E8CE-473F-AE71-C1AF9C5883FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39429B31-E8CE-473F-AE71-C1AF9C5883FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39429B31-E8CE-473F-AE71-C1AF9C5883FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,9 +9,7 @@ export class FetchDataComponent {
   public questions: Question[];
 
   constructor(http: HttpClient) {
-    let headers = new HttpHeaders();
-    headers.set('Access-Control-Allow-Origin', '*');
-    http.get<Question[]>('https://localhost:44332/api/question/firstfive', { headers: headers}).subscribe(result => {
+    http.get<Question[]>('https://localhost:44332/api/question/firstfive').subscribe(result => {
       this.questions = result;
     }, error => console.error(error));
   }

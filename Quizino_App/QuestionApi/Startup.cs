@@ -30,6 +30,8 @@ namespace QuestionApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             var identityUrl = "https://localhost:44397";
@@ -64,7 +66,7 @@ namespace QuestionApi
             app.UseRouting();
             //app.UseAuthentication();
             //app.UseAuthorization();
-
+            app.UseCors(options => options.WithOrigins("https://localhost:44349").AllowAnyMethod().AllowAnyHeader());
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -3,7 +3,12 @@
 <p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!questions"><em>Loading...</em></p>
-
+<form class="container">
+  <div class="btn-group">
+    <button class="btn btn-primary" type="button" style='margin-right:16px'>Add Question</button>
+    <button class="btn btn-primary" type="button">Delete Question</button>
+  </div>
+</form>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="questions">
   <thead>
     <tr>
@@ -16,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let question of questions">
+    <tr *ngFor="let question of questions" contenteditable="true">
       <td>{{ question.text }}</td>
       <td>{{ question.optionA }}</td>
       <td>{{ question.optionB }}</td>

@@ -10,19 +10,21 @@ namespace QuestionApi.Store
     public class QuestionDataStore
     {
         private readonly CosmoDBRepository<Question> _cosmoDBQuestionRepository;
+        private readonly JsonRepository<Question> _jsonRepository;
         public QuestionDataStore()
         {
             _cosmoDBQuestionRepository = CosmoDBRepository<Question>.GetInstance();
+            _jsonRepository = JsonRepository<Question>.GetInstance();
         }
 
         internal Question GetQuestion(long id)
         {
-            return _cosmoDBQuestionRepository.GetItem(x => x.Id == id);
+            return _jsonRepository.GetItem(x => x.Key == id);
         }
 
         internal IEnumerable<Question> GetQuestions(long[] ids)
         {
-            return _cosmoDBQuestionRepository.GetItems(x => ids.Contains(x.Id));
+            return _jsonRepository.GetItems(x => ids.Contains(x.Key));
         }
 
         internal async Task<bool> ProcessQuestions(IEnumerable<Question> questions)
