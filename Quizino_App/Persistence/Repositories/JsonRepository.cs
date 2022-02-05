@@ -30,7 +30,7 @@ namespace Persistence.Repositories
         {
             if (typeof(T) == typeof(Question))
             {
-                var content = File.ReadAllText(@"Data\QuestionData.json");
+                var content = File.ReadAllText(@"Data/QuestionData.json");
                 if (string.IsNullOrEmpty(content))
                 {
                     return;
