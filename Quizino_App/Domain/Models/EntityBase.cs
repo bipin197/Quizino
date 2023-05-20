@@ -4,7 +4,7 @@ namespace Domain.Models
 {
     public abstract class EntityBase : IEntityBase
     {
-        public long Key { get; set; }
+        public long Id { get; set; }
 
         public bool IsNew { get; set; }
 

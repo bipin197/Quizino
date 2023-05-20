@@ -1,50 +1,33 @@
-﻿using Domain.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Common.Loaders;
+using Common.Queries;
+using Common.Repositories;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuizApi.Controllers
 {
+    [Route("api/[controller]")]
     public class QuizController : Controller
     {
-        private readonly CosmoDBRepository<Quiz> _quizRepository;
-        public QuizController()
+        private readonly IQuizQuery _quizQuery;
+        public QuizController(IQuizQuery repository)
         {
-            _quizRepository = CosmoDBRepository<Quiz>.GetInstance();
+            _quizQuery = repository;
         }
 
         // GET: QuizController/Details/5
-        [HttpGet]
-        public Quiz Get(int id)
+        [HttpGet("Active")]
+        public IEnumerable<Quiz> Active()
         {
-            return _quizRepository.GetItem(x => x.Id == id);
+            return _quizQuery.GetAllActiveQuiz();
         }
 
-        //// GET: QuizController/Create
-        //[HttpPost]
-        //public HttpResponse Create()
-        //{
-            
-        //}
-
-        //[HttpPut]
-        //// GET: QuizController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-            
-        //}
-
-
-
-        //// GET: QuizController/Delete/5
-        //[HttpDelete]
-        //public ActionResult Delete(int id)
-        //{
-            
-        //}
+        [HttpGet("{id}")]
+        public Quiz Get(long id)
+        {
+            return _quizQuery.GetQuiz(id).Result;
+        }
     }
 }

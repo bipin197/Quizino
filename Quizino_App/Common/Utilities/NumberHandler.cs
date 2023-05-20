@@ -29,7 +29,7 @@ namespace Common.Utilities
         {
             if (enumerable.Any())
             {
-                return enumerable.Max(x => x.Key) + 1;
+                return enumerable.Max(x => x.Id) + 1;
             }
 
             return 1;

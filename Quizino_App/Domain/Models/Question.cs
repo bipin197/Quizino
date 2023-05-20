@@ -7,7 +7,7 @@ namespace Domain.Models
     public class Question : EntityBase, IQuestion
     {
         private QuestionValidator _validator;
-        public long Id { get; set; }
+        public long QuestionId { get => Id; set => Id = value; }
 
         [JsonProperty("question")]
         public string Text { get; set; }

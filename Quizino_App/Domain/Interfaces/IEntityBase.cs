@@ -3,7 +3,7 @@ namespace Domain.Interfaces
 {
     public interface IEntityBase
     {
-        long Key { get; set; }
+        long Id { get; set; }
 
         bool IsNew { get; set; }
 

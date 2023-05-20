@@ -1,34 +1,29 @@
-﻿using Domain.Models;
+﻿using Common.Utilities;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Persistence.Tools;
 using QuestionApi.Store;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace QuestionApi.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     public class QuestionController : ControllerBase
     {
         private readonly ILogger<QuestionController> _logger;
         private readonly QuestionDataStore _dataStore;
-        public QuestionController(ILogger<QuestionController> logger)
+        public QuestionController(ILogger<QuestionController> logger, QuestionDataStore questionDataStore)
         {
             _logger = logger;
-            _dataStore = new QuestionDataStore();
+            _dataStore = questionDataStore;
         }
 
         [HttpGet("{id}")]
+        [Authorize("read:questions")]
         public Question Get(int id)
         {
             var question = _dataStore.GetQuestion(id);
@@ -41,12 +36,53 @@ namespace QuestionApi.Controllers
             return question;
         }
 
+        [HttpPost("Search")]
+        //[Authorize("read:questions")]
+        [AllowAnonymous]
+        public IEnumerable<Question> GetQuestion([FromBody] Criteria criteria)
+        {
+            if(criteria == null)
+            {
+                _logger.LogError("Empty or invalid criteria");
+                return new List<Question>();
+            }
+            var questions = _dataStore.GetQuestion(criteria);
+            if (questions == null || !questions.Any())
+            {
+                _logger.LogError("No Question found with provided criteria {0}", criteria);
+                return new List<Question>();
+            }
+
+            return questions;
+        }
+
+        [HttpPost("Update")]
+        //[Authorize("read:questions")]
+        [AllowAnonymous]
+        public IEnumerable<Question> UpdateQuestion([FromBody] Criteria criteria)
+        {
+            if (criteria == null)
+            {
+                _logger.LogError("Empty or invalid criteria");
+                return new List<Question>();
+            }
+            var questions = _dataStore.GetQuestion(criteria);
+            if (questions == null || !questions.Any())
+            {
+                _logger.LogError("No Question found with provided criteria {0}", criteria);
+                return new List<Question>();
+            }
+
+            return questions;
+        }
+
         /// <summary>
         /// Only for testing
         /// </summary>
         /// <param name="numberOfItems"></param>
         /// <returns></returns>
         [HttpGet("FirstFive")]
+        [Authorize("read:questions")]
         public IEnumerable<Question> GetFirstFiveItems()
         {
             var question = _dataStore.GetQuestions(new long[] { 1, 2, 3, 4, 5 });
@@ -59,58 +95,18 @@ namespace QuestionApi.Controllers
             return question;
         }
 
-        [HttpPost("Create")]
-        public async Task<HttpResponseMessage> Create()
-        {
-            var message = new HttpResponseMessage();
-            message.StatusCode = System.Net.HttpStatusCode.OK;
-            var body = Request.Body;
-            try
-            {
-                using (var sr = new StreamReader(body))
-                {
-                    var rawContent = await sr.ReadToEndAsync();
-                    if(string.IsNullOrEmpty(rawContent))
-                    {
-                        _logger.LogWarning("Empty payload");
-                        message.StatusCode = System.Net.HttpStatusCode.NoContent;
-                        return message;
-                    }
-                    var objects = new JsonParser<Question[]>().Parse(rawContent);
-                    // use raw content here
-
-                    await _dataStore.ProcessQuestions(objects);
-                }
-            }
-            catch (JsonException exception)
-            {
-                _logger.LogError(exception, "Error occurred while parsing json data");
-                message.StatusCode = System.Net.HttpStatusCode.BadRequest;
-            }
-            catch (Exception exception)
-            {
-                _logger.LogCritical(exception, "Unknown error occurred while parsing json data");
-                message.StatusCode = System.Net.HttpStatusCode.InternalServerError;
-            }
-
-            return message;
-        }
-
-        [HttpPut("Update")]
-        public HttpResponseMessage Update([FromBody] Question[] questions)
-        {
-            var message = "Unknow Error occurred";
-            var responseMessage = new HttpResponseMessage
-            {
-                ReasonPhrase = message,
-                StatusCode = System.Net.HttpStatusCode.NoContent
-            };
-            if (!questions.Any())
-            {
-                return responseMessage;
-            }
-
-            return responseMessage;
-        }
+        ///// <summary>
+        ///// Create Default data if doesn't exist only for testing
+        ///// </summary>
+        ///// <param name="numberOfItems"></param>
+        ///// <returns></returns>
+        //[HttpPost("CreateDefaultData")]
+        //[AllowAnonymous]
+        //public void CreateDefaultData()
+        //{
+        //    var jsonRepo = new JsonRepository<Question>();
+        //    var command = HttpContext.RequestServices.GetService<CreateQuestionCommand>();
+        //    _dataStore.AddQuestions(jsonRepo.GetAllItems(), command);
+        //}
     }
 }

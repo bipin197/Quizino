@@ -20,7 +20,6 @@ namespace QuestionApi.Store
             {
                 var question = new Question
                 {
-                    Key = i,
                     Id = i,
                     Answer = i % 4 + 1,
                     OptionA = "Option A",
@@ -35,6 +34,6 @@ namespace QuestionApi.Store
         }
 
         public static IEnumerable<Question> GetItems(Func<Question, bool> predicate) => _questions.Where(predicate);
-        public static Question GetItem(int id) => _questions.FirstOrDefault(x => x.Key == id);
+        public static Question GetItem(int id) => _questions.FirstOrDefault(x => x.Id == id);
     }
 }

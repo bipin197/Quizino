@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{76E9FD39-DF6C-46BC-AC3D-33B30B864278}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Util.Test", "Util.Test\Util.Test.csproj", "{F65F74CD-3E5F-4058-9955-BBA01E828646}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizino.Identity", "Quizino.Identity\Quizino.Identity.csproj", "{240113C1-8775-492D-9A33-53A1650C8E9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,18 @@ Global
 		{240113C1-8775-492D-9A33-53A1650C8E9C}.Release|iPhone.Build.0 = Release|Any CPU
 		{240113C1-8775-492D-9A33-53A1650C8E9C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{240113C1-8775-492D-9A33-53A1650C8E9C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|iPhone.Build.0 = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{00B80FF0-58D1-4BDB-8A1D-EE3B5BC6FA62}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

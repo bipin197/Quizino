@@ -27,9 +27,9 @@ namespace Persistence
             return _cachedQuestions[quizKey].ElementAt(questionNumber);
         }
 
-        public IQuiz GetQuiz(int key)
+        public IQuiz GetQuiz(int id)
         {
-            return _repository.FirstOrDefault(z => z.Key == key);
+            return _repository.FirstOrDefault(z => z.Id == id);
         }
 
         public IList<IQuiz> GetAllActiveQuiz()
@@ -59,7 +59,7 @@ namespace Persistence
 
                 var questions = questionRepository.GetQuestions(25);
                 _repository.Add(quiz);
-                _cachedQuestions.Add(quiz.Key, questions);
+                _cachedQuestions.Add(quiz.Id, questions);
             }
         }
     }

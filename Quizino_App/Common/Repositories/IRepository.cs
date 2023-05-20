@@ -1,15 +1,25 @@
-using Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Common.Repositories
 {
     public interface IRepository<T>
     {
-        T GetItem(int key);
+        Task AddItemAsync(T item);
+        Task AddItemsAsync(IEnumerable<T> item);
 
-        T GetItem(Func<T, bool> filter);
+        T GetItem(Func<T, bool> predicate);
+        IEnumerable<T> GetItems(Func<T, bool> predicate);
 
-        IEnumerable<T> GetItems();
+        void UpdateItem(T item);
+        Task UpdateItemsAsync(IEnumerable<T> item);
+
+        void RemoveItem(T item);
+        void RemoveItems(IEnumerable<T> item);
+
+        Task SaveAsync();
+
+        void Save();
     }
 }

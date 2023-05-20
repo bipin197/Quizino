@@ -1,3 +1,7 @@
+using Common.Loaders;
+using Common.Queries;
+using Common.Repositories;
+using Domain.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +35,9 @@ namespace QuizApi
             services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
                 .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
             services.AddControllers();
+            services.AddSwaggerGen();
+            services.AddTransient(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
+            services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,8 +46,11 @@ namespace QuizApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwaggerUI();
+                
             }
 
+           // app.UseSwagger();
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -50,6 +61,16 @@ namespace QuizApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "Question/swagger/{documentName}/swagger.json";
+            });
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/Question/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
             });
         }
     }

@@ -1,84 +1,38 @@
-﻿using Domain.Interfaces;
+﻿using Common.Commands;
+using Common.Queries;
+using Common.Utilities;
 using Domain.Models;
-using Persistence.Repositories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuestionApi.Store
 {
     public class QuestionDataStore
     {
-        private readonly CosmoDBRepository<Question> _cosmoDBQuestionRepository;
-        private readonly JsonRepository<Question> _jsonRepository;
-        public QuestionDataStore()
+        private readonly IQuestionQuery _questionQuery;
+        public QuestionDataStore(IQuestionQuery questionQuery)
         {
-            _cosmoDBQuestionRepository = CosmoDBRepository<Question>.GetInstance();
-            _jsonRepository = JsonRepository<Question>.GetInstance();
+            _questionQuery = questionQuery;
         }
 
         internal Question GetQuestion(long id)
         {
-            return _jsonRepository.GetItem(x => x.Key == id);
+            return _questionQuery.GetQuestion(id);
         }
 
         internal IEnumerable<Question> GetQuestions(long[] ids)
         {
-            return _jsonRepository.GetItems(x => ids.Contains(x.Key));
+            return _questionQuery.GetAllQuestions(x => ids.Contains(x.Id));
         }
 
-        internal async Task<bool> ProcessQuestions(IEnumerable<Question> questions)
+        internal IEnumerable<Question> GetQuestion(Criteria criteria)
         {
-            await EnsureMandatoryDefaultProperties(questions);
-            if (!CanProcess(questions))
-            {
-                return false;
-            }
-
-            await _cosmoDBQuestionRepository.AddItemsAsync(questions.Cast<Question>());
-            await SaveToDb().ConfigureAwait(false);
-            return true;
+            return _questionQuery.GetQuestions(criteria);
         }
 
-        private async Task EnsureMandatoryDefaultProperties(IEnumerable<Question> questions)
+        internal void AddQuestions(IEnumerable<Question> questions, CreateQuestionCommand createQuestionCommand)
         {
-            await _cosmoDBQuestionRepository.EnsureCreatedAsync();
-            var allItems = _cosmoDBQuestionRepository.GetItems(x => x.Id > 0);
-            var maxId = 0L;
-            if (allItems.Any())
-            {
-                maxId = allItems.Max(x => x.Id);
-            }
-            foreach (var question in questions)
-            {
-                if (question.Id <= 0)
-                {
-                    question.Id = maxId + 1;
-                    maxId++;
-                }
-                if (string.IsNullOrEmpty(question.ApplicableCategories))
-                {
-                    question.ApplicableCategories = ((int)Categories.GeneralAwareness).ToString();
-                }
-            }
-        }
-
-        internal async Task SaveToDb()
-        {
-            await _cosmoDBQuestionRepository.SaveAsync();
-        }
-
-        private bool CanProcess(IEnumerable<Question> questions)
-        {
-            foreach (var question in questions)
-            {
-                if (!question.IsValid())
-                {
-                    return false;
-                }
-            }
-
-            return true;
+             createQuestionCommand.Handle(questions).ConfigureAwait(false);
         }
     }
 }

@@ -11,6 +11,6 @@ namespace Domain.Models
         public DateTime DeactivationTime { get; set; }
         public Categories Category { get; set; }
         public string QuestionKeys { get; set; }
-        public long Id { get; set; }
+        public long QuizId { get; set; }
     }
 }

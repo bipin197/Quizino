@@ -4,6 +4,7 @@ using Common.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Persistence
 {
@@ -22,9 +23,19 @@ namespace Persistence
             return _instance;
         }
 
-        public IQuestion GetItem(int key)
+        public Task AddItemAsync(IQuestion item)
         {
-            return _repository.FirstOrDefault(z => z.Key == key);
+            throw new NotSupportedException();
+        }
+
+        public Task AddItemsAsync(IEnumerable<IQuestion> item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public IQuestion GetItem(int id)
+        {
+            return _repository.FirstOrDefault(z => z.Id == id);
         }
 
         public IQuestion GetItem(Func<IQuestion, bool> filter)
@@ -33,6 +44,11 @@ namespace Persistence
         }
 
         public IEnumerable<IQuestion> GetItems() => _repository;
+
+        public IEnumerable<IQuestion> GetItems(Func<IQuestion, bool> predicate)
+        {
+            return _repository.Where(predicate);
+        }
 
         public IEnumerable<IQuestion> GetQuestions(int numberOfQuestions)
         {
@@ -52,6 +68,36 @@ namespace Persistence
             }
         }
 
+        public void RemoveItem(IQuestion item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveItems(IEnumerable<IQuestion> item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SaveAsync()
+        {
+            throw new NotSupportedException();
+        }
+
+        public void UpdateItem(IQuestion item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public Task UpdateItemsAsync(IEnumerable<IQuestion> item)
+        {
+            throw new NotImplementedException();
+        }
+
         private void Initialize()
         {
             _repository = new List<QuestionDto>();
@@ -64,7 +110,7 @@ namespace Persistence
                     OptionB = "B " + i,
                     OptionC = "C " + i,
                     OptionD = "D " + i,
-                    Key = i
+                    Id = i
                 };
 
                 _repository.Add(quiz);
