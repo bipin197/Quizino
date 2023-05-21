@@ -55,9 +55,42 @@ namespace Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task UpdateItemsAsync(IEnumerable<Question> item)
+        public async Task UpdateItemsAsync(IEnumerable<Question> items)
         {
-            throw new NotImplementedException();
+            var ids = items.Select(x => x.Id);
+            var questions = _questionDbContext.Questions.Where(x => ids.Contains(x.QuestionId));
+            foreach(var question in questions)
+            {
+                var item = items.Where(x => x.Id == question.Id).FirstOrDefault();
+                if(item != null)
+                {
+                    question.Text = item.Text;
+                    question.OptionA = item.OptionA;
+                    question.OptionB = item.OptionB;
+                    question.OptionC = item.OptionC;
+                    question.OptionD = item.OptionD;
+                    question.Answer = item.Answer;
+                    question.ApplicableCategories= item.ApplicableCategories??"0";
+                }
+            }
+
+            foreach (var item in items.Where(x => x.IsNew))
+            {
+                var question = new Question
+                {
+                    Text = item.Text,
+                    OptionA = item.OptionA,
+                    OptionB = item.OptionB,
+                    OptionC = item.OptionC,
+                    OptionD = item.OptionD,
+                    Answer = item.Answer,
+                    ApplicableCategories = item.ApplicableCategories??"0"
+                };
+
+                _questionDbContext.Add(question);
+            }
+
+            await _questionDbContext.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }

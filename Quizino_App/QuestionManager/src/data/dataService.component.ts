@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable, map, observable } from 'rxjs';
-import { Question } from '../app/app.component';
+import { Observable } from 'rxjs';
+import { QuestionSearchResult } from '../app/app.component';
 
 export interface Token {
   access_token: string;
@@ -25,15 +25,15 @@ export class DataService {
     this._http_Client = httpClient;
   }
 
-  public searchQuestions(): Promise<Question[]>
+  public searchQuestions(): Promise<QuestionSearchResult>
   {
-    const body = { "Ids": [1, 2, 3, 45, 67, 9, 11, 25, 44, 99, 101, 6, 74, 33] };
+    const body = { "Ids": [] };
     return new Promise((resolve, reject) => {
-      this._http_Client.post('http://localhost:5004/api/Question/Search', body)
+      this._http_Client.post('https://localhost:49165/api/Question/Search', body)
         .subscribe(
-          results => {
+          function (results) {
             const result = JSON.stringify(results);
-            const obj:Question[] = JSON.parse(result);
+            const obj: QuestionSearchResult = JSON.parse(result);
             resolve(obj);
           },
           error => {
@@ -42,6 +42,19 @@ export class DataService {
           }
         );
     });
+  }
+
+  public SaveQuestions(body : string[]): void
+  {
+    this._http_Client.post('https://localhost:49165/api/Question/Update', JSON.stringify(body), {headers :{ 'Content-Type' : 'application/json'}})        .subscribe(
+      function (results) {
+        console.log(results);
+
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   setAccessToken() {

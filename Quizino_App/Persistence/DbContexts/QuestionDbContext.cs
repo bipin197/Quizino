@@ -7,7 +7,9 @@ namespace Persistence.DbContexts
     {
         public DbSet<Question> Questions { get; set; }
 
-        public QuestionDbContext(DbContextOptions<QuestionDbContext> options) : base(options) { }
+        public QuestionDbContext(DbContextOptions<QuestionDbContext> options) : base(options) 
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,7 +21,7 @@ namespace Persistence.DbContexts
                 entity.Ignore(x => x.Id);
                 entity.Ignore(x => x.IsNew);
                 entity.Property(e => e.QuestionId)
-                        .HasColumnName("ques_id")
+                        .HasColumnName("ques_id").HasDefaultValueSql("nextval('public.question_ques_id_seq'::regclass)")
                         .HasMaxLength(250);
                 entity.HasKey(e => e.QuestionId)
                         .HasName("ques_id");

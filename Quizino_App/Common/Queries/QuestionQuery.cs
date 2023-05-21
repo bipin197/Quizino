@@ -39,7 +39,13 @@ namespace Common.Queries
 
         public IList<Question> GetQuestions(Criteria criteriaData)
         {
-            return _repository.GetItems(x => criteriaData.Meets(x)).ToList();
+            if(criteriaData.Ids.Any())
+            {
+                return _repository.GetItems(x => criteriaData.Meets(x)).ToList();
+            }
+
+            //TODO: must change this
+            return _repository.GetItems(x => true).ToList();
         }
     }
 }

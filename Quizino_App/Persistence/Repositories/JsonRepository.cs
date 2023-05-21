@@ -2,7 +2,6 @@
 using Domain.Interfaces;
 using Domain.Models;
 using Newtonsoft.Json;
-using Persistence.DbContexts;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,15 +24,7 @@ namespace Persistence.Repositories
         {
             if(typeof(T) == typeof(Question) || typeof(T) == typeof(Quiz))
             {
-                var path = string.Empty;
-                if (typeof(T) == typeof(Question))
-                {
-                    path = @"Data/QuestionData.json";
-                }
-                if (typeof(T) == typeof(Quiz))
-                {
-                    path = @"Data/QuizData.json";
-                }
+                string path = GetFilePath();
 
                 var content = File.ReadAllText(path);
                 if (string.IsNullOrEmpty(content))
@@ -67,6 +58,21 @@ namespace Persistence.Repositories
                 });
                 _repository.AddRange(result);
             }
+        }
+
+        private static string GetFilePath()
+        {
+            var path = string.Empty;
+            if (typeof(T) == typeof(Question))
+            {
+                path = @"Data/QuestionData.json";
+            }
+            if (typeof(T) == typeof(Quiz))
+            {
+                path = @"Data/QuizData.json";
+            }
+
+            return path;
         }
 
         private AnswerOptions GetAnswerOptions(string answerInText)
@@ -130,14 +136,27 @@ namespace Persistence.Repositories
             throw new System.NotSupportedException();
         }
 
-        public Task SaveAsync()
+        public async Task SaveAsync()
         {
-            throw new System.NotSupportedException();
+            Save();
+            await Task.FromResult(_repository).ConfigureAwait(false);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            string json = JsonConvert.SerializeObject(_repository, Formatting.Indented);
+
+            // Write the JSON to the file
+            try
+            {
+                File.WriteAllText(GetFilePath(), json);
+                _repository.Clear();
+                Initialize();
+            }
+            catch(Exception ex)
+            {
+                
+            }
         }
 
         public async Task UpdateItemsAsync(IEnumerable<T> items)
@@ -145,8 +164,15 @@ namespace Persistence.Repositories
             var ids = items.Select(x => x.Id);
             foreach (var id in ids)
             {
-                var re = _repository.Where(x => x.Id == id).FirstOrDefault();
-                var item = items.FirstOrDefault(x => x.Id == id);
+                var itemInRepo = _repository.Where(x => x.Id == id).FirstOrDefault() as Question;
+                var item = items.FirstOrDefault(x => x.Id == id) as Question;
+                itemInRepo.Text = item.Text;
+                itemInRepo.OptionA = item.OptionA;
+                itemInRepo.OptionB = item.OptionB;
+                itemInRepo.OptionC = item.OptionC;
+                itemInRepo.OptionD = item.OptionD;
+                itemInRepo.Answer = item.Answer;
+                itemInRepo.ApplicableCategories = item.ApplicableCategories;
             }
 
             await Task.FromResult(_repository).ConfigureAwait(false);

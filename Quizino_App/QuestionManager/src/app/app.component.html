@@ -23,19 +23,19 @@
 </div>
 
 <div class="content" role="main">
-  <div class="button-container">
-    <button class="add-button">Add</button>
-    <button class="delete-button">Delete</button>
-    <button class="save-button">Save</button>
-  </div>
   <div>
-    <ag-grid-angular style="width: 80%; height: 700px;"
+    <ag-grid-angular style="width: 100%; height: 750px;"
                      class="ag-theme-alpine"
                      [gridOptions]="gridOptions"
-                     [rowData]="rowData" contenteditable="true">
+                     [rowData]="rowData"
+                     (gridReady)="onGridReady($event)">
     </ag-grid-angular>
+    <div class="button-container" >
+      <button class="add-button" (click)="addNewRow()">Add</button>
+      <button class="delete-button">Delete</button>
+      <button class="save-button" (click)="saveGridData()">Save</button>
+    </div>
   </div>
-
 </div>
 
 

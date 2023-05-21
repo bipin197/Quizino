@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Common.Commands
 {
-    public class CreateQuestionCommand : ICommand<Question>
+    public class CreateQuestionCommandHandler : ICommandHandler<Question>
     {
         private readonly IRepository<Question> _repository;
 
-        public CreateQuestionCommand(IRepository<Question> repository)
+        public CreateQuestionCommandHandler(IRepository<Question> repository)
         {
             _repository = repository;
         }
 
-        public async Task Handle(IEnumerable<Question> items)
+        public async Task HandleAsync(IEnumerable<Question> items)
         {
             try
             {

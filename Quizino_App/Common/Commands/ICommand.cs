@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Common.Commands
 {
-    public interface ICommand<T>
+    public interface ICommand
     {
-        Task Handle(IEnumerable<T> items);
     }
 }

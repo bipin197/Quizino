@@ -1,32 +1,21 @@
-﻿using Common.Repositories;
-using Domain.Models;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Common.Commands
 {
-    public class UpdateQuestionCommand : ICommand<Question>
+    public class UpdateQuestionCommand : ICommand
     {
-        private readonly IRepository<Question> _repository;
-        
-        public UpdateQuestionCommand(IRepository<Question> repository)
-        {
-            _repository= repository;
-        }
+        public long Id { get; set; }
+        public string Text { get; set; }
+        public string OptionA { get; set; }
+        public string OptionB { get; set; }
+        public string OptionC { get; set; }
+        public string OptionD { get; set; }
+        public string ApplicableCategories { get; set; }
+        public int Answer { get; set; }
+        public bool IsNew { get; set; }
 
-        public async Task Handle(IEnumerable<Question> items)
-        {
-            try
-            {
-                await _repository.UpdateItemsAsync(items).ConfigureAwait(false);
-                _repository.Save();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
     }
 }

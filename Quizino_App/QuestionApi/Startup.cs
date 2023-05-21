@@ -58,12 +58,14 @@ namespace QuestionApi
                 opt.EnableSensitiveDataLogging();
                 opt.UseInternalServiceProvider(sp);
             });
-            services.AddScoped(typeof(IRepository<Question>), typeof(JsonRepository<Question>));
+            services.AddScoped(typeof(IRepository<Question>), typeof(QuestionRepository));
             services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
             services.AddTransient(typeof(QuestionDataStore));
-            services.AddTransient(typeof(CreateQuestionCommand));
+            services.AddTransient(typeof(CreateQuestionCommandHandler));
+            services.AddTransient(typeof(UpdateQuestionCommand));
+            services.AddTransient(typeof(UpdateQuestionCommandHandler));
             services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
         }
 

@@ -4,15 +4,18 @@ using Common.Utilities;
 using Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace QuestionApi.Store
 {
     public class QuestionDataStore
     {
         private readonly IQuestionQuery _questionQuery;
-        public QuestionDataStore(IQuestionQuery questionQuery)
+        private readonly UpdateQuestionCommandHandler _updateQuestionCommandHandler;
+        public QuestionDataStore(IQuestionQuery questionQuery, UpdateQuestionCommandHandler updateQuestionCommandHandler)
         {
             _questionQuery = questionQuery;
+            _updateQuestionCommandHandler = updateQuestionCommandHandler;
         }
 
         internal Question GetQuestion(long id)
@@ -30,9 +33,14 @@ namespace QuestionApi.Store
             return _questionQuery.GetQuestions(criteria);
         }
 
-        internal void AddQuestions(IEnumerable<Question> questions, CreateQuestionCommand createQuestionCommand)
+        internal void AddQuestions(IEnumerable<Question> questions, CreateQuestionCommandHandler createQuestionCommand)
         {
-             createQuestionCommand.Handle(questions).ConfigureAwait(false);
+             createQuestionCommand.HandleAsync(questions).ConfigureAwait(false);
+        }
+
+        internal async Task UpdateQuestions(IEnumerable<UpdateQuestionCommand> questions)
+        {
+            await _updateQuestionCommandHandler.HandleAsync(questions).ConfigureAwait(false);
         }
     }
 }

@@ -1,11 +1,15 @@
-﻿using Common.Utilities;
+﻿using Common.Commands;
+using Common.Utilities;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using QuestionApi.Store;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 
 namespace QuestionApi.Controllers
 {
@@ -39,41 +43,44 @@ namespace QuestionApi.Controllers
         [HttpPost("Search")]
         //[Authorize("read:questions")]
         [AllowAnonymous]
-        public IEnumerable<Question> GetQuestion([FromBody] Criteria criteria)
+        public QuestionSearchResult GetQuestion([FromBody] Criteria criteria)
         {
             if(criteria == null)
             {
                 _logger.LogError("Empty or invalid criteria");
-                return new List<Question>();
+                return new QuestionSearchResult { Questions = Enumerable.Empty<Question>(), TotalQuestions = 0 };
             }
             var questions = _dataStore.GetQuestion(criteria);
             if (questions == null || !questions.Any())
             {
                 _logger.LogError("No Question found with provided criteria {0}", criteria);
-                return new List<Question>();
+                return new QuestionSearchResult { Questions = Enumerable.Empty<Question>(), TotalQuestions = 0 };
             }
 
-            return questions;
+            return new QuestionSearchResult { Questions = questions, TotalQuestions = questions.Count() }; ;
         }
 
         [HttpPost("Update")]
         //[Authorize("read:questions")]
         [AllowAnonymous]
-        public IEnumerable<Question> UpdateQuestion([FromBody] Criteria criteria)
+        public HttpResponseMessage UpdateQuestion([FromBody] UpdateQuestionCommand[] updateQuestionCommands)
         {
-            if (criteria == null)
+            if(updateQuestionCommands == null)
             {
                 _logger.LogError("Empty or invalid criteria");
-                return new List<Question>();
+                return new HttpResponseMessage(HttpStatusCode.BadRequest) { ReasonPhrase = "Invalid Data"};
             }
-            var questions = _dataStore.GetQuestion(criteria);
-            if (questions == null || !questions.Any())
+            try
             {
-                _logger.LogError("No Question found with provided criteria {0}", criteria);
-                return new List<Question>();
+                _dataStore.UpdateQuestions(updateQuestionCommands).ConfigureAwait(false);
+            }
+            catch(Exception e)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest) { ReasonPhrase = "Error occurred while procession questions: "+ e.Message };
             }
 
-            return questions;
+
+            return new HttpResponseMessage(HttpStatusCode.OK) { ReasonPhrase = "Questions Updated successfully" };
         }
 
         /// <summary>
