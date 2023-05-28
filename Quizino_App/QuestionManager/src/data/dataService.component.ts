@@ -29,7 +29,7 @@ export class DataService {
   {
     const body = { "Ids": [] };
     return new Promise((resolve, reject) => {
-      this._http_Client.post('https://localhost:49165/api/Question/Search', body)
+      this._http_Client.post('http://localhost:5004/api/Question/Search', body)
         .subscribe(
           function (results) {
             const result = JSON.stringify(results);
@@ -46,7 +46,7 @@ export class DataService {
 
   public SaveQuestions(body : string[]): void
   {
-    this._http_Client.post('https://localhost:49165/api/Question/Update', JSON.stringify(body), {headers :{ 'Content-Type' : 'application/json'}})        .subscribe(
+    this._http_Client.post('http://localhost:5004/api/Question/Update', JSON.stringify(body), {headers :{ 'Content-Type' : 'application/json'}})        .subscribe(
       function (results) {
         console.log(results);
 

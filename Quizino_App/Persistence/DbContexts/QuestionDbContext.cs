@@ -21,7 +21,7 @@ namespace Persistence.DbContexts
                 entity.Ignore(x => x.Id);
                 entity.Ignore(x => x.IsNew);
                 entity.Property(e => e.QuestionId)
-                        .HasColumnName("ques_id").HasDefaultValueSql("nextval('public.question_ques_id_seq'::regclass)")
+                        .HasColumnName("ques_id").HasDefaultValueSql("nextval('question_ques_id_seq'::regclass)")
                         .HasMaxLength(250);
                 entity.HasKey(e => e.QuestionId)
                         .HasName("ques_id");

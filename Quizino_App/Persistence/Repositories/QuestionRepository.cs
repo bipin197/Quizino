@@ -87,7 +87,7 @@ namespace Persistence.Repositories
                     ApplicableCategories = item.ApplicableCategories??"0"
                 };
 
-                _questionDbContext.Add(question);
+                _questionDbContext.Questions.Add(question);
             }
 
             await _questionDbContext.SaveChangesAsync().ConfigureAwait(false);

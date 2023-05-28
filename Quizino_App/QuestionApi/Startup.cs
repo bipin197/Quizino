@@ -55,9 +55,9 @@ namespace QuestionApi
             {
                 var conn = Configuration.GetConnectionString("PostgressConnection");
                 opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
-                opt.EnableSensitiveDataLogging();
+                opt.EnableSensitiveDataLogging(true);
                 opt.UseInternalServiceProvider(sp);
-            });
+            }, ServiceLifetime.Singleton);
             services.AddScoped(typeof(IRepository<Question>), typeof(QuestionRepository));
             services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));

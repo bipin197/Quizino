@@ -42,7 +42,6 @@ namespace Common.Commands
                 }
 
                 await _repository.UpdateItemsAsync(questions).ConfigureAwait(false);
-                await _repository.SaveAsync();
             }
             catch (Exception ex)
             {

@@ -13,6 +13,7 @@ export interface Question {
   answer: number;
   caterogry: number;
   isNew: boolean;
+  hasChanges:boolean;
 }
 
 export interface QuestionSearchResult {
@@ -48,8 +49,10 @@ export class AppComponent implements OnInit {
           cellEditorPopupPosition: 'over',
           cellEditor: 'agSelectCellEditor',
           cellEditorParams: {
-            values: [0, 1, 2, 3],
+            values: ["Option A", "Option B", "Option C", "Option D"],
           },
+          valueGetter: (params)=> this.getReadableOption(params.data),
+          valueSetter:this.setStatusValue
         },
         {
           headerName: 'Category',
@@ -81,6 +84,11 @@ export class AppComponent implements OnInit {
     console.log('Grid is ready!');
   }
 
+  onCellValueChanged(params: any)
+  {
+    params.data.hasChanges = true;
+  }
+
   saveGridData(): void {
     if (this.gridApi) {
       const rowData = this.gridApi?.getSelectedNodes();
@@ -94,6 +102,12 @@ export class AppComponent implements OnInit {
       
       console.log('Grid data update:', newArray);
       this.dataService.SaveQuestions(newArray)
+
+      for(let i = 0 ; i < rowData.length ; i++)
+      {
+        rowData[i].data.isNew = false;
+        rowData[i].data.hasChanges = false;
+      }
     }
   }
 
@@ -109,5 +123,52 @@ export class AppComponent implements OnInit {
   
       this.gridApi?.applyTransaction(transaction);
     }
+  }
+
+  getReadableOption(params:any): string
+  {
+    const answer = params.answer;
+    // Logic to convert the answer value to a readable string
+    let readableAnswer = '';
+    switch (answer) {
+      case 0:
+        readableAnswer = 'Option A';
+        break;
+      case 1:
+        readableAnswer = 'Option B';
+        break;
+      case 2:
+        readableAnswer = 'Option C';
+        break;
+      case 3:
+        readableAnswer = 'Option D';
+        break;
+      default:
+        readableAnswer = '';
+    }
+    return readableAnswer;
+  }
+
+  setStatusValue(params: any): boolean {
+  const readableAnswer = params.newValue;
+  let numericAnswer = 0;
+  switch (readableAnswer) {
+    case 'Option A':
+      numericAnswer = 0;
+      break;
+    case 'Option B':
+      numericAnswer = 1;
+      break;
+    case 'Option C':
+      numericAnswer = 2;
+      break;
+    case 'Option D':
+      numericAnswer = 3;
+      break;
+    default:
+      return false; // Return false if the readable string is invalid
+  }
+  params.data.answer = numericAnswer;
+  return true;
   }
 } 
