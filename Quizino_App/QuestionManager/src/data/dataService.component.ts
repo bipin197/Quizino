@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { QuestionSearchResult } from '../app/app.component';
+import { QuestionSearchResult } from '../models/modelService.component';
 
 export interface Token {
   access_token: string;

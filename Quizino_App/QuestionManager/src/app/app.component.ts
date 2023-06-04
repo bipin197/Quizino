@@ -1,25 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GridOptions, GridApi } from 'ag-grid-community';
 import { DataService } from '../data/dataService.component';
-
-
-export interface Question {
-  questionId: number;
-  text: string;
-  optionA: string;
-  optionB: string;
-  optionC: string;
-  optionD: string;
-  answer: number;
-  caterogry: number;
-  isNew: boolean;
-  hasChanges:boolean;
-}
-
-export interface QuestionSearchResult {
-  questions: Question[];
-  TotalQuestions: number;
-}
+import { Question } from '../models/modelService.component';
+import { dataGridService } from './ui/dataGridService.component';
 
 @Component({
   selector: 'app-root',
@@ -33,43 +16,8 @@ export class AppComponent implements OnInit {
   rowData: Question[] = [];
   private gridApi!: GridApi;
 
-  constructor(private dataService: DataService) {
-    this.gridOptions = {
-      columnDefs: [
-        { headerName: 'Question', field: 'text', cellClass: 'scrollable-cell', flex: 1, editable:true },
-        { headerName: 'Option A', field: 'optionA', editable:true },
-        { headerName: 'Option B', field: 'optionB', editable:true },
-        { headerName: 'Option C', field: 'optionC', editable:true },
-        { headerName: 'Option D', field: 'optionD', editable:true },
-        {
-          headerName: 'Answer',
-          editable:true,
-          field: 'answer',
-          cellEditorPopup:true,
-          cellEditorPopupPosition: 'over',
-          cellEditor: 'agSelectCellEditor',
-          cellEditorParams: {
-            values: ["Option A", "Option B", "Option C", "Option D"],
-          },
-          valueGetter: (params)=> this.getReadableOption(params.data),
-          valueSetter:this.setStatusValue
-        },
-        {
-          headerName: 'Category',
-          field: 'caterogry',
-          editable: false,
-          cellEditorPopup: true,
-          cellEditorPopupPosition: 'over',
-          cellEditor: 'agSelectCellEditor',
-          cellEditorParams: {
-            values: [0, 1, 2, 3],
-          },
-        } 
-      ],
-      pagination: true,
-      paginationPageSize: 15,
-      rowSelection:'multiple'
-    };
+  constructor(private dataService: DataService, appDataGridService: dataGridService) {
+    this.gridOptions = appDataGridService.getGridOptionsForQuestions();
   }
 
   ngOnInit(): void {
@@ -123,52 +71,5 @@ export class AppComponent implements OnInit {
   
       this.gridApi?.applyTransaction(transaction);
     }
-  }
-
-  getReadableOption(params:any): string
-  {
-    const answer = params.answer;
-    // Logic to convert the answer value to a readable string
-    let readableAnswer = '';
-    switch (answer) {
-      case 0:
-        readableAnswer = 'Option A';
-        break;
-      case 1:
-        readableAnswer = 'Option B';
-        break;
-      case 2:
-        readableAnswer = 'Option C';
-        break;
-      case 3:
-        readableAnswer = 'Option D';
-        break;
-      default:
-        readableAnswer = '';
-    }
-    return readableAnswer;
-  }
-
-  setStatusValue(params: any): boolean {
-  const readableAnswer = params.newValue;
-  let numericAnswer = 0;
-  switch (readableAnswer) {
-    case 'Option A':
-      numericAnswer = 0;
-      break;
-    case 'Option B':
-      numericAnswer = 1;
-      break;
-    case 'Option C':
-      numericAnswer = 2;
-      break;
-    case 'Option D':
-      numericAnswer = 3;
-      break;
-    default:
-      return false; // Return false if the readable string is invalid
-  }
-  params.data.answer = numericAnswer;
-  return true;
   }
 } 
