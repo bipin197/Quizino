@@ -3,13 +3,16 @@ using Common.Utilities;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Persistence.Repositories;
 using QuestionApi.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace QuestionApi.Controllers
 {
@@ -41,8 +44,7 @@ namespace QuestionApi.Controllers
         }
 
         [HttpPost("Search")]
-        //[Authorize("read:questions")]
-        [AllowAnonymous]
+        [Authorize("read:questions")]
         public QuestionSearchResult GetQuestion([FromBody] Criteria criteria)
         {
             if(criteria == null)
@@ -61,7 +63,7 @@ namespace QuestionApi.Controllers
         }
 
         [HttpPost("Update")]
-        //[Authorize("read:questions")]
+        [Authorize("write:questions")]
         [AllowAnonymous]
         public HttpResponseMessage UpdateQuestion([FromBody] UpdateQuestionCommand[] updateQuestionCommands)
         {
@@ -108,12 +110,30 @@ namespace QuestionApi.Controllers
         ///// <param name="numberOfItems"></param>
         ///// <returns></returns>
         //[HttpPost("CreateDefaultData")]
-        //[AllowAnonymous]
-        //public void CreateDefaultData()
+        //[Authorize("write:questions")]
+        //public async Task CreateDefaultData()
         //{
         //    var jsonRepo = new JsonRepository<Question>();
-        //    var command = HttpContext.RequestServices.GetService<CreateQuestionCommand>();
-        //    _dataStore.AddQuestions(jsonRepo.GetAllItems(), command);
+        //    var updateQuestionsCommand = new List<UpdateQuestionCommand>();
+        //    foreach (var question in jsonRepo.GetAllItems())
+        //    {
+        //        var updateQuestionCommand = new UpdateQuestionCommand
+        //        {
+        //            Id = 0,
+        //            Text= question.Text,
+        //            OptionA = question.OptionA,
+        //            OptionB = question.OptionB,
+        //            OptionC = question.OptionC,
+        //            OptionD = question.OptionD,
+        //            Answer = question.Answer,
+        //            ApplicableCategories= question.ApplicableCategories,
+        //            IsNew= question.IsNew
+        //        };
+
+        //        updateQuestionsCommand.Add(updateQuestionCommand);
+        //    }
+
+        //    await _dataStore.UpdateQuestions(updateQuestionsCommand).ConfigureAwait(false);
         //}
     }
 }

@@ -50,6 +50,7 @@ namespace QuestionApi
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("read:questions", policy => policy.Requirements.Add(new HasScopeRequirement("read:questions")));
+                options.AddPolicy("write:questions", policy => policy.Requirements.Add(new HasScopeRequirement("write:questions")));
             });
             services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
             {

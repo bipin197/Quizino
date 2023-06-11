@@ -74,7 +74,7 @@ namespace Persistence.Repositories
                 }
             }
 
-            foreach (var item in items.Where(x => x.IsNew))
+            foreach (var item in items.Where(x => x.Id == 0))
             {
                 var question = new Question
                 {
