@@ -53,7 +53,7 @@ export class dataGridService{
         ],
         pagination: true,
         paginationPageSize: 15,
-        rowSelection:'multiple'
+        rowSelection:'multiple',
     };
 }
 

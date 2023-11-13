@@ -3,6 +3,7 @@ import { GridOptions, GridApi } from 'ag-grid-community';
 import { DataService } from '../data/dataService.component';
 import { Question } from '../models/modelService.component';
 import { dataGridService } from './ui/dataGridService.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,32 @@ export class AppComponent implements OnInit {
   gridOptions: GridOptions;
   rowData: Question[] = [];
   private gridApi!: GridApi;
+  oidcSecurityService: AuthService;
+  isAuthenticated :boolean;
+  isLogout :boolean;
 
-  constructor(private dataService: DataService, appDataGridService: dataGridService) {
+  constructor(private dataService: DataService, 
+              private appDataGridService: dataGridService,
+              private auth: AuthService) {
+    this.oidcSecurityService = auth;
+    this.isAuthenticated = false;
+    this.isLogout = true;
+
+    auth.isAuthenticated$.subscribe((value:boolean) =>
+    {
+      if(value)
+      {
+        this.isAuthenticated = true;
+        this.isLogout = false;
+      }
+      else
+      {
+        this.login();
+        this.isAuthenticated = false;
+        this.isLogout = true;
+      }
+    })
+
     this.gridOptions = appDataGridService.getGridOptionsForQuestions();
   }
 
@@ -25,6 +50,30 @@ export class AppComponent implements OnInit {
       this.rowData = result.questions;
       console.log('data is ready!');
     });
+  }
+
+  login(): void {
+    this.oidcSecurityService.loginWithRedirect();
+        this.oidcSecurityService.isAuthenticated$.subscribe((isAuthenticated) => {
+      this.isAuthenticated = isAuthenticated;
+      if(this.isAuthenticated)
+      {
+        this.isLogout = false;
+      }
+    });
+  }
+
+  logout(): void {
+    this.oidcSecurityService.logout().subscribe((result: any) => {
+      console.log(result);
+      this.isLogout = true;
+      this.isAuthenticated = false;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.oidcSecurityService.logout().subscribe((result: any) => {
+      console.log(result);});
   }
 
   onGridReady(params: any) {
