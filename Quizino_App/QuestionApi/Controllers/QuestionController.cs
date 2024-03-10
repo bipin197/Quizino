@@ -3,16 +3,13 @@ using Common.Utilities;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Persistence.Repositories;
 using QuestionApi.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace QuestionApi.Controllers
 {
@@ -42,6 +39,21 @@ namespace QuestionApi.Controllers
 
             return question;
         }
+
+
+        //[HttpGet("LastQuestionKey")]
+        //[Authorize("read:questions")]
+        //public int GetMaxKey()
+        //{
+        //    var question = _dataStore.GetQuestions()
+        //    if (question == null)
+        //    {
+        //        _logger.LogError("No Question found with id {0}", id);
+        //        return new Question { Text = @"No Such Question Exist with id " + id };
+        //    }
+
+        //    return question;
+        //}
 
         [HttpPost("Search")]
         [Authorize("read:questions")]

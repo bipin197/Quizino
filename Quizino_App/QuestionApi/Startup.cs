@@ -54,12 +54,13 @@ namespace QuestionApi
             });
             services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
             {
-                var conn = Configuration.GetConnectionString("PostgressConnection");
                 opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
                 opt.EnableSensitiveDataLogging(true);
                 opt.UseInternalServiceProvider(sp);
             }, ServiceLifetime.Singleton);
-            services.AddScoped(typeof(IRepository<Question>), typeof(QuestionRepository));
+
+            services.AddSingleton(typeof(IRepository<Question>), typeof(QuestionRepository));
+            services.AddSingleton(typeof(ICachedRepository<Question>), typeof(CachedQuestionRepository));
             services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));

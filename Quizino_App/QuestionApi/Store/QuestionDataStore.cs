@@ -12,6 +12,7 @@ namespace QuestionApi.Store
     {
         private readonly IQuestionQuery _questionQuery;
         private readonly UpdateQuestionCommandHandler _updateQuestionCommandHandler;
+        private readonly long _lastQuestionId;
         public QuestionDataStore(IQuestionQuery questionQuery, UpdateQuestionCommandHandler updateQuestionCommandHandler)
         {
             _questionQuery = questionQuery;

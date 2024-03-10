@@ -1,9 +1,6 @@
 ﻿using Common.Loaders;
-using Common.Queries;
-using Common.Repositories;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Repositories;
 using System.Collections.Generic;
 
 namespace QuizApi.Controllers

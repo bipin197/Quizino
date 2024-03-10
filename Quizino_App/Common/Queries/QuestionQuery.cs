@@ -2,7 +2,6 @@
 using Common.Utilities;
 using Domain.Interfaces;
 using Domain.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +10,8 @@ namespace Common.Queries
 {
     public class QuestionQuery : IQuestionQuery
     {
-        private readonly IRepository<Question> _repository;  
-        public QuestionQuery(IRepository<Question> repository)
+        private readonly ICachedRepository<Question> _repository;  
+        public QuestionQuery(ICachedRepository<Question> repository)
         {
             _repository = repository;
         }
@@ -34,7 +33,7 @@ namespace Common.Queries
 
         public Question GetQuestion(long id)
         {
-            return _repository.GetItems(x => x.Id == id).FirstOrDefault();
+            return _repository.GetItem(x => x.Id == id);
         }
 
         public IList<Question> GetQuestions(Criteria criteriaData)

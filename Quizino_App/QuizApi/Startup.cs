@@ -2,21 +2,16 @@ using Common.Loaders;
 using Common.Queries;
 using Common.Repositories;
 using Domain.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.AzureAD.UI;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Persistence.DbContexts;
 using Persistence.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuizApi
 {
@@ -32,10 +27,33 @@ namespace QuizApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
-                .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
             services.AddControllers();
+            services.AddCors();
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSwaggerGen();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(op =>
+            {
+                op.Authority = "https://dev-duimink2n4isdefw.us.auth0.com/";
+                op.Audience = "quizion-test-2";
+                op.RequireHttpsMetadata = false;
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("read:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("read:quizes")));
+                options.AddPolicy("write:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("write:quizes")));
+            });
+            services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
+                opt.EnableSensitiveDataLogging(true);
+                opt.UseInternalServiceProvider(sp);
+            }, ServiceLifetime.Singleton);
             services.AddTransient(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
         }
@@ -65,11 +83,11 @@ namespace QuizApi
 
             app.UseSwagger(c =>
             {
-                c.RouteTemplate = "Question/swagger/{documentName}/swagger.json";
+                c.RouteTemplate = "Quiz/swagger/{documentName}/swagger.json";
             });
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/Question/swagger/v1/swagger.json", "v1");
+                options.SwaggerEndpoint("/Quiz/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
         }
