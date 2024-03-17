@@ -5,13 +5,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{76E9FD39-DF6C-46BC-AC3D-33B30B864278}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{441F054A-B31A-43B4-964C-BAABF6EDE145}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApis", "WebApis\WebApis.csproj", "{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Test", "Common.Test\Common.Test.csproj", "{541DEBBA-EFBE-410F-B55F-BEE25402A251}"
 EndProject
@@ -47,18 +43,6 @@ Global
 		{76E9FD39-DF6C-46BC-AC3D-33B30B864278}.Release|iPhone.Build.0 = Release|Any CPU
 		{76E9FD39-DF6C-46BC-AC3D-33B30B864278}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{76E9FD39-DF6C-46BC-AC3D-33B30B864278}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|iPhone.Build.0 = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{4B1F8CE1-42CB-4179-92B4-06F94234F4DE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{441F054A-B31A-43B4-964C-BAABF6EDE145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{441F054A-B31A-43B4-964C-BAABF6EDE145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441F054A-B31A-43B4-964C-BAABF6EDE145}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -83,18 +67,6 @@ Global
 		{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}.Release|iPhone.Build.0 = Release|Any CPU
 		{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{B2B14E2F-2AD7-4FA2-B59E-D9CB34B5BEF3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|iPhone.Build.0 = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{5BA2EB7D-3CF0-465F-BE39-8331A72868BB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{541DEBBA-EFBE-410F-B55F-BEE25402A251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{541DEBBA-EFBE-410F-B55F-BEE25402A251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541DEBBA-EFBE-410F-B55F-BEE25402A251}.Debug|iPhone.ActiveCfg = Debug|Any CPU
