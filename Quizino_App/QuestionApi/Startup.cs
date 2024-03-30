@@ -61,6 +61,7 @@ namespace QuestionApi
 
             services.AddSingleton(typeof(IRepository<Question>), typeof(QuestionRepository));
             services.AddSingleton(typeof(ICachedRepository<Question>), typeof(CachedQuestionRepository));
+            services.AddSingleton(typeof(ICachedRepository<Quiz>), typeof(CachedQuizRepository));
             services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));

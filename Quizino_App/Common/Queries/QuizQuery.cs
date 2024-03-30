@@ -10,8 +10,8 @@ namespace Common.Queries
 {
     public class QuizQuery : IQuizQuery
     {
-        private readonly IRepository<Quiz> _repository;
-        public QuizQuery(IRepository<Quiz> repository)
+        private readonly ICachedRepository<Quiz> _repository;
+        public QuizQuery(ICachedRepository<Quiz> repository)
         {
             _repository = repository;  
         }
