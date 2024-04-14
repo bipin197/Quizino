@@ -17,14 +17,14 @@ namespace Persistence.Repositories
             _questions = _questionRepository.GetItems(x => true).ToList();
         }
 
-        public Task AddItemAsync(Question item)
+        public async Task AddItemAsync(Question item)
         {
-            throw new NotImplementedException();
+           await _questionRepository.AddItemAsync(item);
         }
 
-        public Task AddItemsAsync(IEnumerable<Question> item)
+        public async Task AddItemsAsync(IEnumerable<Question> item)
         {
-            throw new NotImplementedException();
+            await _questionRepository.AddItemsAsync(item);
         }
 
         public Question GetItem(Func<Question, bool> predicate) => _questions.FirstOrDefault(predicate);

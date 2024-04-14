@@ -2,16 +2,15 @@
 using Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Common.Commands
 {
     public class CreateQuestionCommandHandler : ICommandHandler<Question>
     {
-        private readonly IRepository<Question> _repository;
+        private readonly ICachedRepository<Question> _repository;
 
-        public CreateQuestionCommandHandler(IRepository<Question> repository)
+        public CreateQuestionCommandHandler(ICachedRepository<Question> repository)
         {
             _repository = repository;
         }

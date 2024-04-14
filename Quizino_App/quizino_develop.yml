@@ -1,0 +1,45 @@
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Restore Dependencies'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish'
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)/publish_output'
+
+- task: Docker@2
+  displayName: 'Build Docker image'
+  inputs:
+    containerRegistry: 'yourDockerServiceConnection' # Specify your Docker service connection here
+    repository: 'yourRepositoryName'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
+    arguments: '--build-arg CONFIGURATION=Release $(Build.ArtifactStagingDirectory)/publish_output'
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Docker Image Artifact'
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/DockerImage.tar.gz'
+    artifact: 'DockerImage'
+

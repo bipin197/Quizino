@@ -31,5 +31,11 @@ namespace QuestionApi.Controllers
         {
             return _quizDataStore.GetQuiz(id);
         }
+
+        //[HttpGet("Active")]
+        //[Authorize("create:quizzes")]
+        //public ActionResult CreateQuizes(int numberOfQuizes, int questionsPerQuiz)
+        //{
+        //}
     }
 }
