@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizApi", "QuizApi\QuizApi.csproj", "{F8813F39-670C-4D3E-B203-AC77EF807BFA}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{9DB9050D-25E3-4F84-86FA-8CD7264E7A24}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogic", "AppLogic\AppLogic.csproj", "{8B78C3D0-0557-4916-A7C4-53EC2482EB68}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLogic.Test", "AppLogic.Test\AppLogic.Test.csproj", "{66A65158-C1DE-4700-8E96-13A915224CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{8B78C3D0-0557-4916-A7C4-53EC2482EB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B78C3D0-0557-4916-A7C4-53EC2482EB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B78C3D0-0557-4916-A7C4-53EC2482EB68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66A65158-C1DE-4700-8E96-13A915224CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66A65158-C1DE-4700-8E96-13A915224CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66A65158-C1DE-4700-8E96-13A915224CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66A65158-C1DE-4700-8E96-13A915224CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
