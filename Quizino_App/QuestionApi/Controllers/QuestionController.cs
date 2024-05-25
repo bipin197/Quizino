@@ -40,21 +40,6 @@ namespace QuestionApi.Controllers
             return question;
         }
 
-
-        //[HttpGet("LastQuestionKey")]
-        //[Authorize("read:questions")]
-        //public int GetMaxKey()
-        //{
-        //    var question = _dataStore.GetQuestions()
-        //    if (question == null)
-        //    {
-        //        _logger.LogError("No Question found with id {0}", id);
-        //        return new Question { Text = @"No Such Question Exist with id " + id };
-        //    }
-
-        //    return question;
-        //}
-
         [HttpPost("Search")]
         [Authorize("read:questions")]
         public QuestionSearchResult GetQuestion([FromBody] Criteria criteria)
@@ -116,11 +101,30 @@ namespace QuestionApi.Controllers
             return question;
         }
 
-        ///// <summary>
-        ///// Create Default data if doesn't exist only for testing
-        ///// </summary>
-        ///// <param name="numberOfItems"></param>
-        ///// <returns></returns>
+        /// <summary>
+        /// Get random given random active questions
+        /// </summary>
+        /// <param name="numberOfQuestions"></param>
+        /// <returns></returns>
+        [HttpGet("ActiveRandom")]
+        [Authorize("read:questions")]
+        public IEnumerable<long> GetActiveRandomQuestionKeys(int numberOfQuestions)
+        {
+            var keys = _dataStore.GetRandomActiveQuestionKeys(numberOfQuestions);
+            if (keys == null || !keys.Any())
+            {
+                _logger.LogError("No Question found");
+                return new List<long>();
+            }
+
+            return keys;
+        }
+
+        /// <summary>
+        /// Create Default data if doesn't exist only for testing
+        /// </summary>
+        /// <param name="numberOfItems"></param>
+        /// <returns></returns>
         //[HttpPost("CreateDefaultData")]
         //[Authorize("write:questions")]
         //public async Task CreateDefaultData()
@@ -132,14 +136,14 @@ namespace QuestionApi.Controllers
         //        var updateQuestionCommand = new UpdateQuestionCommand
         //        {
         //            Id = 0,
-        //            Text= question.Text,
+        //            Text = question.Text,
         //            OptionA = question.OptionA,
         //            OptionB = question.OptionB,
         //            OptionC = question.OptionC,
         //            OptionD = question.OptionD,
         //            Answer = question.Answer,
-        //            ApplicableCategories= question.ApplicableCategories,
-        //            IsNew= question.IsNew
+        //            ApplicableCategories = question.ApplicableCategories,
+        //            IsNew = question.IsNew
         //        };
 
         //        updateQuestionsCommand.Add(updateQuestionCommand);
