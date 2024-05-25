@@ -51,6 +51,10 @@ namespace Persistence.DbContexts
                        .HasMaxLength(250);
                 entity.Property(e => e.Answer)
                        .HasColumnName("ques_answer");
+
+                entity.Property(e => e.HashCode)
+                       .HasColumnName("ques_hash")
+                       .HasMaxLength(250);
             });
             base.OnModelCreating(modelBuilder);
         }

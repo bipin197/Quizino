@@ -1,15 +1,13 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
-using System;
-using System.Collections.Generic;
+﻿using Domain.Quiz.Interfaces;
+using QuizModel = Domain.Quiz.Models.Quiz;
 
-namespace AppLogic
+namespace AppLogic.Quiz
 {
     public static class QuizGenerator
     {
         public static IQuiz GenerateQuiz(int numberOfQuestions)
         {
-            var quiz = new Quiz
+            var quiz = new QuizModel
             {
                 Category = Categories.All,
                 CreationTime = DateTime.Now,

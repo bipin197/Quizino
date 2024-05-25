@@ -1,4 +1,5 @@
 ﻿using Common.Repositories;
+using Domain;
 using Domain.Models;
 using Persistence.DbContexts;
 using System;
@@ -71,6 +72,7 @@ namespace Persistence.Repositories
                     question.OptionD = item.OptionD;
                     question.Answer = item.Answer;
                     question.ApplicableCategories= item.ApplicableCategories??"0";
+                    question.HashCode = HashGenerator.GetHashForText(item.Text);
                 }
             }
 
@@ -84,8 +86,9 @@ namespace Persistence.Repositories
                     OptionC = item.OptionC,
                     OptionD = item.OptionD,
                     Answer = item.Answer,
-                    ApplicableCategories = item.ApplicableCategories??"0"
-                };
+                    ApplicableCategories = item.ApplicableCategories??"0",
+                    HashCode = HashGenerator.GetHashForText(item.Text)
+            };
 
                 _questionDbContext.Questions.Add(question);
             }

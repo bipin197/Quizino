@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <UserSecretsId>aspnet-QuizApi-C2836B80-A87E-4766-A878-7E0BDB46F1CC</UserSecretsId>
     <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Data\QuestionData.json" />
     <Content Remove="Data\QuizData.json" />
   </ItemGroup>
 
@@ -29,18 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\Persistence\Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Data\QuestionData.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Data\QuizData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Quiz\Common.Quiz.csproj" />
+    <ProjectReference Include="..\Domain.Quiz\Domain.Quiz.csproj" />
+    <ProjectReference Include="..\Persistent.Quiz\Persistent.Quiz.csproj" />
   </ItemGroup>
 
 </Project>

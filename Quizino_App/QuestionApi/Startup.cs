@@ -1,5 +1,4 @@
 using Common.Commands;
-using Common.Loaders;
 using Common.Queries;
 using Common.Repositories;
 using Domain.Models;
@@ -61,10 +60,10 @@ namespace QuestionApi
 
             services.AddSingleton(typeof(IRepository<Question>), typeof(QuestionRepository));
             services.AddSingleton(typeof(ICachedRepository<Question>), typeof(CachedQuestionRepository));
-            services.AddSingleton(typeof(ICachedRepository<Quiz>), typeof(CachedQuizRepository));
-            services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
+            //services.AddSingleton(typeof(ICachedRepository<Quiz>), typeof(CachedQuizRepository));
+           // services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
-            services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
+            //services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
             services.AddTransient(typeof(QuestionDataStore));
             services.AddTransient(typeof(CreateQuestionCommandHandler));
             services.AddTransient(typeof(UpdateQuestionCommand));

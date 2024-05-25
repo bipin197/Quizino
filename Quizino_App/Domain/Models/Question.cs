@@ -30,6 +30,8 @@ namespace Domain.Models
 
         public int Answer { get; set; }
 
+        public string HashCode { get; set; }
+
         public override bool IsValid()
         {
             if(_validator == null)

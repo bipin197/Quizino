@@ -1,8 +1,7 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
-using System;
+﻿using Domain.Quiz.Interfaces;
+using Domain.Quiz.Models;
 
-namespace Persistence.DataTransferObjects
+namespace Persistent.Quiz.DataTransferObjects
 {
     public class QuizDto : EntityBase, IQuiz
     {

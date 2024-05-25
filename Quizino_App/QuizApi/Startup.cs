@@ -1,17 +1,12 @@
-using Common.Loaders;
 using Common.Queries;
-using Common.Repositories;
-using Domain.Models;
+using Common.Quiz.Queries;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Persistence.DbContexts;
-using Persistence.Repositories;
 
 namespace QuizApi
 {
@@ -48,13 +43,13 @@ namespace QuizApi
                 options.AddPolicy("read:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("read:quizes")));
                 options.AddPolicy("write:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("write:quizes")));
             });
-            services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
-            {
-                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
-                opt.EnableSensitiveDataLogging(true);
-                opt.UseInternalServiceProvider(sp);
-            }, ServiceLifetime.Singleton);
-            services.AddTransient(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
+            //services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
+            //{
+            //    opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
+            //    opt.EnableSensitiveDataLogging(true);
+            //    opt.UseInternalServiceProvider(sp);
+            //}, ServiceLifetime.Singleton);
+            //services.AddTransient(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
         }
 

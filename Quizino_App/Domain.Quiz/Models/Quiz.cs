@@ -1,7 +1,7 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Quiz.Interfaces;
 using System;
 
-namespace Domain.Models
+namespace Domain.Quiz.Models
 {
     public class Quiz : EntityBase, IQuiz
     {

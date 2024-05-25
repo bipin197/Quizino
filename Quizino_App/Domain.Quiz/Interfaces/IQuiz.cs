@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Interfaces
+namespace Domain.Quiz.Interfaces
 {
     public interface IQuiz : IEntityBase
     {
@@ -13,7 +13,7 @@ namespace Domain.Interfaces
 
         DateTime DeactivationTime { get; set; }
 
-        Categories Category { get; set; } 
+        Categories Category { get; set; }
 
         string QuestionKeys { get; set; }
     }

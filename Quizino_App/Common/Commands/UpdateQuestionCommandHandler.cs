@@ -1,4 +1,5 @@
 ﻿using Common.Repositories;
+using Domain;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -30,13 +31,14 @@ namespace Common.Commands
                     };
                     if(item != null)
                     {
-                        question.Text= item.Text;
+                        question.Text = item.Text;
                         question.Answer = item.Answer;
                         question.OptionA = item.OptionA;
                         question.OptionB = item.OptionB;
                         question.OptionC= item.OptionC;
                         question.OptionD= item.OptionD;
                         question.ApplicableCategories = item.ApplicableCategories?? "0";
+                        question.HashCode = HashGenerator.GetHashForText(item.Text);
                         questions.Add(question);
                     }
                 }

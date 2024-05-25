@@ -15,11 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Test", "Persist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogic", "AppLogic\AppLogic.csproj", "{1A168B25-CB5F-430C-AD59-ADE72D9F22BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthClient", "AuthClient\AuthClient.csproj", "{A051D3FA-D102-4629-BA7E-13FF52D9F5ED}"
-EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "QuestionManager", "QuestionManager\QuestionManager.esproj", "{8A3D3826-47DA-457A-A3D5-7CFEA4573717}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizApi", "QuizApi\QuizApi.csproj", "{D786D544-5508-4C88-B095-EBE84980BCEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,20 +47,12 @@ Global
 		{1A168B25-CB5F-430C-AD59-ADE72D9F22BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A168B25-CB5F-430C-AD59-ADE72D9F22BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A168B25-CB5F-430C-AD59-ADE72D9F22BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A051D3FA-D102-4629-BA7E-13FF52D9F5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A051D3FA-D102-4629-BA7E-13FF52D9F5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A051D3FA-D102-4629-BA7E-13FF52D9F5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A051D3FA-D102-4629-BA7E-13FF52D9F5ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A3D3826-47DA-457A-A3D5-7CFEA4573717}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{D786D544-5508-4C88-B095-EBE84980BCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D786D544-5508-4C88-B095-EBE84980BCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D786D544-5508-4C88-B095-EBE84980BCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D786D544-5508-4C88-B095-EBE84980BCEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

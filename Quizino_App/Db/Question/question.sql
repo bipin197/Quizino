@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS public.question
     ques_optiond text COLLATE pg_catalog."default" NOT NULL,
     ques_answer integer NOT NULL,
     ques_applicable_cat text COLLATE pg_catalog."default" NOT NULL,
+	ques_hash text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT question_pkey PRIMARY KEY (ques_id)
 )
 

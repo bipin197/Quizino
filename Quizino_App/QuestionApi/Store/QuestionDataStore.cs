@@ -1,4 +1,5 @@
-﻿using Common.Commands;
+﻿using AppLogic;
+using Common.Commands;
 using Common.Queries;
 using Common.Utilities;
 using Domain.Models;
@@ -12,11 +13,16 @@ namespace QuestionApi.Store
     {
         private readonly IQuestionQuery _questionQuery;
         private readonly UpdateQuestionCommandHandler _updateQuestionCommandHandler;
-        private readonly long _lastQuestionId;
         public QuestionDataStore(IQuestionQuery questionQuery, UpdateQuestionCommandHandler updateQuestionCommandHandler)
         {
             _questionQuery = questionQuery;
             _updateQuestionCommandHandler = updateQuestionCommandHandler;
+        }
+
+        internal IEnumerable<long> GetRandomActiveQuestionKeys(int numberOfQuestions)
+        {
+            var allQuestionKeys = _questionQuery.GetAllQuestions(x => x.Id > 0).Select(x => x.Id);
+            return QuestionRandomizer.GetRandomKeysFromAvailableKeys(allQuestionKeys, numberOfQuestions);
         }
 
         internal Question GetQuestion(long id)

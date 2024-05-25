@@ -1,14 +1,10 @@
-﻿using Common.Repositories;
-using Domain.Interfaces;
-using Domain.Models;
+﻿using Common.Quiz.Repositories;
+using Domain.Quiz.Models;
+using Domain.Quiz.Interfaces;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using QuizModel = Domain.Quiz.Models.Quiz;
 
-namespace Persistence.Repositories
+namespace Persistent.Quiz.Repositories
 {
     public class JsonRepository<T> : IRepository<T> where T : EntityBase
     {
@@ -19,10 +15,10 @@ namespace Persistence.Repositories
             _repository = new List<T>();
             Initialize();
         }
-    
+
         private void Initialize()
         {
-            if(typeof(T) == typeof(Question))
+            if (typeof(T) == typeof(QuizModel))
             {
                 string path = GetFilePath();
 
@@ -37,13 +33,13 @@ namespace Persistence.Repositories
                 result.ForEach(x =>
                 {
                     x.Id = key++;
-                    if (typeof(T) == typeof(Question))
+
+                    if (typeof(T) == typeof(QuizModel))
                     {
-                        var question = x as Question;
-                        if (question != null)
+                        var quiz = x as QuizModel;
+                        if (quiz != null)
                         {
-                            question.QuestionId = x.Id;
-                            question.ApplicableCategories = "0";
+                            quiz.QuizId = x.Id;
                         }
                     }
                 });
@@ -54,9 +50,9 @@ namespace Persistence.Repositories
         private static string GetFilePath()
         {
             var path = string.Empty;
-            if (typeof(T) == typeof(Question))
+            if (typeof(T) == typeof(QuizModel))
             {
-                path = @"Data/QuestionData.json";
+                path = @"Data/QuizData.json";
             }
 
             return path;
@@ -64,7 +60,7 @@ namespace Persistence.Repositories
 
         private AnswerOptions GetAnswerOptions(string answerInText)
         {
-            if(answerInText.Equals("A"))
+            if (answerInText.Equals("A"))
             {
                 return AnswerOptions.A;
             }
@@ -86,20 +82,20 @@ namespace Persistence.Repositories
 
         public Task AddItemAsync(T item)
         {
-            throw new System.NotSupportedException();
+            throw new NotSupportedException();
         }
 
         public Task AddItemsAsync(IEnumerable<T> item)
         {
-            throw new System.NotSupportedException();
+            throw new NotSupportedException();
         }
 
-        public T GetItem(System.Func<T, bool> predicate)
+        public T GetItem(Func<T, bool> predicate)
         {
             return _repository.FirstOrDefault(predicate);
         }
 
-        public IEnumerable<T> GetItems(System.Func<T, bool> predicate)
+        public IEnumerable<T> GetItems(Func<T, bool> predicate)
         {
             return _repository.Where(predicate);
         }
@@ -110,17 +106,17 @@ namespace Persistence.Repositories
 
         public void UpdateItem(T item)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void RemoveItem(T item)
         {
-            throw new System.NotSupportedException();
+            throw new NotSupportedException();
         }
 
         public void RemoveItems(IEnumerable<T> item)
         {
-            throw new System.NotSupportedException();
+            throw new NotSupportedException();
         }
 
         public async Task SaveAsync()
@@ -140,29 +136,15 @@ namespace Persistence.Repositories
                 _repository.Clear();
                 Initialize();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
             }
         }
 
-        public async Task UpdateItemsAsync(IEnumerable<T> items)
+        public Task UpdateItemsAsync(IEnumerable<T> items)
         {
-            var ids = items.Select(x => x.Id);
-            foreach (var id in ids)
-            {
-                var itemInRepo = _repository.Where(x => x.Id == id).FirstOrDefault() as Question;
-                var item = items.FirstOrDefault(x => x.Id == id) as Question;
-                itemInRepo.Text = item.Text;
-                itemInRepo.OptionA = item.OptionA;
-                itemInRepo.OptionB = item.OptionB;
-                itemInRepo.OptionC = item.OptionC;
-                itemInRepo.OptionD = item.OptionD;
-                itemInRepo.Answer = item.Answer;
-                itemInRepo.ApplicableCategories = item.ApplicableCategories;
-            }
-
-            await Task.FromResult(_repository).ConfigureAwait(false);
+            throw new NotSupportedException();
         }
 
         private class QuestionTransferObject
