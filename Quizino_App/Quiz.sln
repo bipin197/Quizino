@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogic.Quiz", "AppLogic.Q
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizApi", "QuizApi\QuizApi.csproj", "{FF441141-3995-4687-BE6A-23F3E09E3BB2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistent.Quiz", "Persistent.Quiz\Persistent.Quiz.csproj", "{1DC7F37A-6645-4074-9C11-3DD0681BED8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FF441141-3995-4687-BE6A-23F3E09E3BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF441141-3995-4687-BE6A-23F3E09E3BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF441141-3995-4687-BE6A-23F3E09E3BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC7F37A-6645-4074-9C11-3DD0681BED8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC7F37A-6645-4074-9C11-3DD0681BED8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC7F37A-6645-4074-9C11-3DD0681BED8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC7F37A-6645-4074-9C11-3DD0681BED8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

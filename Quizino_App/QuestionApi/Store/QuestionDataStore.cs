@@ -25,9 +25,26 @@ namespace QuestionApi.Store
             return QuestionRandomizer.GetRandomKeysFromAvailableKeys(allQuestionKeys, numberOfQuestions);
         }
 
+        internal IEnumerable<string> GetRandomActiveQuestionHashes(int numberOfQuestions)
+        {
+            var allQuestions = _questionQuery.GetAllQuestions(x => x.Id > 0);
+            var allQuestionKeys = allQuestions.Select(x => x.Id);
+            var keys = QuestionRandomizer.GetRandomKeysFromAvailableKeys(allQuestionKeys, numberOfQuestions);
+
+            foreach(var key in keys)
+            {
+                yield return allQuestions.FirstOrDefault(x => x.Id == key).HashCode;
+            }     
+        }
+
         internal Question GetQuestion(long id)
         {
             return _questionQuery.GetQuestion(id);
+        }
+
+        internal Question GetQuestionFromHash(string hash)
+        {
+            return _questionQuery.GetQuestion(hash);
         }
 
         internal IEnumerable<Question> GetQuestions(long[] ids)
@@ -40,9 +57,9 @@ namespace QuestionApi.Store
             return _questionQuery.GetQuestions(criteria);
         }
 
-        internal void AddQuestions(IEnumerable<Question> questions, CreateQuestionCommandHandler createQuestionCommand)
+        internal async Task AddQuestions(IEnumerable<Question> questions, CreateQuestionCommandHandler createQuestionCommand)
         {
-             createQuestionCommand.HandleAsync(questions).ConfigureAwait(false);
+             await createQuestionCommand.HandleAsync(questions).ConfigureAwait(false);
         }
 
         internal async Task UpdateQuestions(IEnumerable<UpdateQuestionCommand> questions)

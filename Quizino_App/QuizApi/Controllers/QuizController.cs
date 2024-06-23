@@ -1,4 +1,5 @@
-﻿using Common.Quiz.Queries;
+﻿using Common.Quiz.Commands;
+using Common.Quiz.Queries;
 using Domain.Quiz.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,7 @@ namespace QuizApi.Controllers
 
         [HttpPost("Create")]
         [Authorize("write:quizes")]
-        public bool CreateQuizes(int numberOfQuizes)
+        public bool CreateQuizes([FromBody] CreateQuizCommand createQuizCommand)
         {
             return true;
         }

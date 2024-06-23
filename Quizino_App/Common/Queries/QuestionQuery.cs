@@ -36,6 +36,11 @@ namespace Common.Queries
             return _repository.GetItem(x => x.Id == id);
         }
 
+        public Question GetQuestion(string hash)
+        {
+            return _repository.GetItem(x => x.HashCode == hash);
+        }
+
         public IList<Question> GetQuestions(Criteria criteriaData)
         {
             if(criteriaData.Ids.Any())

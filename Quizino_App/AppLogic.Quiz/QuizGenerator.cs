@@ -10,8 +10,8 @@ namespace AppLogic.Quiz
             var quiz = new QuizModel
             {
                 Category = Categories.All,
-                CreationTime = DateTime.Now,
-                DeactivationTime = DateTime.Now.AddHours(1),
+                Start = DateTime.Now,
+                Finish = DateTime.Now.AddHours(1),
                 IsActive = true,
                 Id = 1
             };

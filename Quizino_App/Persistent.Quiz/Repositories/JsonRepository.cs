@@ -39,7 +39,7 @@ namespace Persistent.Quiz.Repositories
                         var quiz = x as QuizModel;
                         if (quiz != null)
                         {
-                            quiz.QuizId = x.Id;
+                            quiz.Id = x.Id;
                         }
                     }
                 });

@@ -1,16 +1,18 @@
 ﻿using Domain.Quiz.Interfaces;
-using Domain.Quiz.Models;
 
 namespace Persistent.Quiz.DataTransferObjects
 {
-    public class QuizDto : EntityBase, IQuiz
+    public class QuizDto
     {
         public long Id { get; set; }
-        public string Name { get; set; }
-        public bool IsActive { get; set; }
-        public DateTime CreationTime { get; set; }
-        public DateTime DeactivationTime { get; set; }
-        public Categories Category { get; set; }
-        public string QuestionKeys { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime Finish { get; set; }
+        public required string QuesHash { get; set; }
+        public int MaxScore { get; set; }
+        public int MaxTime { get; set; }
+        public required string UserCreated { get; set; }
+        public bool IsChallenge { get; set; }
+        public Categories Category { get; set;}
+        public bool IsActive { get ; set; }
     }
 }

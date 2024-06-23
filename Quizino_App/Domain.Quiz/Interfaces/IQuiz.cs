@@ -1,20 +1,16 @@
-﻿using System;
-
+﻿
 namespace Domain.Quiz.Interfaces
 {
     public interface IQuiz : IEntityBase
     {
-        long Id { get; set; }
-        string Name { get; set; }
-
-        bool IsActive { get; set; }
-
-        DateTime CreationTime { get; set; }
-
-        DateTime DeactivationTime { get; set; }
-
-        Categories Category { get; set; }
-
-        string QuestionKeys { get; set; }
+        public long Id { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime Finish { get; set; }
+        public Categories Category { get; set; }
+        public string QuesHash { get; set; }
+        public int MaxTime { get; set; }
+        public bool IsActive { get; set; }
+        public string UserCreated { get; set; }
+        public bool IsChallenge { get; set; }
     }
 }

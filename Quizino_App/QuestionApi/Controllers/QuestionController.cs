@@ -4,12 +4,14 @@ using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Persistence.Repositories;
 using QuestionApi.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace QuestionApi.Controllers
 {
@@ -57,6 +59,20 @@ namespace QuestionApi.Controllers
             }
 
             return new QuestionSearchResult { Questions = questions, TotalQuestions = questions.Count() }; ;
+        }
+
+        [HttpGet("hash/{hash}")]
+        [Authorize("read:questions")]
+        public Question GetFromHashCode(string hash)
+        {
+            var question = _dataStore.GetQuestionFromHash(hash);
+            if (question == null)
+            {
+                _logger.LogError("No Question found with hash {0}", hash);
+                return new Question { Text = @"No Such Question Exist with id " + hash };
+            }
+
+            return question;
         }
 
         [HttpPost("Update")]
@@ -118,6 +134,25 @@ namespace QuestionApi.Controllers
             }
 
             return keys;
+        }
+
+        /// <summary>
+        /// Get random given random active questions
+        /// </summary>
+        /// <param name="numberOfQuestions"></param>
+        /// <returns></returns>
+        [HttpGet("ActiveRandomHashes")]
+        [Authorize("read:questions")]
+        public IEnumerable<string> GetActiveRandomQuestionHashes(int numberOfQuestions)
+        {
+            var hashes = _dataStore.GetRandomActiveQuestionHashes(numberOfQuestions);
+            if (hashes == null || !hashes.Any())
+            {
+                _logger.LogError("No Question found");
+                return new List<string>();
+            }
+
+            return hashes;
         }
 
         /// <summary>

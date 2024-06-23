@@ -29,7 +29,7 @@ namespace Persistent.Quiz
 
         public IList<IQuiz> GetAllActiveQuizForAPeriod(DateTime start, DateTime end)
         {
-            return _repository.Where(z => z.IsActive && z.CreationTime >= start && z.DeactivationTime <= end).ToList();
+            return _repository.Where(z => z.IsActive && z.Start >= start && z.Finish <= end).ToList();
         }
 
         private void Initialize()

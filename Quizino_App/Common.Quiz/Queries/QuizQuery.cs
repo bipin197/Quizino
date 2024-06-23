@@ -19,7 +19,7 @@ namespace Common.Queries
 
         public IList<QuizModel> GetAllActiveQuizForPeriod(DateTime start, DateTime end)
         {
-            return _repository.GetItems(x => x.CreationTime > start && x.DeactivationTime < end).ToList();
+            return _repository.GetItems(x => x.Start > start && x.Finish < end).ToList();
         }
 
         public Task<QuizModel> GetQuiz(long key)

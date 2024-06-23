@@ -86,9 +86,9 @@ namespace Persistence.Repositories
                     OptionC = item.OptionC,
                     OptionD = item.OptionD,
                     Answer = item.Answer,
-                    ApplicableCategories = item.ApplicableCategories??"0",
+                    ApplicableCategories = item.ApplicableCategories ?? "0",
                     HashCode = HashGenerator.GetHashForText(item.Text)
-            };
+                };
 
                 _questionDbContext.Questions.Add(question);
             }
