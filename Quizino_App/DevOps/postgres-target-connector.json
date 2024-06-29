@@ -1,0 +1,15 @@
+{
+  "name": "postgres-target-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "erm-pgsql.postgres.database.azure.com",
+    "database.port": "5432",
+    "database.user": "bks",
+    "database.password": "passowrd",
+    "database.dbname": "quiz_db",
+    "database.server.name": "quiz_db",
+    "schema.include.list": "public",
+    "table.include.list": "public.question"
+  }
+}
