@@ -14,8 +14,8 @@ source_conn_params = {
 target_conn_params = {
     'dbname': 'quiz_db',
     'user': 'bks',
-    'password': '(B1i2p3i4n5#)',
-    'host': 'erm-pgsql.postgres.database.azure.com',
+    'password': 'bks123',
+    'host': 'localhost',
     'port': '5432'
 }
 
