@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  questionapi:
+    image: ${DOCKER_REGISTRY-}questionapi
+    build:
+      context: .
+      dockerfile: QuestionApi/Dockerfile

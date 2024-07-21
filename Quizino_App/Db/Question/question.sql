@@ -1,6 +1,6 @@
 -- Table: public.question
 
--- DROP TABLE IF EXISTS public.question;
+DROP TABLE IF EXISTS public.question;
 
 CREATE TABLE IF NOT EXISTS public.question
 (
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS public.question
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.question
-    OWNER TO bks;
+    OWNER TO qs_user;
 	
 
 -- INSERT INTO question (ques_text, ques_optiona, ques_optionb, ques_optionc, ques_optiond, ques_answer, ques_applicable_cat) 

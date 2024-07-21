@@ -1,3 +1,6 @@
+
+DROP table IF EXISTS public.quiz;
+
 CREATE TABLE public.quiz
 (
     quiz_id SERIAL PRIMARY KEY,
@@ -14,11 +17,12 @@ CREATE TABLE public.quiz
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.quiz
-    OWNER to bks;
+    OWNER to qz_user;
 
 COMMENT ON TABLE public.quiz
     IS 'quiz table to hold quiz data';
-	
+
+DROP table IF EXISTS public.quiz_result;	
 CREATE TABLE public.quiz_result (
     Id SERIAL PRIMARY KEY,
     Quiz_Id BIGINT NOT NULL,
@@ -30,14 +34,14 @@ CREATE TABLE public.quiz_result (
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.quiz_result
-    OWNER to bks;
+    OWNER to qz_user;
 
 COMMENT ON TABLE public.quiz_result
     IS 'Holds data about quiz result for users';
 	
 -- Table: public.question
 
--- DROP TABLE IF EXISTS public.question;
+DROP TABLE IF EXISTS public.question;
 
 CREATE TABLE IF NOT EXISTS public.question
 (
@@ -55,4 +59,4 @@ CREATE TABLE IF NOT EXISTS public.question
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.question
-    OWNER TO bks;
+    OWNER TO qz_user;
