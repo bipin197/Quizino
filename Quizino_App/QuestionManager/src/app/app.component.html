@@ -18,7 +18,8 @@
 </div>
 
 <div class="content" role="main">
-  <div>
+  <div *ngIf="isLoading" class="spinner"></div>
+  <div *ngIf="!isLoading">
     <ag-grid-angular style="width: 100%; height: 750px;"
                      class="ag-theme-alpine"
                      [gridOptions]="gridOptions"

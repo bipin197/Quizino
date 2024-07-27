@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   oidcSecurityService: AuthService;
   isAuthenticated :boolean;
   isLogout :boolean;
+  isLoading : boolean;
 
   constructor(private dataService: DataService, 
               private appDataGridService: dataGridService,
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
     this.oidcSecurityService = auth;
     this.isAuthenticated = false;
     this.isLogout = true;
+    this.isLoading = true;
 
     auth.isAuthenticated$.subscribe((value:boolean) =>
     {
@@ -48,6 +50,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.searchQuestions().then(result => {
       this.rowData = result.questions;
+      this.isLoading = false;
       console.log('data is ready!');
     });
   }
