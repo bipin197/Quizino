@@ -12,11 +12,11 @@ source_conn_params = {
 
 # Connection details for the target database
 target_conn_params = {
-    'dbname': 'quiz_db',
-    'user': 'bks',
-    'password': 'bks123',
+    'dbname': 'qz_db',
+    'user': 'qz_user',
+    'password': 'qz_user',
     'host': 'localhost',
-    'port': '5432'
+    'port': '5433'
 }
 
 # Query to select data from the source table
