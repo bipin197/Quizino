@@ -15,7 +15,7 @@ namespace Persistence.Test
         {
             var repo = new JsonRepository<Question>();
             var items = repo.GetItems(x => x.Id > 0);
-            Assert.AreEqual(555, items.Count());
+            Assert.Equals(555, items.Count());
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace Persistence.Test
         {
             var repo = new JsonRepository<Question>();
             var items = repo.GetItems(x => x.Id <= 0);
-            Assert.AreEqual(0, items.Count());
+            Assert.Equals(0, items.Count());
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace Persistence.Test
         {
             var repo = new JsonRepository<Question>();
             var items = repo.GetItems(x => x.Answer < 0 || x.Answer > 3);
-            Assert.AreEqual(0, items.Count());
+            Assert.Equals(0, items.Count());
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace Persistence.Test
         {
             var repo = new JsonRepository<Question>();
             var items = repo.GetItems(x => string.IsNullOrEmpty(x.Text));
-            Assert.AreEqual(0, items.Count());
+            Assert.Equals(0, items.Count());
         }
     }
 }
