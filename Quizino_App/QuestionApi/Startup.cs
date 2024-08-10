@@ -1,7 +1,9 @@
 using Common.Commands;
 using Common.Queries;
 using Common.Repositories;
+using Common.Services;
 using Domain.Models;
+using EasyNetQ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using Persistence.DbContexts;
 using Persistence.Repositories;
+using Persistence.Services;
 using QuestionApi.Store;
 
 namespace QuestionApi
@@ -69,6 +72,13 @@ namespace QuestionApi
             services.AddTransient(typeof(UpdateQuestionCommand));
             services.AddTransient(typeof(UpdateQuestionCommandHandler));
             services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
+            services.AddTransient<IPublishService, RabbitMqPublishService>();
+
+            var rabbitMQSettings = Configuration.GetSection("RabbitMQSettings").Get<RabbitMQSettings>();
+            services.AddSingleton(rabbitMQSettings);
+
+            var bus = RabbitHutch.CreateBus($"host={rabbitMQSettings.HostName}");
+            services.AddSingleton<IBus>(bus);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

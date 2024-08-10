@@ -1,6 +1,8 @@
 ﻿using Common.Repositories;
+using Common.Services;
 using Domain;
 using Domain.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,10 +12,12 @@ namespace Common.Commands
     public class UpdateQuestionCommandHandler : ICommandHandler<UpdateQuestionCommand>
     {
         private readonly IRepository<Question> _repository;
+        private readonly IPublishService _publishService;
         
-        public UpdateQuestionCommandHandler(IRepository<Question> repository)
+        public UpdateQuestionCommandHandler(IRepository<Question> repository, IPublishService publishService)
         {
             _repository= repository;
+            _publishService = publishService;
         }
 
         public async Task HandleAsync(IEnumerable<UpdateQuestionCommand> items)
@@ -44,6 +48,7 @@ namespace Common.Commands
                 }
 
                 await _repository.UpdateItemsAsync(questions).ConfigureAwait(false);
+                _publishService.PublishMessage(new RabbitMqMessage { Body = JsonConvert.SerializeObject(questions) });
             }
             catch (Exception ex)
             {

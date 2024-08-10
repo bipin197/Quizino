@@ -36,7 +36,7 @@ export class DataService {
 
 
     return new Promise((resolve, reject) => {
-      this._http_Client.post('http://quizino.bme6bmcac5araeah.southindia.azurecontainer.io/api/Question/Search', body, {headers})
+      this._http_Client.post('https://localhost:44332/api/Question/Search', body, {headers})
         .subscribe(
           function (results) {
             const result = JSON.stringify(results);
@@ -59,7 +59,7 @@ export class DataService {
       Authorization: `Bearer ${token}`
     });
     return new Promise((resolve, reject) => {
-    this._http_Client.post('http://quizino.bme6bmcac5araeah.southindia.azurecontainer.io/api/Question/Update', JSON.stringify(body), {headers})        .subscribe(
+    this._http_Client.post('https://localhost:44332/api/Question/Update', JSON.stringify(body), {headers})        .subscribe(
       function (results) {
         console.log(results);
         resolve();
