@@ -22,7 +22,7 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/index.html",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": false
     },
     "WSL": {
       "commandName": "WSL2",

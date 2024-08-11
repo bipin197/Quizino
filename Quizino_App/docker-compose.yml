@@ -8,7 +8,6 @@ services:
       dockerfile: QuestionApi/Dockerfile
     ports:
       - "5001:8080"
-      - "5002:8081"
     networks:
       - qzn_network
   questionManager:
