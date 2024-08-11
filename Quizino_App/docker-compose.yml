@@ -2,7 +2,52 @@ version: '3.4'
 
 services:
   questionapi:
-    image: ${DOCKER_REGISTRY-}questionapi
+    image: questionapi
     build:
       context: .
       dockerfile: QuestionApi/Dockerfile
+    ports:
+      - "5001:8080"
+      - "5002:8081"
+    networks:
+      - qzn_network
+  questionManager:
+    image: questionmanager
+    build:
+      context: .
+      dockerfile: QuestionManager/Dockerfile
+    ports:
+      - "9034:80"
+    networks:
+      - qzn_network
+  postgres1:
+    image: postgres:13
+    container_name: qs-ser
+    environment:
+      POSTGRES_USER: qs_user
+      POSTGRES_PASSWORD: qs_user
+      POSTGRES_DB: qs_db
+    volumes:
+      - ./qs-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - qzn_network
+
+  postgres2:
+    image: postgres:13
+    container_name: qz-ser
+    environment:
+      POSTGRES_USER: qz_user
+      POSTGRES_PASSWORD: qz_user
+      POSTGRES_DB: qz_db
+    volumes:
+      - ./qz-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    networks:
+      - qzn_network
+
+networks:
+  qzn_network:
+    driver: bridge
