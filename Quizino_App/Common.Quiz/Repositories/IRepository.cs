@@ -5,9 +5,6 @@
         Task AddItemAsync(T item);
         Task AddItemsAsync(IEnumerable<T> items);
 
-        T GetItem(Func<T, bool> predicate);
-        IEnumerable<T> GetItems(Func<T, bool> predicate);
-
         void UpdateItem(T item);
         Task UpdateItemsAsync(IEnumerable<T> items);
 
@@ -17,5 +14,10 @@
         Task SaveAsync();
 
         void Save();
+
+        T GetItem(Func<T, bool> predicate);
+        IEnumerable<T> GetItems(Func<T, bool> predicate);
+
+        Task RefreshAsync();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Domain.Quiz.Models
 {
-    public class Quiz : EntityBase, IQuiz
+    public class QuizWriteModel : EntityBase, IQuiz
     {
         public long Id { get; set; }
         public DateTime Start { get; set; }
@@ -15,7 +15,7 @@ namespace Domain.Quiz.Models
         public bool IsChallenge { get; set; }
 
         // Constructor
-        public Quiz()
+        public QuizWriteModel()
         {
             IsActive = false; // Default value
             UserCreated = string.Empty; // Default to empty string

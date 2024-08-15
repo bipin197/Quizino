@@ -1,5 +1,5 @@
 ﻿using Domain.Quiz.Interfaces;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using QuizModel = Domain.Quiz.Models.QuizWriteModel;
 
 namespace AppLogic.Quiz
 {

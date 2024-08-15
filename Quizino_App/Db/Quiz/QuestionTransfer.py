@@ -16,7 +16,7 @@ target_conn_params = {
     'user': 'qz_user',
     'password': 'qz_user',
     'host': 'localhost',
-    'port': '5433'
+    'port': '5432'
 }
 
 # Query to select data from the source table

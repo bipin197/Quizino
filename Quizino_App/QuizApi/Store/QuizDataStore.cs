@@ -13,12 +13,12 @@ namespace QuizApi.Store
             _quizQuery = quizQuery;
         }
 
-        internal IEnumerable<Quiz> GetAllActiveQuiz()
+        internal IEnumerable<QuizWriteModel> GetAllActiveQuiz()
         {
             throw new NotImplementedException();
         }
 
-        internal Quiz GetQuiz(long id)
+        internal QuizWriteModel GetQuiz(long id)
         {
             throw new NotImplementedException();
         }

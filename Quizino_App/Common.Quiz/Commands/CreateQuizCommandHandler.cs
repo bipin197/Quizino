@@ -1,5 +1,5 @@
 ﻿using Common.Quiz.Repositories;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using QuizModel = Domain.Quiz.Models.QuizWriteModel;
 namespace Common.Quiz.Commands
 {
     public class CreateQuizCommandHandler : ICommandHandler<CreateQuizCommand>

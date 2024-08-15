@@ -1,25 +1,26 @@
 ﻿using Common.Quiz.Repositories;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using Persistent.Quiz.DbContexts;
+using QuizModel = Domain.Quiz.Models.QuizWriteModel;
 
 namespace Persistent.Quiz.Repositories
 {
-    public class CachedQuizRepository : ICachedRepository<QuizModel>
+    public class CachedQuizRepository : IRepository<QuizModel>
     {
-        private readonly IRepository<QuizModel> _quizRepository;
+        private readonly QuizWriteModelDbContext _quizWriteModelDbContext;
         private readonly List<QuizModel> _quizes;
-        public CachedQuizRepository(IRepository<QuizModel> quizRepository)
+        public CachedQuizRepository(QuizWriteModelDbContext quizWriteModelDbContext)
         {
-            _quizRepository = quizRepository;
-            _quizes = _quizRepository.GetItems(x => true).ToList();
+            _quizWriteModelDbContext = quizWriteModelDbContext;
+            _quizes = _quizWriteModelDbContext.Quizes.Where(x => true).ToList();
         }
         public async Task AddItemAsync(QuizModel item)
         {
-            await _quizRepository.AddItemAsync(item);
+            await _quizWriteModelDbContext.Quizes.AddAsync(item);
         }
 
         public async Task AddItemsAsync(IEnumerable<QuizModel> item)
         {
-            await _quizRepository.AddItemsAsync(item);
+            await _quizWriteModelDbContext.Quizes.AddRangeAsync(item);
         }
 
         public QuizModel GetItem(Func<QuizModel, bool> predicate)
@@ -35,7 +36,7 @@ namespace Persistent.Quiz.Repositories
         public async Task RefreshAsync()
         {
             _quizes.Clear();
-            _quizes.AddRange(await Task.FromResult(_quizRepository.GetItems(x => true)));
+            _quizes.AddRange(await Task.FromResult(_quizWriteModelDbContext.Quizes.Where(x => true)));
         }
 
         public void RemoveItem(QuizModel item)

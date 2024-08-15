@@ -1,5 +1,5 @@
 ﻿using Domain.Quiz.Interfaces;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using QuizModel = Domain.Quiz.Models.QuizReadModel;
 namespace Common.Quiz.Queries
 {
     public interface IQuizQuery : IQuery<QuizModel>

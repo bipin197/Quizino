@@ -1,12 +1,18 @@
 using Common.Queries;
 using Common.Quiz.Queries;
+using Common.Quiz.Repositories;
+using Domain.Quiz.Interfaces;
+using Domain.Quiz.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Persistent.Quiz.DbContexts;
+using Persistent.Quiz.Repositories;
 
 namespace QuizApi
 {
@@ -43,14 +49,26 @@ namespace QuizApi
                 options.AddPolicy("read:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("read:quizes")));
                 options.AddPolicy("write:quizes", policy => policy.Requirements.Add(new HasScopeRequirement("write:quizes")));
             });
-            //services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
-            //{
-            //    opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
-            //    opt.EnableSensitiveDataLogging(true);
-            //    opt.UseInternalServiceProvider(sp);
-            //}, ServiceLifetime.Singleton);
-            //services.AddTransient(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
+            services.AddEntityFrameworkNpgsql().AddDbContext<QuizWriteModelDbContext>((sp, opt) =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
+                opt.EnableSensitiveDataLogging(true);
+                opt.UseInternalServiceProvider(sp);
+            }, ServiceLifetime.Singleton);
+
+            services.AddEntityFrameworkNpgsql().AddDbContext<QuizReadModelDbContext>((sp, opt) =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
+                opt.EnableSensitiveDataLogging(true);
+                opt.UseInternalServiceProvider(sp);
+            }, ServiceLifetime.Singleton);
+
+
+            services.AddTransient(typeof(IRepository<QuizWriteModel>), typeof(CachedQuizRepository));
+            services.AddTransient(typeof(IReadOnlyRepository<QuizReadModel>), typeof(CachedQuizReadOnlyRepository));
             services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
+            services.AddTransient(typeof(QuizWriteModel));
+            services.AddTransient(typeof(QuizReadModel));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

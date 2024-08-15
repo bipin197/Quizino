@@ -1,13 +1,13 @@
 ﻿using Common.Quiz.Queries;
 using Common.Quiz.Repositories;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using QuizModel = Domain.Quiz.Models.QuizReadModel;
 
 namespace Common.Queries
 {
     public class QuizQuery : IQuizQuery
     {
-        private readonly ICachedRepository<QuizModel> _repository;
-        public QuizQuery(ICachedRepository<QuizModel> repository)
+        private readonly IReadOnlyRepository<QuizModel> _repository;
+        public QuizQuery(IReadOnlyRepository<QuizModel> repository)
         {
             _repository = repository;  
         }

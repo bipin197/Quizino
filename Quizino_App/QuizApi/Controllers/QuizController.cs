@@ -21,14 +21,14 @@ namespace QuizApi.Controllers
         // GET: QuizController/Details/5
         [HttpGet("Active")]
         [Authorize("read:quizes")]
-        public IEnumerable<Quiz> GetActive()
+        public IEnumerable<QuizReadModel> GetActive()
         {
             return _quizQuery.GetAllActiveQuiz();
         }
 
         [HttpGet("{id}")]
         [Authorize("read:quizes")]
-        public Quiz Get(long id)
+        public QuizReadModel Get(long id)
         {
             return _quizQuery.GetQuiz(id).Result;
         }

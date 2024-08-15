@@ -2,7 +2,8 @@
 using Domain.Quiz.Models;
 using Domain.Quiz.Interfaces;
 using Newtonsoft.Json;
-using QuizModel = Domain.Quiz.Models.Quiz;
+using QuizModel = Domain.Quiz.Models.QuizWriteModel;
+using Persistent.Quiz.DbContexts;
 
 namespace Persistent.Quiz.Repositories
 {
@@ -143,6 +144,11 @@ namespace Persistent.Quiz.Repositories
         }
 
         public Task UpdateItemsAsync(IEnumerable<T> items)
+        {
+            throw new NotSupportedException();
+        }
+
+        public async Task RefreshAsync()
         {
             throw new NotSupportedException();
         }
