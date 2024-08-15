@@ -5,7 +5,6 @@ ques_id,ques_text,ques_optiona,ques_optionb,ques_optionc,ques_optiond,ques_answe
 568,Where did jazz great Sun Ra claim he was born?,Atlantis,Mount Olympus,Saturn,in a saxophone,2,0,599b9a14d453772ca5804a5e8da0e99b149daad2cecc487d5831d154a722c33e
 569,Where are fireworks first known to have been developed?,Italy,China,Great Britain,Greece,1,0,19a806f0c4a840d9b6e3deb3d8cba76d63a8b3ab117c73ef0fde858354842717
 570,"When it's noon in New York during daylight-saving time, what time is it in Honolulu?",6:00 a.m.,6:30 a.m.,7:00 a.m.,8:00 a.m.,0,0,9862bbc25dacc59364453d1b95fb3b1608ba67d1a97757be23444065ce29f374
-571,"When it first appeared on the Internet, amazon.com sold only what?",books,compact discs,cars,clothes,0,0,ee47704500024b7685fb3deaedbe618cbb30d006a183d834da45bd5fdc5e308f
 572,"When it comes to measuring horses, how long is a 'hand'?",four inches,seven inches,ten inches,two feet,0,0,fae4c6078b307bd42cf9d2da3dadff23178f8b8b25234428c472d40686896969
 573,"In the presidential election of 1932, how many U.S. states did FDR not win the electoral votes for?",six,seven,eight,ten,0,0,230c7cfc721518c4eb451343d2fe8ead99316feb1cabbdf2e5b4d50d08ab2d56
 574,"When driving, which of the following gestures means 'left turn'?",arm bent upwards,thumbs up,closed fist,arm straight out,3,0,0b257795c6cba34b66cdf63094909b6dfaef9e8f0f8f48f00c35dee2b667e998
@@ -555,3 +554,4 @@ ques_id,ques_text,ques_optiona,ques_optionb,ques_optionc,ques_optiond,ques_answe
 1118,The Strauss family of composers popularized what dance?,waltz,tango,fox-trot,square dance,0,0,56ef383c9cef722a8fd52a5cebc6c2a1c97d28e4e8d7cbc1f6b89d35eeb76658
 1119,Which latitude passes through the middle of India?,Equator,Tropic of Cancer,Tropic of Capricorn,Arctic Circle,1,0,ce06ee14f96ef4c7048222c38fdb4b3d55ea3e00c5f0bd1d1d5d80a569c474c1
 1120,Which is the longest river of the world?,Thames,Ganga,Nile,Brahamputa,2,0,0e4e6bf492858a16bbed26327b7136b42d11005ea4d81530dd9d98322abf207b
+571,"When it first appeared on the Internet, amazon.com sold only what?",Books,CD,Cars,Cloths,0,0,ee47704500024b7685fb3deaedbe618cbb30d006a183d834da45bd5fdc5e308f
