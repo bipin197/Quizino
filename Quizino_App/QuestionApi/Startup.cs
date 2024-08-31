@@ -38,6 +38,7 @@ namespace QuestionApi
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSwaggerGen();
+          
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,8 +46,8 @@ namespace QuestionApi
             })
             .AddJwtBearer(op =>
             {
-                op.Authority = "https://dev-duimink2n4isdefw.us.auth0.com/";
-                op.Audience = "quizion-test-2";
+                op.Authority = Configuration["AuthOptions:Authority"];
+                op.Audience = Configuration["AuthOptions:Audience"];
                 op.RequireHttpsMetadata = false;
             });
             services.AddAuthorization(options =>
@@ -96,7 +97,7 @@ namespace QuestionApi
 
 
             app.UseRouting();
-            app.UseCors(options => options.WithOrigins("https://localhost:44349", "http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

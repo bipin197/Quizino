@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { QuestionSearchResult } from '../models/modelService.component';
+import { environment } from '../env/environment';
 
 export interface Token {
   access_token: string;
@@ -11,18 +12,22 @@ export interface Token {
   token_type: string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class DataService {
   _http_Client!: HttpClient;
-  _token_url: string = 'https://dev-duimink2n4isdefw.us.auth0.com/oauth/token';
   _token!: string;
   tokenResponse!: Observable<any>;
 
+  baseUrl:string;
+  _token_Url:string;
   constructor(httpClient: HttpClient) {
     this._http_Client = httpClient;
+    this.baseUrl = environment.apiUrl;
+    this._token_Url = environment.tokenUrl;
   }
 
   public async searchQuestions(): Promise<QuestionSearchResult>
@@ -36,7 +41,7 @@ export class DataService {
 
 
     return new Promise((resolve, reject) => {
-      this._http_Client.post('https://localhost:44332/api/Question/Search', body, {headers})
+      this._http_Client.post(`${this.baseUrl}/Question/Search`, body, {headers})
         .subscribe(
           function (results) {
             const result = JSON.stringify(results);
@@ -59,7 +64,7 @@ export class DataService {
       Authorization: `Bearer ${token}`
     });
     return new Promise((resolve, reject) => {
-    this._http_Client.post('https://localhost:44332/api/Question/Update', JSON.stringify(body), {headers})        .subscribe(
+    this._http_Client.post(`${this.baseUrl}/Question/Update`, JSON.stringify(body), {headers})        .subscribe(
       function (results) {
         console.log(results);
         resolve();
@@ -76,7 +81,7 @@ export class DataService {
     let token:string = "";
     return new Promise((resolve, reject) => {
     this._http_Client.post(
-      this._token_url,
+      this._token_Url,
       '{"client_id": "7SnodGk5EgwbIzTmqqZd8u1H3STPqaY0", "client_secret": "eByGWFS6Xo4n9DuuWGvsrshtsv1uZqMzzVhhTT9LqfCABOuE4AwaHQAVSSr4CcDO","audience": "quizion-test-2", "grant_type": "client_credentials", "scope": "read:questions"}',
       {
         headers: {
@@ -97,7 +102,7 @@ export class DataService {
     let token:string = "";
     return new Promise((resolve, reject) => {
     this._http_Client.post(
-      this._token_url,
+      this._token_Url,
       '{"client_id": "7SnodGk5EgwbIzTmqqZd8u1H3STPqaY0", "client_secret": "eByGWFS6Xo4n9DuuWGvsrshtsv1uZqMzzVhhTT9LqfCABOuE4AwaHQAVSSr4CcDO","audience": "quizion-test-2", "grant_type": "client_credentials", "scope": "write:questions"}',
       {
         headers: {

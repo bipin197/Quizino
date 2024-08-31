@@ -30,29 +30,29 @@ target_table = 'public.question'
 
 try:
     # Connect to the source database
-    source_conn = psycopg2.connect(**source_conn_params)
-    source_cursor = source_conn.cursor()
+    # source_conn = psycopg2.connect(**source_conn_params)
+    # source_cursor = source_conn.cursor()
     
-    # Execute the query to fetch data
-    source_cursor.execute(source_query)
+    # # Execute the query to fetch data
+    # source_cursor.execute(source_query)
     
-    # Fetch all rows from the query
-    rows = source_cursor.fetchall()
+    # # Fetch all rows from the query
+    # rows = source_cursor.fetchall()
     
-    # Get column names
-    column_names = [desc[0] for desc in source_cursor.description]
+    # # Get column names
+    # column_names = [desc[0] for desc in source_cursor.description]
     
-    # Write data to CSV
-    with open(csv_file_path, 'w', newline='') as csv_file:
-        csv_writer = csv.writer(csv_file)
-        csv_writer.writerow(column_names)  # Write header
-        csv_writer.writerows(rows)  # Write data
+    # # Write data to CSV
+    # with open(csv_file_path, 'w', newline='') as csv_file:
+    #     csv_writer = csv.writer(csv_file)
+    #     csv_writer.writerow(column_names)  # Write header
+    #     csv_writer.writerows(rows)  # Write data
     
-    print(f"Data exported successfully to {csv_file_path}")
+    # print(f"Data exported successfully to {csv_file_path}")
     
-    # Close the source cursor and connection
-    source_cursor.close()
-    source_conn.close()
+    # # Close the source cursor and connection
+    # source_cursor.close()
+    # source_conn.close()
     
     # Connect to the target database
     target_conn = psycopg2.connect(**target_conn_params)
@@ -70,10 +70,10 @@ except Exception as e:
     print(f"Error: {e}")
 finally:
     # Close the cursors and connections if they exist and are open
-    if 'source_cursor' in locals() and not source_cursor.closed:
-        source_cursor.close()
-    if 'source_conn' in locals() and not source_conn.closed:
-        source_conn.close()
+    # if 'source_cursor' in locals() and not source_cursor.closed:
+    #     source_cursor.close()
+    # if 'source_conn' in locals() and not source_conn.closed:
+    #     source_conn.close()
     if 'target_cursor' in locals() and not target_cursor.closed:
         target_cursor.close()
     if 'target_conn' in locals() and not target_conn.closed:
