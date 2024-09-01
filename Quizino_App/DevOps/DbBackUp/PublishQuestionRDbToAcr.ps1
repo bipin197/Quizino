@@ -1,7 +1,7 @@
 # Variables
-$containerName = "qz-ser"  # Name or ID of the running PostgreSQL container
+$containerName = "qsr-ser"  # Name or ID of the running PostgreSQL container
 $backupFileName = "pg_backup.sql"         # Name of the SQL dump file
-$imageName = "qzdb"          # Name for the new Docker image
+$imageName = "qsrdb"          # Name for the new Docker image
 $tag = "latest"                       # Tag for the Docker image (e.g., 'latest', 'v1')
 $acrName = "quizinoregistry"              # Azure Container Registry name
 $acrLoginServer = "${acrName}.azurecr.io"   # ACR login server URL
@@ -9,7 +9,7 @@ $acrImageName = "${acrLoginServer}/${imageName}:${tag}"
 
 # Step 1: Dump the PostgreSQL database from the running container
 Write-Output "Dumping PostgreSQL database from the running container..."
-docker exec ${containerName} pg_dumpall -U qz_user -f /tmp/$backupFileName
+docker exec ${containerName} pg_dumpall -U qsr_user -f /tmp/$backupFileName
 
 # Step 2: Copy the dump file from the container to the host machine
 Write-Output "Copying the database dump from the container to the host..."
