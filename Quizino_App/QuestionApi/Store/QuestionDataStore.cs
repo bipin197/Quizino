@@ -3,6 +3,7 @@ using Common.Commands;
 using Common.Queries;
 using Common.Utilities;
 using Domain.Models;
+using Domain.ReadModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,38 +22,38 @@ namespace QuestionApi.Store
 
         internal IEnumerable<long> GetRandomActiveQuestionKeys(int numberOfQuestions)
         {
-            var allQuestionKeys = _questionQuery.GetAllQuestions(x => x.Id > 0).Select(x => x.Id);
+            var allQuestionKeys = _questionQuery.GetAllQuestions(x => x.QuestionId > 0).Select(x => x.QuestionId);
             return QuestionRandomizer.GetRandomKeysFromAvailableKeys(allQuestionKeys, numberOfQuestions);
         }
 
         internal IEnumerable<string> GetRandomActiveQuestionHashes(int numberOfQuestions)
         {
-            var allQuestions = _questionQuery.GetAllQuestions(x => x.Id > 0);
-            var allQuestionKeys = allQuestions.Select(x => x.Id);
+            var allQuestions = _questionQuery.GetAllQuestions(x => x.QuestionId > 0);
+            var allQuestionKeys = allQuestions.Select(x => x.QuestionId);
             var keys = QuestionRandomizer.GetRandomKeysFromAvailableKeys(allQuestionKeys, numberOfQuestions);
 
             foreach(var key in keys)
             {
-                yield return allQuestions.FirstOrDefault(x => x.Id == key).HashCode;
+                yield return allQuestions.FirstOrDefault(x => x.QuestionId == key).HashCode;
             }     
         }
 
-        internal Question GetQuestion(long id)
+        internal QuestionReadModel GetQuestion(long id)
         {
             return _questionQuery.GetQuestion(id);
         }
 
-        internal Question GetQuestionFromHash(string hash)
+        internal QuestionReadModel GetQuestionFromHash(string hash)
         {
             return _questionQuery.GetQuestion(hash);
         }
 
-        internal IEnumerable<Question> GetQuestions(long[] ids)
+        internal IEnumerable<QuestionReadModel> GetQuestions(long[] ids)
         {
-            return _questionQuery.GetAllQuestions(x => ids.Contains(x.Id));
+            return _questionQuery.GetAllQuestions(x => ids.Contains(x.QuestionId));
         }
 
-        internal IEnumerable<Question> GetQuestion(Criteria criteria)
+        internal IEnumerable<QuestionReadModel> GetQuestion(ReadOnlyCriteria criteria)
         {
             return _questionQuery.GetQuestions(criteria);
         }

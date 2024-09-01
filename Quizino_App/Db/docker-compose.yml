@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres1:
-    image: postgres:13
+    image: quizinoregistry.azurecr.io/qsdb:latest
     container_name: qs-ser
     environment:
       POSTGRES_USER: qs_user
@@ -16,7 +16,7 @@ services:
       - qzn_network
 
   postgres2:
-    image: postgres:13
+    image: quizinoregistry.azurecr.io/qzdb:latest
     container_name: qz-ser
     environment:
       POSTGRES_USER: qz_user
@@ -29,9 +29,23 @@ services:
     networks:
       - qzn_network
 
+  postgres3:
+    image: quizinoregistry.azurecr.io/qsdb:latest
+    container_name: qsr-ser
+    environment:
+      POSTGRES_USER: qsr_user
+      POSTGRES_PASSWORD: qsr_user
+      POSTGRES_DB: qsr_db
+    volumes:
+      - ./qsr-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5434:5432"
+    networks:
+      - qzn_network
+
   pgadmin:
     image: dpage/pgadmin4
-    container_name: qzn_pgadmin
+    container_name: qzn-pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: bipin.singh@quizino.com
       PGADMIN_DEFAULT_PASSWORD: qzn123#
@@ -39,6 +53,13 @@ services:
       - qzn_network
     ports:
       - "8080:80"
+  redis:
+    networks:
+      - qzn_network
+    image: redis:latest
+    container_name: qzn-redis
+    ports:
+      - "6379:6379"
 networks:
   qzn_network:
     driver: bridge

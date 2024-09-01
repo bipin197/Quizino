@@ -1,6 +1,7 @@
 ﻿using Common.Commands;
 using Common.Utilities;
 using Domain.Models;
+using Domain.ReadModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -28,13 +29,13 @@ namespace QuestionApi.Controllers
 
         [HttpGet("{id}")]
         [Authorize("read:questions")]
-        public Question Get(int id)
+        public QuestionReadModel Get(int id)
         {
             var question = _dataStore.GetQuestion(id);
             if(question == null)
             {
                 _logger.LogError("No Question found with id {0}", id);
-                return new Question { Text = @"No Such Question Exist with id " + id };
+                return new QuestionReadModel { Text = @"No Such Question Exist with id " + id };
             }
 
             return question;
@@ -42,18 +43,18 @@ namespace QuestionApi.Controllers
 
         [HttpPost("Search")]
         [Authorize("read:questions")]
-        public QuestionSearchResult GetQuestion([FromBody] Criteria criteria)
+        public QuestionSearchResult GetQuestion([FromBody] ReadOnlyCriteria criteria)
         {
             if(criteria == null)
             {
                 _logger.LogError("Empty or invalid criteria");
-                return new QuestionSearchResult { Questions = Enumerable.Empty<Question>(), TotalQuestions = 0 };
+                return new QuestionSearchResult { Questions = Enumerable.Empty<QuestionReadModel>(), TotalQuestions = 0 };
             }
             var questions = _dataStore.GetQuestion(criteria);
             if (questions == null || !questions.Any())
             {
                 _logger.LogError("No Question found with provided criteria {0}", criteria);
-                return new QuestionSearchResult { Questions = Enumerable.Empty<Question>(), TotalQuestions = 0 };
+                return new QuestionSearchResult { Questions = Enumerable.Empty<QuestionReadModel>(), TotalQuestions = 0 };
             }
 
             return new QuestionSearchResult { Questions = questions, TotalQuestions = questions.Count() }; ;
@@ -61,13 +62,13 @@ namespace QuestionApi.Controllers
 
         [HttpGet("hash/{hash}")]
         [Authorize("read:questions")]
-        public Question GetFromHashCode(string hash)
+        public QuestionReadModel GetFromHashCode(string hash)
         {
             var question = _dataStore.GetQuestionFromHash(hash);
             if (question == null)
             {
                 _logger.LogError("No Question found with hash {0}", hash);
-                return new Question { Text = @"No Such Question Exist with id " + hash };
+                return new QuestionReadModel { Text = @"No Such Question Exist with id " + hash };
             }
 
             return question;
@@ -103,13 +104,13 @@ namespace QuestionApi.Controllers
         /// <returns></returns>
         [HttpGet("FirstFive")]
         [Authorize("read:questions")]
-        public IEnumerable<Question> GetFirstFiveItems()
+        public IEnumerable<QuestionReadModel> GetFirstFiveItems()
         {
             var question = _dataStore.GetQuestions(new long[] { 1, 2, 3, 4, 5 });
             if (question == null)
             {
                 _logger.LogError("No Question found");
-                return new List<Question>();
+                return new List<QuestionReadModel>();
             }
 
             return question;

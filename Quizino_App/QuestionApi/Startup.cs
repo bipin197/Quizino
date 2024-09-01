@@ -3,6 +3,7 @@ using Common.Queries;
 using Common.Repositories;
 using Common.Services;
 using Domain.Models;
+using Domain.ReadModels;
 using EasyNetQ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -38,48 +39,11 @@ namespace QuestionApi
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSwaggerGen();
-          
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(op =>
-            {
-                op.Authority = Configuration["AuthOptions:Authority"];
-                op.Audience = Configuration["AuthOptions:Audience"];
-                op.RequireHttpsMetadata = false;
-            });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("read:questions", policy => policy.Requirements.Add(new HasScopeRequirement("read:questions")));
-                options.AddPolicy("write:questions", policy => policy.Requirements.Add(new HasScopeRequirement("write:questions")));
-            });
-            services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
-            {
-                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
-                opt.EnableSensitiveDataLogging(true);
-                opt.UseInternalServiceProvider(sp);
-            }, ServiceLifetime.Singleton);
 
-            services.AddSingleton(typeof(IRepository<Question>), typeof(QuestionRepository));
-            services.AddSingleton(typeof(ICachedRepository<Question>), typeof(CachedQuestionRepository));
-            //services.AddSingleton(typeof(ICachedRepository<Quiz>), typeof(CachedQuizRepository));
-           // services.AddScoped(typeof(IRepository<Quiz>), typeof(JsonRepository<Quiz>));
-            services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
-            //services.AddTransient(typeof(IQuizQuery), typeof(QuizQuery));
-            services.AddTransient(typeof(QuestionDataStore));
-            services.AddTransient(typeof(CreateQuestionCommandHandler));
-            services.AddTransient(typeof(UpdateQuestionCommand));
-            services.AddTransient(typeof(UpdateQuestionCommandHandler));
-            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
-            services.AddTransient<IPublishService, RabbitMqPublishService>();
-
-            var rabbitMQSettings = Configuration.GetSection("RabbitMQSettings").Get<RabbitMQSettings>();
-            services.AddSingleton(rabbitMQSettings);
-
-            var bus = RabbitHutch.CreateBus($"host={rabbitMQSettings.HostName}");
-            services.AddSingleton<IBus>(bus);
+            AddAuthorization(services);
+            AddWriteModel(services);
+            AddReadModels(services);
+            AddMessageBroker(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,6 +78,69 @@ namespace QuestionApi
                 options.SwaggerEndpoint("/Question/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
+        }
+
+        private void AddAuthorization(IServiceCollection services)
+        {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(op =>
+            {
+                op.Authority = Configuration["AuthOptions:Authority"];
+                op.Audience = Configuration["AuthOptions:Audience"];
+                op.RequireHttpsMetadata = false;
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("read:questions", policy => policy.Requirements.Add(new HasScopeRequirement("read:questions")));
+                options.AddPolicy("write:questions", policy => policy.Requirements.Add(new HasScopeRequirement("write:questions")));
+            });
+
+
+            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
+            services.AddTransient<IPublishService, RabbitMqPublishService>();
+        }
+
+        private void AddReadModels(IServiceCollection services)
+        {
+            services.AddEntityFrameworkNpgsql().AddDbContext<QuestionReadModelDbContext>((sp, opt) =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("ReadModelPostgressConnection"));
+                opt.EnableSensitiveDataLogging(true);
+                opt.UseInternalServiceProvider(sp);
+            }, ServiceLifetime.Singleton);
+
+            services.AddSingleton(typeof(IReadOnlyRepository<QuestionReadModel>), typeof(ReadOnlyQuestionRepository));
+            services.AddTransient(typeof(IQuestionQuery), typeof(QuestionQuery));
+        }
+
+        private void AddWriteModel(IServiceCollection services)
+        {
+            services.AddEntityFrameworkNpgsql().AddDbContext<QuestionDbContext>((sp, opt) =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("PostgressConnection"));
+                opt.EnableSensitiveDataLogging(true);
+                opt.UseInternalServiceProvider(sp);
+            }, ServiceLifetime.Singleton);
+
+            services.AddSingleton(typeof(IRepository<Question>), typeof(QuestionRepository));
+            services.AddSingleton(typeof(ICachedRepository<Question>), typeof(CachedQuestionRepository));
+            services.AddTransient(typeof(QuestionDataStore));
+            services.AddTransient(typeof(CreateQuestionCommandHandler));
+            services.AddTransient(typeof(UpdateQuestionCommand));
+            services.AddTransient(typeof(UpdateQuestionCommandHandler));
+        }
+
+        private void AddMessageBroker(IServiceCollection services)
+        {
+            var rabbitMQSettings = Configuration.GetSection("RabbitMQSettings").Get<RabbitMQSettings>();
+            services.AddSingleton(rabbitMQSettings);
+
+            var bus = RabbitHutch.CreateBus($"host={rabbitMQSettings.HostName}");
+            services.AddSingleton<IBus>(bus);
         }
     }
 }
