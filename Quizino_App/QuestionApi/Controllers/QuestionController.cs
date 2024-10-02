@@ -1,6 +1,5 @@
 ﻿using Common.Commands;
 using Common.Utilities;
-using Domain.Models;
 using Domain.ReadModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -76,7 +75,6 @@ namespace QuestionApi.Controllers
 
         [HttpPost("Update")]
         [Authorize("write:questions")]
-        [AllowAnonymous]
         public HttpResponseMessage UpdateQuestion([FromBody] UpdateQuestionCommand[] updateQuestionCommands)
         {
             if(updateQuestionCommands == null)
