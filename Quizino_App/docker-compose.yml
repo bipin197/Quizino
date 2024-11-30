@@ -10,6 +10,15 @@ services:
       - "5001:8080"
     networks:
       - qzn_network
+  quizapi:
+    image: quizapi
+    build:
+      context: .
+      dockerfile: QuizApi/Dockerfile
+    ports:
+      - "5002:8081"
+    networks:
+      - qzn_network
   questionManager:
     image: questionmanager
     build:

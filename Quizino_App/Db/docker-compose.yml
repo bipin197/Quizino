@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres1:
-    image: quizinoregistry.azurecr.io/qsdb:latest
+    image: postgres:latest
     container_name: qs-ser
     environment:
       POSTGRES_USER: qs_user
@@ -16,7 +16,7 @@ services:
       - qzn_network
 
   postgres2:
-    image: quizinoregistry.azurecr.io/qzdb:latest
+    image: postgres:latest
     container_name: qz-ser
     environment:
       POSTGRES_USER: qz_user
@@ -30,7 +30,7 @@ services:
       - qzn_network
 
   postgres3:
-    image: quizinoregistry.azurecr.io/qsdb:latest
+    image: postgres:latest
     container_name: qsr-ser
     environment:
       POSTGRES_USER: qsr_user
