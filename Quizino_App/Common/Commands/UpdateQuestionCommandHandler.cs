@@ -48,7 +48,7 @@ namespace Common.Commands
                 }
 
                 await _repository.UpdateItemsAsync(questions).ConfigureAwait(false);
-                _publishService.PublishMessage(new RabbitMqMessage { Body = JsonConvert.SerializeObject(questions) });
+                _publishService.PublishMessage(new Message { CreatedAt = DateTime.Now, Body = JsonConvert.SerializeObject(questions) });
             }
             catch (Exception ex)
             {

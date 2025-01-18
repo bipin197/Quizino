@@ -4,7 +4,7 @@ using Common.Repositories;
 using Common.Services;
 using Domain.Models;
 using Domain.ReadModels;
-using EasyNetQ;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -136,11 +136,17 @@ namespace QuestionApi
 
         private void AddMessageBroker(IServiceCollection services)
         {
-            var rabbitMQSettings = Configuration.GetSection("RabbitMQSettings").Get<RabbitMQSettings>();
-            services.AddSingleton(rabbitMQSettings);
-
-            var bus = RabbitHutch.CreateBus($"host={rabbitMQSettings.HostName}");
-            services.AddSingleton<IBus>(bus);
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host("localhost", "/", h =>
+                    {
+                        h.Username("guest");
+                        h.Password("guest");
+                    });
+                }); 
+            });
         }
     }
 }

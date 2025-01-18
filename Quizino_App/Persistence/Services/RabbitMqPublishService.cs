@@ -1,20 +1,21 @@
 ﻿using Common;
 using Common.Services;
-using EasyNetQ;
+using MassTransit;
+using System.Threading.Tasks;
 
 namespace Persistence.Services
 {
     public class RabbitMqPublishService : IPublishService
     {
-        private readonly IBus _bus;
-        public RabbitMqPublishService(IBus bus)
+        private readonly IPublishEndpoint _publishEndpoint;
+        public RabbitMqPublishService(IPublishEndpoint publishEndpoint)
         {
-            _bus = bus;
+            _publishEndpoint = publishEndpoint;
         }
 
-        public void PublishMessage(RabbitMqMessage message)
+        public async Task PublishMessage(Message message)
         {
-            _bus.PubSub.Publish(message);
+           await _publishEndpoint.Publish(message);
         }
     }
 }

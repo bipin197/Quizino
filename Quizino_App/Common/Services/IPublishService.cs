@@ -8,6 +8,6 @@ namespace Common.Services
 {
     public interface IPublishService
     {
-        void PublishMessage(RabbitMqMessage message);
+        Task PublishMessage(Message message);
     }
 }

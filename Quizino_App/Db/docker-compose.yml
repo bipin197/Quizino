@@ -60,6 +60,14 @@ services:
     container_name: qzn-redis
     ports:
       - "6379:6379"
+  rabbitmq:
+    networks:
+      - qzn_network
+    image: rabbitmq:management
+    container_name: qzn-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 networks:
   qzn_network:
     driver: bridge

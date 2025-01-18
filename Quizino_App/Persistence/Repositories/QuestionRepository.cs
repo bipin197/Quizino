@@ -1,7 +1,9 @@
 ﻿using Common.Repositories;
+using Common.Services;
 using Domain;
 using Domain.Models;
 using Persistence.DbContexts;
+using Persistence.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,11 @@ namespace Persistence.Repositories
     public class QuestionRepository : IRepository<Question>
     {
         private readonly QuestionDbContext _questionDbContext;
-        public QuestionRepository(QuestionDbContext dbContext)
+        private readonly IPublishService _publishService;
+        public QuestionRepository(QuestionDbContext dbContext, IPublishService publishService)
         {
             _questionDbContext = dbContext;
+            _publishService = publishService;
         }
 
         public async Task AddItemAsync(Question item) 
@@ -94,6 +98,7 @@ namespace Persistence.Repositories
             }
 
             await _questionDbContext.SaveChangesAsync().ConfigureAwait(false);
+            await _publishService.PublishMessage(new Common.Message()).ConfigureAwait(false);
         }
     }
 }
