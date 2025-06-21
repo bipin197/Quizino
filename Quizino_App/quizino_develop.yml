@@ -1,45 +1,44 @@
 trigger:
-- develop
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  AWS_ACCOUNT_ID: '<aws_account_id>'
+  AWS_REGION: '<region>'
+  QUIZAPI_REPO: 'quizapi'
+  QUESTIONAPI_REPO: 'questionapi'
+
 steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Restore Dependencies'
+- task: UseDotNet@2
   inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
+    packageType: 'sdk'
+    version: '8.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build'
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    arguments: '--configuration Release'
+- script: |
+    dotnet build QuizApi/QuizApi.csproj --configuration Release
+    dotnet build QuestionApi/QuestionApi.csproj --configuration Release
+  displayName: 'Build .NET Projects'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Publish'
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)/publish_output'
+- script: |
+    docker build -t $(QUIZAPI_REPO) -f QuizApi/Dockerfile .
+    docker build -t $(QUESTIONAPI_REPO) -f QuestionApi/Dockerfile .
+  displayName: 'Build Docker Images'
 
-- task: Docker@2
-  displayName: 'Build Docker image'
-  inputs:
-    containerRegistry: 'yourDockerServiceConnection' # Specify your Docker service connection here
-    repository: 'yourRepositoryName'
-    command: 'build'
-    Dockerfile: '**/Dockerfile'
-    tags: |
-      $(Build.BuildId)
-      latest
-    arguments: '--build-arg CONFIGURATION=Release $(Build.ArtifactStagingDirectory)/publish_output'
+- script: |
+    aws --version
+    aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
+  displayName: 'Login to AWS ECR'
 
-- task: PublishPipelineArtifact@1
-  displayName: 'Publish Docker Image Artifact'
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)/DockerImage.tar.gz'
-    artifact: 'DockerImage'
+- script: |
+    docker tag $(QUIZAPI_REPO):latest $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUIZAPI_REPO):latest
+    docker tag $(QUESTIONAPI_REPO):latest $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUESTIONAPI_REPO):latest
+  displayName: 'Tag Docker Images'
+
+- script: |
+    docker push $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUIZAPI_REPO):latest
+    docker push $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUESTIONAPI_REPO):latest
+  displayName: 'Push Images to ECR'
 
