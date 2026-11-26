@@ -1,0 +1,44 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  AWS_ACCOUNT_ID: '<aws_account_id>'
+  AWS_REGION: '<region>'
+  QUIZAPI_REPO: 'quizapi'
+  QUESTIONAPI_REPO: 'questionapi'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: |
+    dotnet build QuizApi/QuizApi.csproj --configuration Release
+    dotnet build QuestionApi/QuestionApi.csproj --configuration Release
+  displayName: 'Build .NET Projects'
+
+- script: |
+    docker build -t $(QUIZAPI_REPO) -f QuizApi/Dockerfile .
+    docker build -t $(QUESTIONAPI_REPO) -f QuestionApi/Dockerfile .
+  displayName: 'Build Docker Images'
+
+- script: |
+    aws --version
+    aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
+  displayName: 'Login to AWS ECR'
+
+- script: |
+    docker tag $(QUIZAPI_REPO):latest $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUIZAPI_REPO):latest
+    docker tag $(QUESTIONAPI_REPO):latest $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUESTIONAPI_REPO):latest
+  displayName: 'Tag Docker Images'
+
+- script: |
+    docker push $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUIZAPI_REPO):latest
+    docker push $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(QUESTIONAPI_REPO):latest
+  displayName: 'Push Images to ECR'
+

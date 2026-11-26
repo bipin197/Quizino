@@ -1,0 +1,116 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quizapi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: quizapi
+  template:
+    metadata:
+      labels:
+        app: quizapi
+    spec:
+      containers:
+      - name: quizapi
+        image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/quizapi:latest
+        ports:
+        - containerPort: 8081
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: quizapi-db-secret
+              key: connectionstring
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quizapi
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8081
+  selector:
+    app: quizapi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: questionapi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: questionapi
+  template:
+    metadata:
+      labels:
+        app: questionapi
+    spec:
+      containers:
+      - name: questionapi
+        image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/questionapi:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: questionapi-db-secret
+              key: connectionstring
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: questionapi
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 81
+    targetPort: 8080
+  selector:
+    app: questionapi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: questionmanager
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: questionmanager
+  template:
+    metadata:
+      labels:
+        app: questionmanager
+    spec:
+      containers:
+      - name: questionmanager
+        image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/questionmanager:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: questionmanager
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 4200
+    targetPort: 80
+  selector:
+    app: questionmanager

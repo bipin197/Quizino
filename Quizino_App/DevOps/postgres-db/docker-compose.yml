@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: qzn_db
+    environment:
+      POSTGRES_USER: qu_user
+      POSTGRES_PASSWORD: qu_user
+      POSTGRES_DB: qu_db
+    networks:
+      - qzn_netwrok
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: qzn_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: bipin.singh@quizino.com
+      PGADMIN_DEFAULT_PASSWORD: qzn123#
+    networks:
+      - qzn_netwrok
+    ports:
+      - "8080:80"
+
+networks:
+  qzn_netwrok:
+    driver: bridge

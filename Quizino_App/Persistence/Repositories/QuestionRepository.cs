@@ -1,0 +1,104 @@
+﻿using Common.Repositories;
+using Common.Services;
+using Domain;
+using Domain.Models;
+using Persistence.DbContexts;
+using Persistence.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Persistence.Repositories
+{
+    public class QuestionRepository : IRepository<Question>
+    {
+        private readonly QuestionDbContext _questionDbContext;
+        private readonly IPublishService _publishService;
+        public QuestionRepository(QuestionDbContext dbContext, IPublishService publishService)
+        {
+            _questionDbContext = dbContext;
+            _publishService = publishService;
+        }
+
+        public async Task AddItemAsync(Question item) 
+        { 
+            await Task.FromResult(_questionDbContext.Questions.Add(item)).ConfigureAwait(false);
+        }
+        
+        public async Task AddItemsAsync(IEnumerable<Question> items)
+        {
+             _questionDbContext.Questions.AddRange(items);
+        }
+
+        public Question GetItem(Func<Question, bool> predicate)
+        {
+            return _questionDbContext.Questions.FirstOrDefault(predicate);
+        }
+
+        public IEnumerable<Question> GetItems(Func<Question, bool> predicate)
+        {
+            return _questionDbContext.Questions.Where(predicate);
+        }
+
+        public void RemoveItem(Question item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveItems(IEnumerable<Question> item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task SaveAsync() => await _questionDbContext.SaveChangesAsync().ConfigureAwait(false);
+
+        public void Save() => _questionDbContext.SaveChanges();
+
+        public void UpdateItem(Question item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task UpdateItemsAsync(IEnumerable<Question> items)
+        {
+            var ids = items.Select(x => x.Id);
+            var questions = _questionDbContext.Questions.Where(x => ids.Contains(x.QuestionId));
+            foreach(var question in questions)
+            {
+                var item = items.Where(x => x.Id == question.Id).FirstOrDefault();
+                if(item != null)
+                {
+                    question.Text = item.Text;
+                    question.OptionA = item.OptionA;
+                    question.OptionB = item.OptionB;
+                    question.OptionC = item.OptionC;
+                    question.OptionD = item.OptionD;
+                    question.Answer = item.Answer;
+                    question.ApplicableCategories= item.ApplicableCategories??"0";
+                    question.HashCode = HashGenerator.GetHashForText(item.Text);
+                }
+            }
+
+            foreach (var item in items.Where(x => x.Id == 0))
+            {
+                var question = new Question
+                {
+                    Text = item.Text,
+                    OptionA = item.OptionA,
+                    OptionB = item.OptionB,
+                    OptionC = item.OptionC,
+                    OptionD = item.OptionD,
+                    Answer = item.Answer,
+                    ApplicableCategories = item.ApplicableCategories ?? "0",
+                    HashCode = HashGenerator.GetHashForText(item.Text)
+                };
+
+                _questionDbContext.Questions.Add(question);
+            }
+
+            await _questionDbContext.SaveChangesAsync().ConfigureAwait(false);
+            await _publishService.PublishMessage(new Common.Message()).ConfigureAwait(false);
+        }
+    }
+}

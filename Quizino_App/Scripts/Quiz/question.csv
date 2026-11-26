@@ -1,0 +1,557 @@
+ques_id,ques_text,ques_optiona,ques_optionb,ques_optionc,ques_optiond,ques_answer,ques_applicable_cat,ques_hash
+1,What is the capital of India,Mumbai,New Delhi,Kolkata,Chennai,1,0,260f3bc6d2f3008b4911421c6e0bc27e849dceb395ccc2266e317e8624f58337
+566,Where did the Exxon Valdez run aground in March of 1989?,Monterey Bay,Prince William Sound,Cape Cod,Gulf of Mexico,1,0,9a11829a397977a5b42b2f6af3be9486b75891a94e117e860b110f30a77060f4
+567,Where did Lewis and Clark begin their famous expedition in 1804?,Seattle,St. Louis,New Orleans,"Washington, DC",1,0,2948f16b40d5377abe5517fed9d1bd9d07498a0c3907d529df7aeb308d6b1738
+568,Where did jazz great Sun Ra claim he was born?,Atlantis,Mount Olympus,Saturn,in a saxophone,2,0,599b9a14d453772ca5804a5e8da0e99b149daad2cecc487d5831d154a722c33e
+569,Where are fireworks first known to have been developed?,Italy,China,Great Britain,Greece,1,0,19a806f0c4a840d9b6e3deb3d8cba76d63a8b3ab117c73ef0fde858354842717
+570,"When it's noon in New York during daylight-saving time, what time is it in Honolulu?",6:00 a.m.,6:30 a.m.,7:00 a.m.,8:00 a.m.,0,0,9862bbc25dacc59364453d1b95fb3b1608ba67d1a97757be23444065ce29f374
+571,"When it first appeared on the Internet, amazon.com sold only what?",books,compact discs,cars,clothes,0,0,ee47704500024b7685fb3deaedbe618cbb30d006a183d834da45bd5fdc5e308f
+572,"When it comes to measuring horses, how long is a 'hand'?",four inches,seven inches,ten inches,two feet,0,0,fae4c6078b307bd42cf9d2da3dadff23178f8b8b25234428c472d40686896969
+573,"In the presidential election of 1932, how many U.S. states did FDR not win the electoral votes for?",six,seven,eight,ten,0,0,230c7cfc721518c4eb451343d2fe8ead99316feb1cabbdf2e5b4d50d08ab2d56
+574,"When driving, which of the following gestures means 'left turn'?",arm bent upwards,thumbs up,closed fist,arm straight out,3,0,0b257795c6cba34b66cdf63094909b6dfaef9e8f0f8f48f00c35dee2b667e998
+575,"When daylight-saving time arrives in the spring, how do most Americans turn their clocks?",one hour forward,one hour backward,two hours forward,two hours backward,1,0,ee97c75af1b7e257b359fe8686e6a6bcc2694cd5da7f0c8c42841e2b87ff571b
+576,What's unique about a skeleton key?,It opens many locks.,It's made of bone.,It's extremely old.,It hangs in a closet.,0,0,145d072da68922189bccea78bb00a365526a2088b057d1e54bab0900de2a34e3
+577,What's the third letter of the Greek alphabet?,delta,gamma,phi,theta,1,0,616fec5e8d1e383cbfe666ca25d11a3faf4d11951b19f6435b816ab48fc265df
+578,What's the popular name of the breakfast meal consisting of sausages wrapped in pancakes?,ducks in a pond,pigs in a blanket,cows in a pasture,dogs in the oven,1,0,50e7a1abfb500e9519d60001bd57bf494a91ccc1453cce4e2ea5c87a3ea7d121
+579,What were the first names of the early American explorers Lewis and Clark?,Morgan and Mason,Meriwether and William,Cabot and Joseph,Meredith and George,1,0,6be38abf46d545fbd692ffc033793f7472d992e0cf26567eddf0a26bd3bca1a3
+580,Where is Ghirardelli Square located?,Milan,Rome,Washington DC,San Francisco,3,0,3242e754055bd3b683d5251af28e519ec2e4b785f457f96129f351d399456036
+581,What was the title of Beethoven's only completed opera?,'Faust','The Silence','Immortal Beloved','Fidelio',3,0,bc0d1efcba0210497dac842e76f7692fec4ee08a5c009d7cebdfe00ab1f277cf
+582,What was the name of the first ship to sail around the world?,Triton,Victoria,Magellan,Elizabeth II,1,0,e0e4771f7d8d1f8491a7e65254c58660929e4873743b11734b11e5f567450b4c
+583,What was the name of the first nuclear-powered submarine?,Nautilus,Neptune,Nordenfelt III,Nicholas,0,0,2cb64c93d9f627fbba5d83497a94cc51bb34b45884dff8ecb77b6efad394ca2f
+584,What was the name of the 1999 art exhibit that sparked a national debate about censorship?,'Sticks & Stones','Pulsation','Black & White','Sensation',3,0,00e2d5ed671fb6e3d4469d4d53d73bc7c721439b4a75ca29fffb756a3d90b7e4
+585,What was the name of Huey Lewis' band?,The News,The Attractions,The Silver Bullet Band,Louie and Dewey,0,0,b26333aa968e7b111cebcd34e0fb0928d70b3b97c9c09c9d0eb7c5eaa299366a
+586,What was the first American college to become coeducational?,Oberlin College,Dartmouth College,Grinnell College,Antioch College,0,0,6f602690451f7e600272fbca205ffcf0823c783218710cd9720d89aa564b9b1d
+587,What was the birth name of civil rights leader Malcolm X?,Michael Brown,Malcolm Little,Malcolm Lincoln,Michael Lloyd,1,0,9aaf286078a30709565808c7398f26ba633a97732f51dc63032d32941f668c9c
+588,What was Richard Nixon's middle name?,Michael,Milhous,Mortimer,Matthew,1,0,89afdd64c5a6f4e336726ed5703be27d14711f55f04e1fe22b773e7bdd934f28
+589,What was Ludwig Van Beethoven's final symphony?,Ninth,Tenth,Eleventh,Twelfth,0,0,c5e28e86034768c8312fdc658c4d03082a9875ce0052dba659d36b0642faf986
+590,What U.S. president is mentioned by name in the opening theme song of TV's 'All in the Family'?,Calvin Coolidge,Harry Truman,Herbert Hoover,Richard Nixon,2,0,041fa32cd4ed8297404519c477a0c27a702bda72c0cf562cc70060903e389480
+591,What type of substance is 'terra-cotta'?,metal,ceramic,wood,glass,1,0,1aee1b63f37aef4471a45e613ac27b2fb92aa39a254f620826dbd6b4df8f5550
+592,What type of meat is on a traditional Reuben sandwich?,turkey,bologna,corned beef,pepperoni,2,0,f1cac7c555c9dbf1de9c63a02d31bc851e974a1228909b197ed1c6e849e330cc
+593,What topic does Spin magazine primarily cover?,politics,washing machines,books,music,3,0,2a475180ffaad4d61217f64fa80688c7801a9824c016f48d48e3916923644f63
+594,What term is used to describe a group of geese?,gaggle,gang,gander,grist,0,0,9ea92c023ea67ea24918107a20a6632ad698b501a13501398311b8acafa9fcc0
+595,What term is used to describe a group of fish?,knot,drape,school,gaggle,2,0,eff2d2de5dd307b80578a40f11e86c8611fa0b7ebfbb048615eb7ea95b8d88e2
+596,What was the original name of the Apple Macintosh XL computer?,Lisa 2,Mac Daddy,Granny Smith,Orange XL,0,0,b1daeb7bb7caff2b0a19708df973cec7d343c77f95c1ed08c626dc2bf155651c
+597,Where is the Louvre museum?,Paris,Lyon,Geneva,Vichy,0,0,2f90941eb18a87044701175780ad89e156e3c919508bfc7f3342b73beec29e58
+598,Where was the chicken first domesticated?,France,India,Peru,Zaire,1,0,32a15925e4f8cf21edbcda194e7c1c120d843b4e4a585f75da69bd1d3b9d4b45
+599,Where would you typically find a bailiff?,grocery store,courtroom,football stadium,doctor's office,1,0,5b3d88fd810e59a4a116e69573c36bc1df8af015003b22302baa29ecb6e957ce
+600,Which of these college football programs has produced the most Heisman Trophy winners?,Notre Dame,USC,Oklahoma,Michigan,0,0,13dd6d96c60541a9b779255c902975a622c06f0e67a024fe359c827d927d275e
+601,Which of these candy bars was named for a baseball player?,Baby Ruth,Clark Bar,Reggie Bar,Butterfinger,0,0,8717c2316182927da89581730e668edccb11e22aea8f039a56b1c24cd2073636
+602,Which of these Australian birds is most closely related to the ostrich?,puffin,kookaburra,cockatoo,emu,3,0,a9a39b71c146a1fc44a9a23fc6b13d098fadc760844be7b4b2f9a9e2b980eca4
+603,Which of these are not legumes?,beans,peas,radishes,peanuts,2,0,53e923ed6f7aa174d98c76224f1344f74f22b2afd438e550819455a8eae7fa76
+604,Which of these animals shares its name with a luxury car?,yak,gazelle,sloth,jaguar,3,0,fad209b0ac2a4c7265bffe7ef7cf0687e98acd811d62924232a4d916c530a0f7
+605,Which of these animals lays eggs?,cow,gerbil,frog,elephant,2,0,d9878738845e4e46915ff694ded4059b40a78b5546d1ebaf89fbdbd475c11432
+606,Which of these actors did one-handed push-ups on stage at the 1992 Academy Awards?,Sylvester Stallone,Jack Nicholson,Jack Palance,Marisa Tomei,2,0,aee4a1c3af1179faf208f252c3c47ccd1b8e93e41cccadb7889790e0d62672b7
+607,Which of the Three Stooges was not related to the others?,Moe,Larry,Curly,Shemp,1,0,cc26c67560d46761b646a39618e36f5d73a232501535016d56230682b3f68a1c
+608,Which of the following words does not appear in the Lewis Carroll poem 'Jabberwocky'?,brillig,bandersnatch,wabe,grelp,3,0,32c1b40514476b246480bd866bdbe2a7e78fcce0588984964eab1a1218da4059
+609,Which of the following requires the use of at least two needles?,macrame,braiding,crocheting,hand knitting,3,0,0a577cffe25d1edaf84e9ffd6c554555859d09ea7a6bb0f5e069f7b9462934ca
+610,Which of the following must be obtained by foreigners wishing to permanently reside in the US?,visa,bill of landing,driver's license,carte blanche,0,0,27dd43abd0d63aff691e9d3d8c32c295e513652426e61f149b57b961798fcb1d
+611,Which of the following is not in Nevada?,Liberace Museum,Pikes Peak,Lake Mead,Hoover Dam,1,0,822ed80f56fccf4d598c5356a82d2a4d3d26af67d4f2a6ed0c3420b203f13224
+612,Which of the following is not a TV cartoon duo?,Chip and Dale,Beavis and Butt-head,Simon and Garfunkel,Tom and Jerry,2,0,669f537ad84fb5fb62b2f8640fc6c8e0dfeda597bbc405b47d7dfd6ea8b10f5f
+613,Which of the following is not a flavor of Ben & Jerry's Ice Cream?,Wavy Gravy,Bovinity Divinity,Cutie Patootie,Chubby Hubby,2,0,4eb5485dbf8b6872fddba9ce0cf8011da4c131d5992f4797c512453e31d78205
+614,Which of the following is most commonly kept in a terrarium?,money,books,ice,plants,3,0,6f7b1fd3f7a7e46f818c4f7fdc5ceee40a74d13e903430cfc5be26fe28fe2d1f
+615,Which of the following is about the Watergate scandal?,'All the King's Men','All the Pretty Horses','All the President's Men','All the Right Moves',2,0,173f4beb482e5b8a2c9694ef44d608cb9146c96b8fddd75d0a90d566ba490b48
+616,Which of the following is a sports award?,Oscar,Emmy,Nobel,Espy,3,0,2f26179f63be3b7a8b2a74c229f23ae221aaf8020052ef060de3164faee1adb3
+617,Where is the Frank Lloyd Wright-designed house known as Falling Water?,Connecticut,Pennsylvania,Illinois,New York,1,0,e8253ef37882f98ef45693d67cfd577e6382ae2b0eeddc3f2d5931f03a3ce7ce
+618,Which actress played a pointy-eared Vulcan in the movie 'Star Trek II: The Wrath of Khan'?,Whoopi Goldberg,Jennifer Grey,Kirstie Alley,Helen Hunt,2,0,5c5b6cd757be37f414a134aefc45ae82cf96441004ee6529f3ae2ce829cf12f1
+619,"Which American colony, known for its religious tolerance, did Roger Williams found in 1636?",Massachusetts,Rhode Island,Virginia,Vermont,1,0,8ec52007af2d54b532f5bc185b29dfbb878e3f6f5c43cf671a4d1f1293b581ae
+620,Which brand of cat food claims it's so tasty that 'cats ask for it by name'?,Fancy Feast,Cat Chow,Meow Mix,9-Lives,2,0,724b38a515f330f49574b9e92c9f370ab2c9b95d5b15a05b44926c37bfdb9082
+621,Which character on the TV show 'Friends' is a chef?,Joey,Monica,Ross,Rachel,1,0,7a94a33c9a72f7d3dc357a49518398564e73954b73f7e5ad3e37f7dc9afbaede
+622,Which company holds an annual self-named 'Bake-Off'?,Betty Crocker,Duncan Hines,Pillsbury,Keebler,2,0,c22313a01f34268b86e8e7629a7fc88df1db1409db608131850d63b5eeda8a41
+623,What term describes the passing of genetic traits from one generation to the next?,heredity,heresy,homogeneity,hemoglobin,0,0,ac5c88de00c6800c318056f4f777872da892b72505092f66110635d80e7a72fd
+624,Which famed modeling agency shares its name with a top U.S. automaker?,Ford,Chevrolet,Chrysler,Saturn,0,0,261762d92a5118d2f081d9ec340530f7413ae2a8eb17de5d7c3fc9cb0de9086a
+625,Which of the boys on the TV show 'My Three Sons' is adopted?,Mike,Ernie,Chip,Robbie,1,0,78ad6ed3b82f7733739056fca76df088ae6b8786913cab3ecc1b6542b0e41168
+626,Which of the following articles of clothing has a hood?,parka,kilt,lederhosen,sarong,0,0,4546fd7f15cf92902e0d9ad73993eaec7c9c318858622e40eefc6a28ee019ac2
+627,Which of the following beverages is brewed from the leaves of a plant?,tea,coffee,ginger ale,wine,0,0,cfbfec477bee5851b003c4485259156c7aa969b8d65132e544ad6d0c32dea93a
+628,Which of the following breakfast cereals is shaped like the letter O?,Life Corn,Chex,Cheerios,Raisin Bran,2,0,bf2308d6ccbcc9026a4264ef0be011cd59533a05b68a91cc0f706838eca39489
+629,Which of the following candies is traditionally fruit flavored?,M&M's,Skittles,Reese's Pieces,Junior Mints,1,0,615af114c004dc34f83dd2980f9d8a053ddcf377ab733ed37edfc7e074c537ac
+630,Which of the following is a natural sugar found in most fruits?,necrose,fructose,bellicose,pantiose,1,0,66902a2846d148b0211108b3807f81329834d0c4cfe460cc94cdc77ee5e9ade2
+631,"Which fast food chain used the advertising slogan, 'Where's the beef?'",Wendy's,Kentucky Fried Chicken,Burger King,McDonald's,0,0,b4bd205e07cced35f2707d39b2f9a1ec33c3cec56807939fa3b84c0b637237fc
+632,What term describes someone who does not believe in the existence of God?,hedonist,deist,agnostic,atheist,3,0,31b220b3c5fa9ceaf0e6afcc318c8ee9956b04ceb0242b22b67213afa920f9f2
+633,What term describes a word created by rearranging the letters of another word?,onomatopoeia,malapropism,anagram,antonym,2,0,b8a7a7ba6b4a8b4fd9d69942ac6c93fb737b6a60428ec348b509a99555a6ab5c
+634,What term describes a tribe that has no set homeland and wanders from place to place?,Nomadic,Pedantic,Schematic,Cathartic,0,0,5daeb23b908f3d6d629799ac091e74778f54789791d55b140ccac6bc82081ce8
+635,What is your hallux?,earlobe,tongue,eyelid,big toe,3,0,e7939982c01b303760d0c3c59dc1a19623eed84cf2a43fa3f4977e9ffd931946
+636,What is your astrological sign if you were born on Halloween?,Scorpio,Capricorn,Libra,Cancer,0,0,7740a04be88ecdffc12d5e3043d1ede2bac586b998ec5fb1e9e84b7d4faaf2c8
+637,What is varicella?,a fancy pasta,a type of opera,the chicken pox virus,ancient Roman poetry,2,0,34d549f0bc530d126146edeaf99aa74327fef7e6a6dded12b9745f10695a75fc
+638,What is the traditional 20th wedding anniversary gift?,paper,leather,china,silver,2,0,423ce3395868f6c55c88d1d5b630c1fbd44fa13a66d54345a12960b365c1e417
+639,What is the technical term for the offspring of a female donkey and a male horse?,burro,dorse,hinny,honker,2,0,36a9e14226f56740d4461cbd044366998f44caa3680b67da3cdcdb2b9ac69caf
+640,What is the technical term for someone who studies fish?,entomologist,ichthyologist,marinologist,herpetologist,1,0,16b1b75e1ee3a303f796eccf13a3ee74f775da91515ef17c906220f5180184b0
+641,What is the square root of 81 squared?,9,27,81,729,2,0,dc83aa4260aca18fec1c2ee88f4dc2c796ee353b5935ab34e1df196f7403ba93
+642,What is the singular form of the word 'graffiti'?,graffita,graffitem,graffito,graffitus,2,0,388ee2a043782fc610ecb7b30c027d8e1a2df1eb488f525871e4775abddcb685
+643,What is the proper nautical use of an anchor?,to catch large fish,to calculate water depth,to hold a ship in place,to damage other boats,2,0,d0d7b2c8a186df0fcc434688fbaf3d27705a602daed19c296fc4dd2996ccbfd3
+644,What is the proletariat?,the homeless,the royalty,the upper class,the working class,3,0,8484c8babbe67ac0bf44be38fb567bc8fa4bbcb065b5aa77613ba5b275f552a0
+645,What is the principal ingredient in traditional cole slaw?,lettuce,spinach ,cabbage,chicory,2,0,4e99f669d0be06f555b7cbb11af6ed8da4c57549047fdfc88235ed9eaeda5377
+646,What is the oldest permanent European settlement in the United States?,"St. Augustine, Florida","Plymouth, Massachusetts","Newport News, Virginia","Charlotte, North Carolina",0,0,c50b670380b7c0294ae6b5be86c72d3b9a94d4f9f0d6fae5eed06a59e462a74d
+647,What is the oldest continuously run sporting event in the United States?,Westminster Dog Show,Boston Marathon,Kentucky Derby,Indianapolis 500,2,0,09698f2e9d63906e394ef51cf2efd4e936ef2f2f3568315fc59bac5ca57c7c4f
+648,What is the official language of The Netherlands?,Danish,Swedish,German,Dutch,3,0,2a048b55efd34591224ecba40f92c4e6e2826520361f406c5a49eb549626d914
+649,"What is the normal playback speed of a 12"" long-playing record?",12 1/2 rpm,33 1/3 rpm,45 rpm,100 rpm,1,0,bb174bec6c89aff3cae0cad0eadb26f6c1ab7f688ac22cfc306804d816c7c97e
+650,What is the nickname of Florida's controversial death row electric chair?,Old Yeller,Old Geezer,Old Smoky,Old Sparky,3,0,d0c5ca769a42b25117ea5450320fc93a90d73df33ba9f9f1c6d98cc32f1b0e9c
+651,What is the national animal of Australia?,koala,kangaroo,platypus,alligator,1,0,089fab2ad9903e97ffd7c6e099dfb9b6d905f920e1c3ce650e8c4eec0c1761da
+652,What is the more common name for the disease 'pertussis'?,whooping cough,tennis elbow,black lung,German measles,0,0,d65eb25108bdeaf6cebe1cd8a36fe9156e7f5277a35ab8e8deb13d32b3d69362
+653,What is the name for the thin board used to mix colors while painting?,pestle,easel,shoe,palette,3,0,c9c5465b1beaa00689a23e0482bbfb111c3deeb402446ffbbdedf06399644ea6
+654,What is the name of Howard Stern's female on-air sidekick?,Allison Norris,Jackie Reeses,Jackie Martling,Robin Quivers,3,0,dc4e713f55426269f38291d66e98b9d3c171fe5193f1d96cd19676f6795e8fff
+655,What is the name of Mario's brother in the 'Super Mario' video games?,Louis,Luigi,Luciano,Zelda,1,0,d9176b7aea519c88b5fbc8d31dfa6ded7d22f172ba681041bd1366529730b882
+656,What is the name of the baby who appears in cartoons and comic strips with Popeye the Sailor?,Pun'kin,Lamikins,Suga'baby,Swee'pea,3,0,2ac4d51d3d7c5c5acb46a24cd74d4d59f910bd48e6e3fad6e99d54a8b77be7b7
+657,What is the name of the character Played by Woody Allen in the 1967 James Bond film 'Casino Royale'?,Dr. Evil,Q,Little Jimmy Bond,M,2,0,aa57e14692f9e4761bdfa753d28e6003bafb6faf6d16165d939fa9c50f9c0e83
+658,What kind of angle is formed where two perpendicular lines meet?,obtuse,acute,right,invisible,2,0,f293b50ecc794495254f4aef8ea05b349e80f72ed4f4e8e0b7a3cdad85be81dc
+659,What is the name of the female character played by comedian Flip Wilson on his 1970s TV show?,Miss Jackie,Elizabeth Sanford,Geraldine Jones,Gladys Knight,2,0,503073e3db32201f64e6a553745158bc4c57891ec3ba84ce31e81efff466356f
+660,What is the name of the mountain where the mythological Greek gods live?,Jupiter,Olympus,Vesuvius,Valhalla,1,0,a723e85dd8caef7f7659e41e7169130060e55c6a4120de1634c366b40b4dc077
+661,What is the name of the Newtonian law that states 'An object in Motion tends to stay in motion'?,Law of Inertia,Law of Thermodynamics,Law of Relativity,Law of Gravitation,0,0,d38a0b9aecc9cee74626111326a74d5870fa45e02de958734e9aff0dce658e4f
+662,What is the name of the POW camp where 'Hogan's Heroes' are held?,Stalag 13,Alcatraz 17,Devil's Island,Leavenworth,0,0,1d4ced273b6ee8d2352c297743ffa8d115396ac605e63e4044843e72c13a8893
+663,What is the name of the South African political party that was headed by Nelson Mandela?,African National Congress,South African Democrats,Inkatha Freedom Party,Aryan National Assembly,0,0,42ae468ddae0454882d65cfe9e98a9e20adf1b53b3d44b9c70cc1fa9ac5091d6
+664,What is the name of the StarKist tuna mascot?,Charlie,Sam,Al,Morris,0,0,090c84fd53ff4b8b0d9d1a240208b104df543c50ecd9586c79c4d64228724a62
+665,What is the name of the Swedish company that specializes in affordable furniture?,Gambro,Electrolux,Saab,IKEA,3,0,978d0ae61485dd80e54fdd531fb9d42c18d60786c9e4b973f1420c3f7e503b24
+666,What is the name of the fruit that is half tangerine and half grapefruit?,graperine,tangefruit,tangelo,kumquat,2,0,aa4d633b3ea83f3d783d037228f90fd08b92a5c65e84a2787917a92d190396dd
+667,Which of these colors is a shade of blue?,ochre,periwinkle,mauve,ecru,1,0,5ab76267f6576af8c739dbf6e0e513610491229829bc5cf7fba6fd9d4600a07a
+668,What kind of animal is a peregrine?,moose,cat,bird,fish,2,0,373654c80b5f41d6f163916f3b0fbfb6f6bd18c77fb081ce26921c9a2d4eda91
+669,What kind of car did Burt Reynolds drive in the movie 'Smokey and the Bandit'?,Lamborghini,Camaro,Corvette,Trans Am,3,0,9a82d67906631f7eda867b92acc9c70187686f73ba35c94e4aa2049a03802a8e
+670,What team has won the most World Series?,Chicago Cubs,Los Angeles Dodgers,New York Yankees,San Francisco Giants,2,0,54d1fb075e4f177fb9c24748bfff3175fc7f49b9b5e5744cc4c5ea7f0df36c90
+671,What tea is known for its distinctive bergamot flavor?,Earl Grey,Darjeeling,English Breakfast,Prince of Wales,0,0,7dd9324e1add0919cccfc55532ecb82a7b8985199034f7d3c8843310748b89b8
+672,What substance was used for blood in the famous shower scene from the movie 'Psycho'?,tomato juice,red wine,chocolate syrup,ketchup,2,0,abcbd349c65ab2e97e1d7c7b6e75770a54cd03f051fd87bcc675ed232c93c36f
+673,What sporting event is held annually on Memorial Day weekend?,Iditarod,Kentucky Derby,Indianapolis 500,Super Bowl,2,0,ee86782cce115a587c7c96b5695b409cfc14032fdb5af77252f70d12c7541125
+674,What sport is known as 'The Sport of Kings'?,polo,archery,yachting,horse racing,3,0,9895f665600ca4ad5c6bc0caa5145a8d9e8234863bc37cfd479341aef4b4f0a8
+675,What sport is featured in the 1996 movie 'Kingpin'?,wrestling,golf,chess,bowling,3,0,962fa8bcb85534627fd0cf7f1dcd0d8760a7804d32abba5636c677628bbd0d4e
+676,What singer appeared in the 1992 baseball film 'A League of Their Own'?,Brandy,Madonna,Garth Brooks,Whitney Houston,1,0,6dcd4759041498939401d2140448a9c39f23913d4ef7723e2e89764d524d807c
+677,What recording artist claims that sportscaster Marv Albert was a major influence on his sound?,David Lee Roth,Meat Loaf,Axl Rose,Chuck D,3,0,0cdc52a55fe1c13f95e064bd33228b036cebb44ae1a9e6dfd9506997afece8ef
+678,What rank entitles a general in the US Army to wear three stars?,brigadier general,corporal general,lieutenant general,major general,2,0,6ee3c018b6f3bf0237e13954a3ba109280fe1fed863ed769f7de32aaf15b48c5
+679,What professional sports team plays its home games in the Alamodome?,New York Jets,Detroit Tigers,Boston Bruins,San Antonio Spurs,3,0,c0bbec751df3a2c64dc54c99585dc649ed54d4288714d31019c4afb82c2af808
+680,What pro wrestler grapples with Sylvester Stallone in the movie 'Rocky III'?,Dolph Lundgren,Hulk Hogan,Andre the Giant,The Iron Sheik,1,0,38829b3d026af0d31bc9c9c74ffef767e2ee0595674e988c905497a95c7ddfdf
+681,What popular toy is featured in the film 'The Hudsucker Proxy'?,Beanie Babies,Hula Hoop,Lincoln Logs,Lite Brite,1,0,91f1efae45758fb497d423931074ced076cb135b06a8b6e0b8d22cf00f510970
+682,What place is named in the title of the 1979 live album by rock legends Cheap Trick?,Budapest,Budokan,Bhutan,Britain,1,0,118fb912979f26500303c5405ff31ec6280b1745d33f7cf97d5e5dabfd6bd8bc
+683,What people ruled the Andes Mountains until they were conquered by the Spanish in 1532?,Pueblo,Aztec,Inca,Apache,2,0,be7142743910950b74f8051592820b9f6c234010ea95d27d69eb16b2be0f0b0f
+684,What part of the world was once known as Cathay?,China,India,Iran,Indonesia,0,0,33b20b952ece1440667abbd0174287faaac718b6b5ba7e38b62d0ae25f19ea05
+685,What part of the human body does a gastroenterologist examine?,brain,skeleton,stomach,nose,2,0,51144c2d98ada5d4bcb6736b20c4dd510c83be50c2521eb53c778f24708f1ef6
+686,What newspaper do Lois Lane and Clark Kent work for?,The Bugle,The Daily Planet,The Metropolis Tribune,The New York Times,1,0,6328ef65a5a3d789b877d1540f59059e62882488b3a5b877cc512eb487a13cb5
+687,What kind of flying contraption is featured in the movie 'Chitty Chitty Bang Bang'?,boat,car,truck,bike,1,0,c6b4830d645475053b248b9820e56c6eb17f1191530346d7eb105cab5d27b3c5
+688,What kind of item is a ginsu?,radio,knife,toothbrush,martial arts weapon,1,0,d2330e684e2be7dfa939acc804864f8d9db8d67765817a1f7e329d610fa9a1c1
+689,What kind of worker uses a 'paddy wagon'?,limo driver,police officer,rice farmer,paramedic,1,0,2b90f3ffb1178df9c0843917314b7c940bb6c163bd6d2451bd5d635cca8c12ad
+690,What letters are on the '3' button of a touch-tone telephone?,ABC,DEF,GHI,WXY,1,0,af9e013dd8e8141d074da7edd7d9f8134a5fcde8eeed26791de7172171b16ca7
+691,What liqueur is used to make a Pink Lady cocktail pink?,grenadine,schnapps,triple sec,pernod,0,0,e6c1836e6599b8883e782a3b4d92dbfb76a1ce97951f6f671329435077e92a04
+692,"What literary work is the source of the quote 'Abandon every hope, all you who enter here'?",'Paradise Lost','The Divine Comedy','Beowulf','Twilight',1,0,3dbc1367c8c9a3780f6786fed513f6cda23aee4ba39b31ae1603f5d27c1c6a2e
+693,What kind of animal is cartoon character Tennessee Tuxedo?,cat,skunk,walrus,penguin,3,0,9bf5c9ce630615ab2b9130c2e717217b838882e1f7b2964a66e5ab501760725e
+694,What mathematical term is used to describe the average of a series of numbers?,median,mode,majority,mean,3,0,88ced38a2ceac9171e73cfe4303bb2b6088f147604aecf4b76fe5bc6b2231b18
+695,What Mexican holiday takes place on May 5th?,Mexican Independence Day,Santa Anna's Birthday,Cinco de Mayo,Christmas,2,0,8bb50f26a8011a9f73fea4225479468591dddb810dce6277ad466273db60466d
+696,What nationality was Karl Marx?,Russian,German,Danish,English,1,0,52dfe906d233741ed28cc9c8df0120265de9b78b7bc210e7b1e6dbb5178c3885
+697,What Native American tribe did chief Crazy Horse lead?,Apache,Comanche,Sioux,Iroquois,2,0,f6d779a46c1799d7d5abb5858a1cf6e928e23ea9e2a1d1e5236eb2fa10f5a5da
+698,What native empire controlled Large areas of South African Territory during the 19th century?,Hutu,Zulu,Aztec,Masai,1,0,a0e5b359895fbc8af02b6fe078af261dc1a78b5a4697198ee18b3e04b9e15e73
+699,What New Age musician released a 1998 album titled 'King of the Pan Flute'?,Zamfir,Yanni,Vangelis,Kenny G,0,0,452864ae457ae999afedcee70f7aca1d4948fea5d64e5b1941ae0a64358947ee
+700,What new token was recently added to the Monopoly board game?,piggybank,sack of money,globe,telephone,1,0,ca5c57e540b51ae1195059dadca3676bae5288176c8eedc405c981bb7d8d6d19
+701,What metal device is used by police to immobilize the wheels of repeat parking offenders?,Brooklyn clamp,Denver boot,LoJack,The Club,1,0,59a23c9ab5f816385bd58bee16f30c16ff0b410901f384bfdd212165cb68ba9f
+702,What is the medical term for a doctor's identification of a disease?,Hypnosis,Prognosis,Trichinosis,Diagnosis,3,0,4c36b5cc0d08dcdeb247aa20cb9eaad2e5df426463b2bbfee110ef947fa7d407
+703,Which of these countries does not participate in NAFTA?,United States,Canada,Mexico,Guatemala,3,0,575f9d7b800abbb4141bda0b1dc29f991ee5547fe655c1f2b6493a257d20dff1
+704,Which of these countries is not in Europe?,Italy,Spain,Greece,Israel,3,0,9cefd3fef4693b72f065eb2abee92bc0e5c653435fb276eeb82e40fbcd398e91
+705,Who kills Tony at the end of the film 'West Side Story'?,Riff,Chino,Bernardo,He kills himself.,1,0,a2f2a109a1143a08de7b7d0cf2aba9ae557529a761c49a24cadc6248cdbb83fd
+706,Who is the twin sister of 'Dear Abby' columnist Abigail VanBuren?,Martha Stewart,Dr Ruth Westheimer,Ann Landers,Miss Manners,2,0,3269f7af549a1a7982bf6fcd82e3c807a0ab28216d9909d562e47318976e3e92
+707,Who is the star of the TV show 'Everybody Loves Raymond'?,Ray Liotta,Ray Romano,Ray Parker Jr.,Sugar Ray Leonard,1,0,9512d3ef2707af6fdbe49ba6734f233b99807adaed0832b41bb5000df33498fd
+708,Who is the star of the movie 'Casablanca'?,Errol Flynn,Clark Gable,Cary Grant,Humphrey Bogart,3,0,157b167d148763e38cb3f3e53bf8e98acfecea0f8d58a9f9bff0ab26f6fccd2d
+709,Who is the shortest man to ever win an NBA slam dunk competition?,Anthony 'Spud' Webb,Michael 'Air' Jordan,Tyrone 'Muggsy' Bogues,Julius 'Dr. J' Erving,0,0,d89d614d37df68999c9aed932fc4f7f97cfe386235cab48ee5dac347cb618978
+710,Who is the patron saint of animals?,St. Isidore of Seville,St. Anthony of Padua,St. Francis of Assisi,St. Joan of Arc,2,0,4204ba2a9d935704bf368608e5d62e4d22696e42554ea698880c1896e465d68d
+711,Who is the mythological Roman goddess of flowers?,Diana,Echo,Flora,Niobe,2,0,8b2763048f81c1c34d6a47dc8d51f5243ba2d9fc3d5014d56d3622e48244e41b
+712,Who is the creator of the comic strip 'The Far Side'?,Jim Davis,Gary Larson,Garry Trudeau,Charles Schulz,1,0,8d48f20da56338b6ce2899804ff6694e38aaae4f7a9ed8f6b4a36c4ca721a8a9
+713,Who is the career hit leader among players never elected to Baseball's Hall of Fame?,Steve Garvey,Jim Rice,Pete Rose,Ken Griffey Jr,2,0,6901f5fb1f8391cd03565cbce84b349c7d32372f6042a5981e53017f1eeb1c81
+714,Who is considered the owner of a 'publicly held' company?,the CEO,the stockholders,the president,the government,1,0,58bc6e35f78262d8d27ab886b0453219ed335cc5ac3e4f34cf258644be62f1ea
+715,Who is an archenemy of the cartoon superhero Underdog?,OverCat,Muttley,Mr. Whoopie,Dick Dastardly,0,0,1bf729c17eecbece9533cf8a02c7189c41dafe19dc9c155bca0a43382c550d45
+716,Who composed the 'Moonlight Sonata'?,Mozart,Handel,Bach,Beethoven,3,0,6758d3838ffe0588f4fdab25a0f15bc3d51d73d742e68f9bf4aa5dcd3d3824f6
+717,Who co-founded Microsoft with Bill Gates?,Steve Jobs,Steve Wozniak,Paul Williams,Paul Allen,3,0,06ca212a52e08388e5296ef787fc9402643b77c4a3a696c2a5b9fc5ae7217c42
+718,Which 'Rocky' film features Mr. T?,'Rocky II','Rocky III','Rocky IV','Rocky ',1,0,6a03288c33bcfcb482933fa169b3accc7304edc4b93fa89ba3708a3eb3b5dedf
+719,"Who led the 1831 slave insurrection in Southampton, Virginia?",John Brown,Dred Scott,Nat Turner,Harriet Tubman,2,0,95f95d316542fd114a65560558b13e14c67682d5a6a0778a38c3355fbbfc9778
+720,Which Pope immediately preceded John Paul II?,John XXIII ,Paul VI,John Paul I,Hank II,2,0,ca19e8c179340de75f617928f995a59f7e70c37ba69349d63f5264f54ff3f475
+721,Which one of these World War II leaders was not at the Yalta Conference?,Stalin,Mussolini,Churchill,Roosevelt,1,0,bb629eb4daebcd4250b148944f38c630a49546abeb0eb772731d5be934f5024d
+722,Which one of these world leaders was assassinated?,Indira Gandhi,Ferdinand Marcos,Golda Meir,Neville Chamberlain,0,0,6cfcbe427147a60abf6f67452f4d7afea71979ad78da35cdab0e2c53def0cbf3
+723,Which of these words is spelled correctly?,decieve,foriegn,hygiene,wierd,2,0,47757617d62b570534b48a0f9a55fcaddd374a8b43db9624f9d5169a7a6dde4a
+724,Which of these words means 'yes' in French?,qui,oui,ja,okey-dokey,1,0,c157bad5d6cb09c5fbb6e79400d9c0f65e4049f8b7571eeb3a51e9a6c7c541db
+725,Which of these words is an adverb?,hurried,fast,speedy,quickly,3,0,4381f2b098ec74afd1b7f4163b2f1177c2c1eb38fe8c5173df02c3acb05f36fa
+726,Which of these words is a synonym for 'perambulate'?,kiss,shout,stroll,heal,2,0,09ab50306721e6c1ad82e77daf464fcdebf46110475010e8e9f923495afbf518
+727,Which of these vitamins was the first to be named?,Vitamin A,Vitamin-12,Vitamin E,Vitameatavegimen,0,0,4af52a6bd7b7b0ce35491dcbf6a49e99392e2d15e6a09960444efe7b352e4a6a
+728,Which of these toys answers questions?,Magic 8 Ball,Barbie,Frisbee,Slinky,0,0,c20fce0fc1ddce0cc188a4b96b7ead38f58c5ffed7a0b75506f3b4ce10b48bc6
+729,Which of these television series was not set in the United States?,'Picket Fences','M*A*S*H','Northern Exposure','The Paper Chase',1,0,fabee015c672214fab85d479f173527c297d1967afac2bf9eac79e3b734d1ac3
+730,Which of these television programs did not feature characters introduced on 'Happy Days'?,'Mork & Mindy','Perfect Strangers','Joanie Loves Chachi','Laverne & Shirley',1,0,f81727766b24065464a805c4292a52a5c759cead7bc37b893d0cca3210a6555e
+731,Which of these stores is not owned by Gap Inc?,Gap,Banana Republic,Old Navy,J Crew,3,0,7d5a05846558dcb3d907e0d91f451a91554cd507c6f251376e297a7f0793c359
+732,Which of these states is not the birthplace of a US president?,New Jersey,Nebraska,Kansas,California,2,0,e5126930612a20a11956a522766696a3c11f3c7bab614d4316bee81dbee07c37
+733,Which of these sounds is commonly associated with owls?,chirp,bark,growl,hoot,3,0,ef42a9026755bd6cf424ea18a2c7d782d0236ec83b01687504e7dbd169c1b2fd
+734,Which of these songs was a Top 10 hit for the rock band The Police?,'Radio Ga-Ga',"'Ob-la-di, Ob-la-da'","'De Do Do Do, De Da Da Da'",'In-a-Gadda-Da-Vida',2,0,f159e6ce559d5ed2a447862ee79b1fa030fc6c809e6a4fe292da7bf360d4c3c1
+735,Which of these would you most commonly find in a sconce?,candle,food,birds,books,0,0,00ee3a965df936198803a2ae123ea42c4a49cd1becd515ae5b6df5296656753e
+736,Who or what was Big Bertha?,a comet,a World War I gun,a pro wrestling champion,a giant Muppet,1,0,cb4cd9d58f60781d995ded4607f41c6f872373bc4d541d5f56c2688eaca579b7
+737,Who originally proposed the idea of daylight-saving time?,Benjamin Franklin,Henry David Thoreau,Galileo,Albert Einstein,0,0,9283bc2c1ff72b600d2500c6894cc6a7b08b06d74830efb1353c6779fd79b1f1
+738,Who sang lead vocals for the band Big Brother and the Holding Company?,Grace Slick,Janis Joplin,Mama Cass,Karen Carpenter,1,0,7243de91ada942c20a5973906b0a4a724a4bb78ce1bb5343132660eb69d80868
+739,Which of the following is a key geographical feature of Western Australia?,Inselbergs,Black Swamps,Coral Reefs,Barchans,2,0,f9f84dbd91d9c79e35db92f30c5df7f9a4c1368b30c65211988689d77eeb4511
+740,Which is the most abundant metal in the Earth’s crust?,Nickel,Aluminium,Iron,Silicon,1,0,dc290ca581261c256523fdc82012068db3130eb3070155c27ee77c7d68e832fd
+741,The most populous city in the world is,Paris,London,Mumbai,Tokyo,3,0,75dc783aefe7cbfb71bb38bd41beebe3e23833156a00cba308f98d64ae6569eb
+742,The most important river of Orissa is ?,Mahanadi,Bramaputra,Sharavathi,Godaveri,0,0,0c73fa5f8ae49f703f346b757c01d308f1afcc8fa771cec8bc65dbac545f9f79
+743,The chief ore of Aluminium is ?,Cryolite,Iron,Haematite,Bauxite,3,0,146bbe1f1fa20778133d75c2706b832498611b078bf9aa76585aa8e678b6646e
+744,Which is considered as the biggest port of India ?,Mumbai,Chennai,Coachin,Kolkata,0,0,4d7ea469b80c4c1ed7931c661ce905d512b18b95860277a386eeb402858c2ef5
+745,The first chairman of the Atomic Energy Commission was ?,Dr.Vickram Sarabhai,Dr.A.P.J.Abdul Kalam,Dr.C.V.Raman,Dr.H.J.Bhabha,3,0,577779ac343fc6d295002f2a41c0281e529df4d2023d18952313c81a465f1b18
+746,Deficiency of Iron leads to ?,Anaemia,Dental Cavity,Rickets,Malaria,0,0,ed844aa4ea42190fe7a6f474d831edc9964566f08432cea5cb0ba33afe0835c1
+747,Country that was called as Land of Rising Sun ?,Russia,Italy,Japan,India,2,0,ee059b4a4b769fa1e515443ca01de4e427b50d63c4f468adb1731239bc43d49f
+748,Mahesh Bhupathi is associated with ?,Football,Tennis,Cricket,Wrestling,1,0,95edf264a04dbe4e13dbdf9f8f48ea1c2b6718b3ea751b5e1923778ca76ae8d9
+749,The term“Googly” is associated with ?,Football,Hockey,Cricket,Wrestling,2,0,401a4a411f1af41cd4993bf13f77c8da9d09844d523a73294a99bd3ce5f7780e
+750,2010 Commonwealth Games held in ?,India,Canada,Britain,Pakistan,0,0,8866cebbf9d66bd460766e5c96e71c986576e7496fd32377aff0f461ee1a6695
+751,With what would you use a wah-wah pedal?,bicycle,stock car,electric guitar,baby,2,0,fe00217526ab2f88fa95907089797bedd7f05875cfcfa5061813258e4c2b5403
+752,Whose profile can you see on the front of dimes that are currently in circulation?,George Washington,Thomas Jefferson,Benjamin Franklin,Franklin Roosevelt,3,0,d7995a7aca896246b46cfc44062dbd42543c46881a2fcc55984234390a3fcd8d
+753,Whom did Billie Jean King defeat in the famous 'Battle of the Sexes' tennis match?,Jimmy Connors,Pete Sampras,John McEnroe,Bobby Riggs,3,0,d9472a121e9757f52eda848f6cdff6b63eaae1a5ea905e4c18f6356fda736147
+754,Who wrote the lyrics of the Frank Sinatra anthem 'My Way'?,Frank Sinatra,Kris Krist offerson,Carole King,Paul Anka,3,0,9ea04207fb073e4a2368a6cd798d7e41da910f61c5e6ca01bbc886ab2c377a13
+755,Who wrote musicals with Oscar Hammerstein II?,Richard Rodgers,Rogers Hornsby,Gilbert O' Sullivan,George Rogers Clark,0,0,f86eb1f752a54714b2bf5eaee65ff38619b3ace7450ff31488d2f354b3c00776
+756,Who was Charlie McCarthy?,a U.S. senator,a Chicago gangster,a famous baseball pitcher,a wooden dummy,3,0,0c4aad66d2e4118c43ba961ad60669faba0a8ea76f3c3bcd0fb46a9a4437d80d
+757,Who was not one of the Cartwright sons on the TV series 'Bonanza'?,Adam,Little Joe,Hoss,Ben,3,0,1a65d1cfab7eb1c8fd3f0a4984d413357569079757e8490862bcfd831076c5cf
+758,Who was on the $500 bill?,Calvin Coolidge,Andrew Jackson,Aaron Burr,William McKinley,3,0,c133ed908749c27cf96360de9c16d0fb89484e815a6012dc74d2f45b4903643d
+759,Who was president of the United States when Bill Clinton was born?,Herbert Hoover,Harry S. Truman,Franklin Roosevelt,Dwight Eisenhower,1,0,d7aca51c72d58622262b2213647c7614461d6f14d0b828f1e3f292ea864cf0ba
+760,Who was the English king at the time of the American Revolution?,Charles I,James I,Edward III,George III,3,0,99bb7a445601be94fd056d9722ee7cfe74da1cb6bc78b7cece2c1a810b1cda9d
+761,Who was the first American in space?,John Glenn,Buzz Aldrin,Alan Shepard,Neil Armstrong,2,0,c5459a168beea2769cca446613f3c936165ca8ae09ce9bcdb391773c53aaffa3
+762,Which of these snakes is poisonous?,anaconda,boa constrictor,copperhead,python,2,0,12660fb414ddd5dbdd67d2b583417c88fcd849516edee051072e516f49f6a334
+763,Who was the first First Lady to run for political office?,Hillary Clinton,Rosalynn Carter,Bess Truman,Eleanor Roosevelt,0,0,0cbe3b827ff074dbaa199e07fe39bfa3dbb7bc58166133d8daa66e92b1f6f478
+764,Who was the longest reigning monarch in French history?,Louis XIII ,Louis XIV,Louis XV,Louis XVI,1,0,b777d8fc2687ca86a50c048a23f92c42780fc2f0cac0d60db10ef3d85b944541
+765,Who was the mother of the Greek god Zeus?,Gaia,Phoebe,Rhea,Hera,2,0,365e580a2a39f6f4b3862d915972cfe06e2ea0f742f61f62854ca7439fef227c
+766,Who was the WNBA's Most Valuable Player of 1999?,Rebecca Lobo,Sheryl Swoopes,Lisa Leslie,Yolanda Griffith,3,0,6201f5f2117ddd778846d63611ea0a1608a7cb72d051fb9b22574d38a81a45f5
+767,Who were the Chicago Seven?,war protesters,bluegrass musicians,bank robbers,mobsters,0,0,cbf14193174ae049d52311210e283ed63569feb9d38f1574afe1fdaf77a2c868
+768,Who were the Know-Nothings?,a '60's comedy troupe,computer designers,a political party,a spy ring,2,0,638336103580f39e4ffda2348699ce2fcbf38d8a04d7415e2037983348580fdf
+769,Who wrote 'A Tale of Two Cities'?,Charles Dickens,Nathaniel Hawthorne,Washington Irving,Mark Twain,0,0,febddfb33d7000ff5dcd726fc2812f34fd43f2277f23fe6ec7a7eae991f01205
+770,Who was the first US president to resign from that office?,Martin Van Buren,Andrew Jackson,Andrew Johnson,Richard Nixon,3,0,8bddd5d6b98e3fbfc796db4a0dfac582f4f9f7581bd630ebca451d5b22f419da
+771,Which of these sentences is written in the subjunctive?,I am not your man,I wish I were your man,Wherefore art your man?,Your man is where?,1,0,9674f97bd9afb8737404fc413fa3c51b27f0058452d76466fde757775179f968
+772,Which of these rocks will float in water?,granite,limestone,shale,pumice,3,0,6786cc447b9c645c203eacc968176289d9ba069cad84ad158ba2b1c00800ab81
+773,Which of these rock guitarists designed a colorful line of men's neckties?,Eric Clapton,Jerry Garcia,Jeff Beck,Keith Richards,1,0,d4b705ecff1c8afb0436704056f46493a19ff71b0ce9a51c808cf8fa5b9f06f8
+774,Which of these is not a position on an American football team?,quarterback,tight end,striker,free safety,2,0,c6ab09195229c6cda840fd402cd60e12ea3d45e84efef659a98d73c2670a294f
+775,Which of these is not a 'lock' function on a standard desktop computer keyboard?,print lock,number lock,scroll lock,caps lock,0,0,6e73c754411dc0f11ae769b80289715936633373dcb13fc64ac01ee49cd2cd12
+776,Which of these is not a Hindu deity?,Shiva,Vishnu,Sanskrit,Brahma,2,0,f3bc3945e37baae811bdd27cae9482928f455dda53fc512ceb3ca1c23e820294
+777,Which of these is not a fabric?,Velveteen,Celotex,Seersucker,Tencel,1,0,bce6720e9a818da63c5351d101e1b51699a0a71b69f8428f1fc311cd277acd2d
+778,Which of these is not a city in the state of New York?,Perskippity,Kerhonkson,Schenectady,Lackawanna,0,0,23422f55c71fa86c6f29d11179a1ab2892c936ddd3e3330a210c1dfb320a03dd
+779,Which of these is not a breed of cat?,Persian,Turkish Angora,Bichon Frise,Maine Coon,2,0,91366fdf2ee59114c7783bf1038648623f152cee60f8be2eb0baeee3f54ea003
+780,Which of these is made from cacao seeds?,marzipan,soy sauce,chocolate,anchovies,2,0,13ce102862ca9e1e3fec82ed0dfa3ff386fb0e571110e75e246fb6042c09b0b4
+781,Which of these is commonly used to treat allergies?,antimatter,anticoagulants,antiseptics,antihistamines,3,0,5025631c4f497baefe32348983a0177ba3a615e05a8621224db1509f4ab16296
+782,Which of these is another name for a golf course?,Pitch,Links,Steps,Suite,1,0,1c9c614e466f3602b92119161ac05ec994d0a8f22d68b2c04f248f5d654be6c6
+783,Which of these is an Italian Design firm?,Escada,Fendi,Ghost,Mainbocher,1,0,5545c7b381760e5ced10ace626f001902bdf1f8f056187e170d7c47f06d8057b
+784,Which of these is a type of artwork consisting of pieces of wood inlaid in geometric patterns?,marquetry,parquetry,harquetry,sharquetry,1,0,353554ec0f25a349534599c20d65a3a529f20e065b844251c075a53a9c1f908f
+785,Which of these is a slang term for 'police'?,fuzz,shrinks,bean counters,aardvarks,0,0,9a3f208b244ec16a54dc4eb560a883f824bc71f954eb705f351244d468c74fb2
+786,Which of these is a member of the cucumber family?,green pepper,watermelon,potato,green bean,1,0,10a11cf3ed38be6348018a992629a7b9a7e35a3100942ad8e7f6e7356a03b9a9
+787,Which of these is a government agency established to protect investors?,AAA,NBA,SEC,MADD,2,0,a60a67c3ee7d9f108d953b404f7fa9af14d51f8036b332f9fa1d5aa28551b2a0
+788,Which of these is a fish?,sea horse,sea cow,sea snake,sea lion,0,0,a8f62830f59857b67e6296ed3653a2f30146da38b6ea29ecc5ff7f87074ba532
+789,Which of these is a commonly-known investment account?,CNN,EMC,IRA,IRS,2,0,530d1aed35f26b055e8517b16265619c437b7c44abbe40ba9a077c177e01c9d9
+790,Which of these household pets should be vaccinated for parvovirus?,hamster,cat,dog,bird,2,0,b815077bd7cd0cf68ce73cae111ce3887b99ebb92c2774ff4748c5ec6d603dff
+791,Which of these countries was not a member of the Axis nations during World War II?,Germany,Italy,Spain,Japan,2,0,5054c4e0acd67b4e3aed2b6d2a3a6839aba10ff5661d73f544104aa2a403bc03
+792,Which of these Democrats lost to Ronald Reagan in the 1984 presidential elections?,Michael Dukakis,Walter Mondale,Gary Hart,Jimmy Carter,1,0,d6c26c609394acdb482cdc813246643d8ff070d23c80c8b9a862ccafe5ecb4d9
+793,Which of these dishes is made from pig intestines?,haggis,chitlins,grits,chop suey,1,0,6f3b98a25f2680a90895d4cc3706aa23b8b4cb434723923e2d40a7b768652e0b
+794,Which of these evangelists is a cousin of rocker Jerry Lee Lewis?,Billy Graham,Oral Roberts,Jerry Falwell,Jimmy Swaggart,3,0,8bbcf98d3ac6cdd0a91e638b6a7a8ab55085f5f0fcf5d2c6734bb19f87ffa9f1
+795,Which of these famous baseball figures was once acquitted at court-martial for insubordination?,Abner Doubleday,Ty Cobb,Jackie Robinson,Billy Martin,2,0,72fc9a5d9b2ca85f6c59db54b00ca25a0aed0b33ad839388691dac37fd58f24e
+796,Which of these fashion designers was born in the United States?,Laura Ashley,Helmut Lang,Donna Karan,Christian Dior,2,0,fe227774a670c3c0a437003b657cb80cf756d324d29254ed444a3c6ef42518a8
+797,Which of these is not a spice?,dill,aniseed,cucumber,cayenne,2,0,4c3d53b3771ebf5c10f21b6a485314ccf910db8440a202783f65014f41d9ec45
+798,Which of these foods could contain small amounts of naturally occurring opium?,chocolate truffles,poppy seed bagels,carbonated soda,sesame chicken,1,0,6951b44eadcc7f3f0052e82a3241a3f1d7d28e07e4d6fe1b58b8a202b1b019ba
+799,Which of these foods is poisonous to dogs?,peanut butter,bananas,chocolate,olives,2,0,e50264b68c2d5d6eae8dbb2a8f812a7def0f368cedff48bd708569949ef778ca
+800,Which of these games is not played with cards?,baccarat,rummy,craps,solitaire,2,0,4258c4927ff66321c677372ea98d5c0ed0c8811868fe1e3aeda949ee4140bf53
+801,Which of these foods is not traditionally considered kosher?,citrus fruits,barley,chicken,shellfish,3,0,a2da5348e2eafa22516f3e3bb331a8ac3db9d0a0fe916d756038e7d41510ca40
+802,Which of these Hemingway characters is a newspaperman?,Jake Barnes,Rogelio Gomez,Frederic Henry,John MacWalsey,0,0,24d38d0c9205056b3a91399a5641f27c5f0826b784e862083f3379fd846efd40
+803,Which of these holidays is not attached to a specific date?,Independence Day,New Year's Day,Thanksgiving,Christmas,2,0,1c3bfd176f3a55f8857d10a99197f6b914343785f5dbf81bf88178075f3ba79d
+804,Which of these horror films spawned the most sequels?,'Scream','Jaws','Halloween','Friday the 13th',3,0,fb55b2cad6b0bb6fc1935c7afe60d011a3d494789774f0cc73bade03cf77c3a9
+805,Which of these foods could you catch at sea?,shallot,stollen,scallop,scone,2,0,cd0ed6508a6b429c7f16b8ce882704e47313744c91b0e9a500af4ac9e31a50bc
+806,Which of these companies is not an online stock brokerage?,E*Trade,EDigital,Datek Online,DLJ Direct,1,0,ca09fd88b1dfa557089b8822aaddf7cece2c6abdf7e2fadb5c1ce1d639e2cf0c
+807,Which of these is not a style of shoe?,gingham,brogan,espadrille,docksider,0,0,e02bfc4daa04945bb47eab4f1fbe7d9595d6657e67d17cf9a82ab2adbbb1be60
+808,Which of these is not a type of chili pepper?,habanero,cheyenne,jalapeno,guajillo,1,0,ec6523f4027092979862a70474cb78587845d6c75ebad2a3efdaeb75993f58e1
+809,Which of these rivers flows through France?,Volga,Seine,Mekong,Allegheny,1,0,6b825fb961130ee6b8fa049a83fe7a61d67449a43a094d0445a109d41b4949d8
+810,Which of these refers to an alcoholic drink laced with a knockout drug?,Zombie,Kamikaze,Mickey Finn,Molotov cocktail,2,0,8a59a6793bfe00b102c3dbb25eb84b240c6a35e7aab577a4115e020e541986ba
+811,Which of these popular games relies on bluffing?,Outburst,Balderdash,Pictionary,Scattergories,1,0,4226467b0f39c2fc41cfe062b358b0b1b1ff9a30ecb47d312a44e353ca1eded1
+812,Which of these plants is the national emblem of Scotland?,ivy,thistle,rose,linden,1,0,a4e727d8a9e51e3045eed595620d0f4355ee5b379865fa987854766785cd0a4d
+813,Which of these places is known for art auctions?,Shelby's,Nickleby's,Gatsby's,Sotheby's,3,0,140b133285dc752b4a91c1077bbaf1aa10c7a23c9ba969a2582832db0b545773
+814,Which of these performers made her film debut in Spike Lee's 'Do the Right Thing'?,Jennifer Lopez,Rosie Perez,Paula Abdul,Tisha Campbell,1,0,03d32cfc235e73745a43c32dda619b85dbe28ac4c7e1b8ad62ca29ad5e3c5118
+815,Which of these people was not alive in the 20th century?,Mark Twain,Thomas Edison,Sigmund Freud,Ulysses S. Grant,3,0,9da4a325909eb2775a227834167b533cd0d2e880f9e63f27c03eb0ef18cee7e6
+816,Which of these people was buried in the Valley of the Kings?,Louis XIV,Elvis Presley,Julius Caesar,King Tut,3,0,126eb4fd5b348b858d011e2415c01b477abfc94e1c4dce6493626516803f97ca
+817,Which of these pastas is spiral shaped?,fettuccine,rigatoni,tortellini,rotini,3,0,962638a88cf13d6250a7b5fffffa570390609b1438f6f1d3b83807a920413e26
+818,Which of these painting tools has bristles on it?,easel,knife,brush,palette,2,0,4ce9e5529157991a94a51afabb49675402a7147db91a6ea55974f7ae301749c8
+819,Which of these organs comes in a pair?,liver,kidney,stomach,gallbladder,1,0,ef93cac820b7a78eaa8e3fc0c5de5d926fee906e6ec35000e23f67e59b6a8680
+820,Which of these organizations is not part of the U.S. government?,NAACP,NASA,CIA,FBI,0,0,cecdd1b2c2a1e38cbe0813292c71db7b8e430c992e691cca0e209f541f0a0904
+821,Which of these names has never belonged to a Pope?,Leo,Lando,Linus,Lawrence,3,0,a13f43f992a6d0cb4ba4f1408d25129253f8042787ff92117538807544525b8b
+822,Which of these movies does not star Jim Carrey?,'Patch Adams','The Truman Show','Dumb and Dumber','The Mask',0,0,ce6dba7df5c0931d9745f827804142e9797ed9bcd33dde732a3000ea586740ea
+823,Which of these months has 31 days?,March,April,June,September,0,0,d97813277aba196b316e059efdc683e1c949ac20db12f1cfe4464214e0812114
+824,Which of these men has never been a head coach in the NFL?,Dick Vermeil,Bill Parcells,Chuck Noll,Pat Riley,3,0,98ae343c8daf3be2f61adc00624111187ceb792cf9000b0faf6305671edc073f
+825,Which of these magazines does not focus on natural science?,Tiger Beat,Outside,National Geographic,Smithsonian,0,0,d7426389e4b565caec0e84ad6cc7235988b18af2e4dfc86b2a810e29edc488d5
+826,Which of these is not a type of primate?,baboon,marmot,orangutan,chimpanzee,1,0,12fe8c0e830e49f3d25e12e5078838e0fbf9da9597252b78678d7d5db0a58124
+827,Which of these is not a type of rock?,metamorphic,sedimentary,igneous,deciduous,3,0,408bb2b511f07e5e13be226b592efc70c89cae31e8a3f6450bc3711e38a6bee2
+828,Which of these is not an ingredient in Yorkshire pudding?,eggs,milk,chocolate,meat drippings,2,0,382045f0cace43cbc6b58fa18222015ff4be748c32b7d2828ab3a0a8adbb834f
+829,Which of these is not found in a Snickers candy bar?,almonds,chocolate,nougat,caramel,0,0,d7e8c1f812ee265e42da239cf0085b770beadbfb3708a9efebce6f2b445ae713
+830,Which of these is not one of Aesop's fables?,'The Dog and the Squirrel','The Hare and the Tortoise','The Eagle and the Beetle','The Ox and the Frogs',0,0,f809caafb97626c6d93b3e0aadc76b22dfe94d484f8fcdb5e323ed27d814b2d6
+831,Which of these is not one of superhero Captain Marvel's abilities?,the power of Apollo,the strength of Hercules,the courage of Achilles,the wisdom of Solomon,0,0,d1f6356cb0659a1d7027ae38fab2342b72321fdd0aa9b2926b2413cff142f496
+832,Which of these is not a traditional Greek dish?,sukiyaki,souvlaki,moussaka,finikia,0,0,a3590090be089858e410424816b5c2ec3e136325fb4fded595ba3b7f19abde52
+833,Which of these is not one of the four basic forces in nature?,electromagnetic,gravitational,nuclear,centrifugal,3,0,8a8efa7e8ad36147658f4357b6cf254a1e760bff843e5652c98be68f3aabdab4
+834,Which of these is not one of the three branches of the US government?,Judicial,Executive,Parliamentary,Legislative,2,0,38965ae37aa85ec8353a9d25d39aa5c6dc256cc4b99708e6e7bf15efd946edff
+987,What does an animal produce when it lactates?,sweat,wool,milk,methane,2,0,501b47c4dcba81c85eab6b698329588d3e7a70128f4841ef21707dd48d5c7961
+835,Which of these is not the name of one of rock musician Frank Zappa's children?,Dweezil,Ahmet,Moon Unit,Lumpy Gravy,3,0,af9fd35e8f783546e7d73d64eb105f77b9d6f5cfc7d4535ab68fa807475bd96d
+836,Which of these is referred to as a 'pigskin'?,Football,Basketball,hockey puck,catcher's Mitt,0,0,7ed453689dd3ba8eef5df6d7df10e79d58e50fd227a224c4ba5d0131f3077191
+837,Which of these is typically not used as a spice?,dill,thyme,hemlock,marjoram,2,0,7ec6b3b49a659e2b9924f5950d7386a87f5c589f951181abdd2333dca5bdbf0d
+838,Which of these items is useful for removing ink stains?,baking soda,nail polish,hair spray,butter,0,0,d06ebd84956d5ec078d3d9268ba95bb0c6c95f61d195307557075742a4ec9ae3
+839,Which of these measurements is equal to one square foot?,50 square inches,77 square inches,100 square inches,144 square inches,3,0,3113cb8a0e495dbd10c37c6f735548a1092af3efc4813b9ffc2006e104807f72
+840,Which of these is not one of the official languages of the United Nations?,Japanese,English,Russian,Spanish,0,0,03ff1be7d0882a228df4766bdccae09c65d3bf8bb44438f70c9ba2c650f8a0c2
+841,Which national highway joins Agra to Mumbai?,NH 1,NH 3,NH 2,NH 4,1,0,ea43bdfe3fefaa62c2de2d3ceefc33504378a74f80b4c4ef4f90a9653751187a
+842,"What is the meaning of 'Betelgeuse', the name of the brightest star in the constellation Orion?",blossom on a shield,eye of the archer,the lion's mane,armpit of the giant,3,0,0a0b7929fdf9a54ac1a7a39c73442312a8dbfbe2a996e210ed0d9c59dc775996
+843,What is the last book of the New Testament?,Revelation,Judges,Ruth,John,0,0,d5dbc8bf9850c5ad0e458eb5bff0ed60b38f060b6af541186c903d3617ae2408
+844,"In horse racing, what is the term for a wager on the 1st, 2nd and 3rd place finishers in a specific race?",triple action,trifecta,exacta,triple crown,1,0,050c56cfb3354831eb2d700e578f12b0f67668eadbed620300d6de74340710c8
+845,"In Greek mythology, what is the name of Zeus' father?",Apollo,Cronus,Prometheus,Hercules,1,0,bd8ebcbcaee4f128fed5a5af136ac05685fc2c2b3033f898bdf56b3f24a16770
+846,"In golf, what is one stroke over par called?",eagle,bogey,dormy,birdie,1,0,711e518cf9b3a2dbc8668dd2215fb268557fcb6df53bf369d0241b55ee7db2e4
+847,"In cooking, the term 'au gratin' is sometimes used to describe a dish with what topping?",cheese,fruit,gravy,whipped cream,0,0,1674162c9c6c61cc752bcc4229898214a02f47eccd81902ae4878df6f5fdc269
+848,"In computer terminology, what does the acronym 'ISP' stand for?",Individual Site Privacy,Investment Stability Plan,Internal Security Position,Internet Service Provider,3,0,332884416525ae4bf91c761ac3c21b86203513b3e5727e0a342448afa0f5ee0a
+849,"In computer terminology, what does the acronym 'FTP' stand for?",file transfer protocol,full time portal,full text processor,free to print,0,0,8797ad1fc925fdb1c30ca268881734939b1de7a6439686523bd65244b3b0e4bf
+850,"In British currency, how many pence make a pound?",10,100,500,1000,1,0,7bc12937efe95175e20f5b255a8a4a4e68e54ae37e254b5b9646e8ed4bcd28e2
+851,"In bowling, how many pins must you knock down to get a strike?",zero,8,10,12,2,0,88d726ea4586f30b4add14ba061554851368ba6ede3b8ddcf37bd541f570388c
+852,"In baseball, how many balls make a walk?",one,two,three,four,3,0,9169661075450bda03f7a0e7d9a4442fbf0aa2c3f20b2fa541ea428a097e4d1c
+853,"In an adult human, how long is the large intestine?",one foot,five feet,twelve feet,twenty feet,1,0,66b8cbe3f13c6b46d39d084510544d469847c9ee2051e62e650abf714185a8af
+854,"In American football, how many points is a touchdown worth?",two,three,six,seven,2,0,f0c2091b2bb015e60d8121f6069c02d14bba07e43f18ce69701b34155f7ab4e2
+855,"In America, what is the main ingredient in pepperoni?",fish,pepper,wheat,meat,3,0,e81602637d7855d5007553d759768297f3e7b491ac2ba228e12fa945a61619a9
+856,"In a game with no wild cards, what is the highest possible poker hand?",straight flush,royal flush,full house,four of a kind,1,0,c044b012123fcfbfd0bef9fc9bbddb258bd6f3b94cf6a4985af39ad371de2f30
+857,"In 1986, Libyan leader Muammar Qaddafi drew a so-called 'Line of Death' over what body of water?",Gulf of Sidra,Gulf of Oman,Red Sea,Persian Gulf,0,0,cc088f0b0ee8cee30543399ddb9be54453f553bf6e324e704b1bb2b3c0860b85
+858,"In ice hockey, which of the following is not a penalty?",hooking,charging,carving,butt-ending,2,0,a8c7cb1d2da3bb3f5e04370017bb27ff54cc84596f10d1c304951f1b442e008e
+859,"In 1978, who became the youngest jockey ever to win horse racing's triple crown?",Jerry Bailey,Steve Cauthen,Willie Shoemaker,Pasquale Devito,1,0,d7e1d933af3b5cf1023926e0f8d4064a01f6273af15777ad7e241c66d7b2662d
+860,"In 1926, the Harlem Globetrotters basketball team was formed in what city?",Boston,Philadelphia,Chicago,New York City,2,0,29303e04d3fc62056f97e2f19bc3339fbb755b472131fb7c9d864629704257fd
+861,"In 1909, Frederick Cook claimed to be the first explorer to reach what location?",Mount Everest,Bermuda Triangle,Atlantis,North Pole,3,0,617b6c70db27143f331eaad3cd029395e6e213437952eae2523aed0703c21d94
+862,If you work as a 'dolly grip' what business are you in?,sheep farming,film production,construction,moving,1,0,45c37b2f61b0db27369ef52d7e05e5f31d564d7a5a7924d1312f210182c938b2
+863,If you have a 'sawbuck' how much money do you have?,$1,$5,$10,$20,2,0,a97af279c96121bcb379807e8b79382668d054cdb4bfad9eb2d671632513a426
+864,"If you dial '411' on a telephone, who are you calling?",the police,the White House,directory assistance,Moviefone,2,0,bb5044553903118f8a8d7f9ca3af26e1640f3fc7f313d41494b546cd1b16f480
+865,"If you ask for 'gai' at a Thai restaurant, what will you get?",shrimp,chicken,beef,pork,1,0,7c13477d59de1f5a32dbbfa75f5436a4f599af55d1f6a10838a3aeefefafe6d3
+866,"If you are watching a Shavian play, who is the author?",Shakespeare,Aeschylus,George Bernard Shaw,Anton Chekhov,2,0,a71510508aff9765fde9a1cad185aed6a1bf511ac05cc51cb073a822d2959a95
+867,"If you are truly afraid of the dark, what do you suffer from?",hypnophobia,cryptophobia,hadephobia,nyctophobia,3,0,d125863aa73e1278777c096bbf113dcd46452c96c7405a2f79c6b9fd79d67606
+868,If you are 'riding fakie' inside a 'half pipe' what are you probably doing?,skiing,biking,snowboarding,surfing,2,0,e33211c7535d2ca82be43e074fc377c7ba94667b2e6b12e8465ffb07c8b06511
+869,"If someone has cataracts, what part of their body might need an operation?",ear,hand,eye,knee,2,0,4fd52dbca01544a822c342c5bd614d7bfaeba7c9fc8275478daec30c09088bfd
+870,"If Christmas Day is on a Saturday, then the following New Year's Day falls on what day of the week?",Sunday,Monday,Friday,Saturday,3,0,e8b6edb930ef4c9dcbe16ff985bef7cdd80eaa8a6438c4236cf740f8368f860c
+871,"If a ring has the number 925 stamped into it, it is most likely made of what material?",platinum,gold,steel,silver,3,0,146c05933a152978ca5354ee78f08a1c2b0cdef395fb4ac44c72765997ad5299
+872,If a piece of music is in 'common time' how many quarter notes are there per measure?,one,four,five,ten,1,0,18afe7a6368e1e52437f51b8b872160422e8f9143c4f9eaf1846640cc437222d
+873,If a business files under Chapter 11 what is it doing?,declaring bankruptcy,selling stock,buying a smaller,company suing the government,0,0,50f1b927a2ec2bf10a4fb153f15a9636afb8a28200f80877195e00b6a9f3af6e
+874,"In 1960, Nazi official Adolph Eichmann was finally captured in what country?",Brazil,East Germany,Argentina,Paraguay,2,0,62b7c0f874dd7e2b267aae9ecd42369d46c9021789af6f3495f9a93c572163f2
+875,"In Mister Rogers' theme song, what does he ask you to be?",his cook,his student,his neighbor,all you can be,2,0,e00503858466f74cb2ede034d48a5270db075ec18718f9a5b95704fcc69d02a9
+876,"In mobster lingo, if you 'sing like a canary' what are you doing?",impersonating Sinatra,talking to the cops,killing an enemy,betting on horses,1,0,c3f9deef3222c230025238da66e0d8546a80c8208e5af3fbf31412b1d0942e2d
+877,"In soccer, which player is allowed to use his or her hands in the field of play?",midfielder,center,sweeper,goalkeeper,3,0,beac240be5c51aff5ebbc9ccd0239386079d6447ce72625b23c909719049f4ef
+878,In what decade was the Hula-Hoop invented?,1890s,1920s,1950s,1970s,2,0,04a45737fddf02201a3e40b8ea1f318f58f6d41b99670581d670de9e11af6491
+879,In what decade did Israel become an independent state?,1920s,1940s,1950s,1960s,1,0,45c2512dc94166f5993b2944ee10e0256f452a849dd5ad8d3ec61820b0692988
+880,In what country did Pokemon originate?,France,Hungary,Japan,Canada,2,0,b8f09b74170c6f0f720a0cd8449fc55c90cb9f344b995f59f044e6d187b1eb72
+881,In what country did Magic Johnson play professional basketball during the 1999 season?,United States,Sweden,Israel,Turkey,1,0,e1db67616efcd22b6294519dcfc581ec9213ec65242ff695095114fd15dbe017
+882,In what country are police officers referred to as 'bobbies'?,Israel,Greece,England,France,2,0,90685f7ea6c0f034fb23eb849ccd01e9ae9561ea6eddefd957e6bb0a009588ff
+883,In what city would you find people studying art and design at the Fashion Institute of Technology?,Paris,New York,Los Angeles,Melbourne,1,0,949e69fd81b5b82670beeadfa36c666a7ba0d033796da9d082d6376ef5d35c3b
+884,In what city is TV's 'The Mary Tyler Moore Show' set?,Dallas,Chicago,New York,Minneapolis,3,0,7dbfc34012804096fa270608d166aa883ea90200ba3766a2f35bea3d640b6730
+885,"In traditional English puppet shows, who is married to the character Punch?",Debbie,Victoria,Judy,Barbara,2,0,6c8ff85ca725455f9f859aa2617d8ea7716fc26885f459a48e42186e60071394
+886,"In the United States, what is the first day of spring?",February 21,March 21,April 21,May 21,1,0,84b763c228cfbb9c13cc57a987b93383985d4cabe7431fa69726adfb29893c7b
+887,In the phrase 'Y2K' what does 'K' stand for?,millennium,computer code,catastrophe,thousand,3,0,44b3def463a9a0910829121f4fa7eef8c5132e5b2952861d3de4b72891afabbb
+888,In the television network abbreviation 'ABC' what does the 'A' stand for?,Artistic,Audio,American,Adult,2,0,45bd582ef0c843711373adaae4de60a3cdbccbefd7751d86fe3bf65776a66002
+889,In the story 'Jack and the Beanstalk' what does Jack trade to get the magic beans?,a cow,a hat,a harp,a goose,0,0,69212745115c66bb9679a825e5360194b7c345693546405705b1126ca7d1b1e8
+890,In the sci-fi movie 'Fantastic Voyage' where do the voyagers travel?,through outer space,through a human body,to the ocean floor,to the center of the earth,1,0,7be95f0b786866e6b2bc097b524b096a8e12d9d24e8f8a492c372a8381a04fcf
+891,"In the original 'Get Smart' TV series, what is agent Maxwell Smart's code name?",Agent 86,Agent 99,Larrabee,The Chief,0,0,5a1b61568cba4178f0543ac1188742d756aff76e8199ed8ad3348182d5dfc5f6
+892,In the novel 'The Adventures of Tom Sawyer' what is the name of Tom's sweetheart?,Polly Finn,Becky Thatcher,Nancy Drew,Emma Bovary,1,0,5e86ed65660da5dc26fcbba8b1a20044a054d4fe25a61fc3ac9d74fd4e01c2e3
+893,In the novel 'Around the World in 80 Days' Phileas Fogg's faithful valet is named what?,Sancho Panza,Passepartout,Renfield,Savoir Faire,1,0,2318c2b39f4e40fdc2b0befc973554102d6e6b85fe34572e19b19366a7c47ec0
+894,In the movie 'Star Wars' what kind of creature is Chewbacca?,Woolie,Boobie,Wookie,Klingon,2,0,7b510cdf295d4bddcd3459ae1f0d9fd26f6b7ec413c0083af69f3a92fb65ab37
+895,"In the 1960s 'Batman' TV series, who was not a guest villain?",The Minstrel,The Archer,The Bookworm,The Squeegee Guy,3,0,0da22e3a2585bdbc808d0ccb7a8b9119946f181fc492c6700c0fec2f67964891
+896,In the 1976 remake of the classic film 'King Kong' what New York landmark does the giant ape climb?,Statue of Liberty,Empire State Building,World Trade Center,Chrysler Building,2,0,1226735cc07c5ecf712b6ff97a92f228b59d297275d93b006013910585d7c0b4
+897,In the 1992 animated film 'Aladdin' what device does the hero use to travel from place to place?,talking car,winged horse,magic carpet,hot air balloon,2,0,8348c966d003098ce349079856cf159df9d708c3102e6d51bf415215a85ed930
+898,"In the Arthurian legend, who is married to Guinevere?",Merlin,King Arthur,Lancelot,Camelot,1,0,276317337fa10f28f7c8e20e3d0d30f6194593ab94cd78d20a18b3bb1c9835d5
+899,"In the card game blackjack, how much are a queen and a king worth-together?",11,15,20,21,2,0,af772206334150fa40f1ec457f78fddcae37af0ff532466f5c7b1f7f5350a2da
+900,"In the children's game, what color is 'Rover'?",green,black,red,blue,2,0,36bd91ef4169c0f36ee999cfa02b252a3aa87481c8f00f968f81ddf54ee57b8c
+901,"Huffy, Schwinn and Raleigh are all brands of what?",sportswear,dishwashers,cigarettes,bicycles,3,0,33ee37759c4971cf0bbea3d2d3e0ebf6c9e6eb7f201d519fc4ada30fc54163eb
+902,In the classic song 'Take Me Out to the Ballgame' for whom do we 'root root root'?,the umpire,the home team,the bat boy,Mighty Casey,1,0,4943c983a79f5a60ebdd9a643b16e282075ec954d73cc598c4ceb742229cbcd1
+903,In the famous ballet 'The Nutcracker' who does the hero defeat?,Sugar Plum Fairy,Rat King,Snow Queen,Marzipan,1,0,d7ab0473d6ce64f943aafc090abd004825945987e61b685a25d6c39535249ad9
+904,In the famous baseball poem 'Casey at the Bat' Casey plays for the team from what town?,Stormfield,Fog City,Mudville,Waterlog,2,0,7606e9e14cc3a7c57e40a10485f1135eb41f012715fe9fefc4a04b9d936755dd
+905,In the film 'Easy Rider' what emblem is on the back of Peter Fonda's leather jacket?,peace symbol,American flag,two white doves,Harley-Davidson logo,1,0,6f120c4db1340d4b9304050ed56a2dc7287426e9979bb1724b3d64ebbdf8150b
+906,In the film 'The Talented Mr. Ripley' who plays Mr. Ripley?,Jude Law,Matt Damon,Dustin Hoffman,Ben Affleck,1,0,d80b22d1b8f14b842dc343006ceff85da1a87b47480661c90d4df8ab7085a8bf
+907,In the Jimmy Buffet song 'Margaritaville' what is the singer searching for?,a lime,a shaker of salt,his car keys,the bartender,1,0,04ebadf231cea0ba08c6f38c67c6509d904be1dda343bbad86cd768e080ea9da
+908,In the movie 'Austin Powers: The Spy Who Shagged Me' what is the name of Dr. Evil's diminitive clone?,Little Buddy,Mini-Me,Small Fry,Dr. Evil Jr,1,0,25087038b1682197e3a8c47606a8a0ae1bafe98a0db5c232ae9d7c871c6120dd
+988,What does a pH level measure?,acidity,density,wavelength,humidity,0,0,cdcf73ef27bf821200951ce43590b3715e741cad1eca03c1e6950b8d68c64af5
+909,In the comic strip 'Peanuts' what is Schroeder known for doing?,Dancing,playing football,playing the piano,Flying an imaginary plane,2,0,c540462e7c15754f7e1dcb8ec12d50d7644798093901848ab4ea6d39e55b9b19
+910,How long is Hanukkah?,one day,five days,eight days,two weeks,2,0,d679d88e9282a121739f248da99782d7ba59370f573eed0837774233cbf80f03
+911,How much does Peanuts character Lucy charge for her psychiatric advice?,5 cents,10 cents,75 cents,$125,0,0,a29e779923fe79e8b4c088458fd30bcf8861dd1124509864821caf77ccb126f9
+912,How many states were in the Confederate States of America?,11,13,16,22,0,0,9dd221f7f67a4731bb61ddb03d9d52fd2074cad29cc1bff32071b7929854a125
+913,By what nickname is the Federal National Mortgage Association known?,Morty,FEMA,Freddie Mac,Fannie Mae,3,0,c3301874cfe21264166620aa1dcde38a5605d156213a76b17fe4040c138e360e
+914,"By what collective name do Christians refer to God the Father, God the Son and the Holy Ghost?",the Trio,the Troika,the Triumvirate,the Trinity,3,0,be26676dea50bd9840f0ba7a5c4b7cc4ffd297c9e75bd389537d820680c96b4c
+915,By what name is Bob Keeshan better known?,Bozo the Clown,Pee Wee Herman,Captain Kangaroo,Buffalo Bob,2,0,0c86ae2fc6c22e5215aaa6d2f63eeb156a098c36517ea856c6f7b8ed1e54082b
+916,"Before he went into coaching, Phil Jackson played for which of the following NBA teams?",Boston Celtics,Los Angeles Lakers,New York Knicks,Philadelphia 76ers,2,0,34f3a0bce99fb7b11f97d350fc3c4e5bf7b629e08853a6e585e81086ffedfa7e
+917,Backgammon is a how many player game?,Two,Three,Four,Six,0,0,e069cf716f2dee7bbd364084e7a59bf95f9bb49ab5e44e5d49db7496860d80aa
+918,At what age can someone first attend an R-rated movie without an accompanying adult?,15,17,18,21,2,0,7154eb98823541ebd1afec5646be659b6b8c8c14dceb6619d274c4603065b54b
+919,"At the equator, how fast is the earth's surface turning?",about 100 miles per hour,about 500 miles per hour,about 1000 miles per hour,about 2000 miles per hour,2,0,c86a537bfb2b2880b72118632169214b0947a37393d8c1c62c352cde41a6cd87
+920,Astronaut John Glenn served as a pilot in what branch of the military?,Army,Air Force,Marines,Navy,2,0,25503d2d2a7219e00c9c1209d975612a4491d5bcd7dbbc40c29ab18d01f33641
+921,"As of 1999, which state has the most Girl Scouts?",California,Illinois,New York,Pennsylvania,0,0,1fa40241c4e7cd719ab60caabc53940ef8427bed3713c68b32e7d1cefdbb9e47
+922,An airplane's black box is usually what color?,black,white,orange,purple,2,0,3fbca2b0baedaca34072effe3eb12d6e419d89a5699e6e12b3f42907cb888608
+923,"After Prince Charles, who is next in line to be the king of England?",Prince William,Prince Andrew,Prince Edward,Fresh Prince,0,0,8e07e31243d3a4825e9ac22ac93db4076b0b71dda1d65e6cee68fc82625dc75e
+924,Ada Lovelace is credited with being the first person to have made what?,a computer program,a souffle,a brassiere,a mystery novel,0,0,d283fc3032833512e28faca3fbcc42e2f1529f802a6ba9672fbb6d7158fa9820
+925,"According to the USDA, which food group should you eat the most servings of per day?",vegetables,dairy,meats,breads,3,0,87047c31ee1384b6bbf86e7926b3c51ba906205075d1d91f2e5c82838a913068
+926,"According to the title of a popular children's TV show, what color is Bear's big house?",red,green,purple,blue,3,0,bd179bb639c95442b8bb8ffc89e8adc9678c8c56e40a6e595a39343c002b9f4c
+927,"According to the proverb, necessity is the mother of what?",Invention,Luck,Problems,Procrastination,0,0,f02f6743f753c1616641dee9e4842dd20afe773c54c2b9d8e1d0bd459326bb96
+928,"According to the popular saying, what should you do 'when in Rome'?",watch your wallet,see the Coliseum,as the Romans do,don't drink the water,2,0,0d0f4e4731a2080c9f952187222190e31b050abec2d580c39a4bd1d38905dfec
+929,"According to the Mother Goose nursery rhyme, which child is full of woe?",Monday's child,Wednesday's child,Thursday's child,Saturday's child,1,0,4b3882167706832164590246f6bfe59d6bbbdcde7bd63e1d97b93e7e16608526
+930,A knish is traditionally stuffed with what filling?,potato,creamed corn,lemon custard,raspberry jelly,0,0,a2f1ac0561faa4bea99b1e2e70aad8da88556772cd35f62f4a055b318360709f
+931,A pita is a type of what?,fresh fruit,flat bread,French tart,friend bean dip,1,0,a80fc42d15fa778e08067c59eae8e0015b948042adc7e99177bf6e6e6c3fd7da
+932,A portrait that comically exaggerates a person's physical traits is called a what?,landscape,caricature,still life,Impressionism,1,0,a70ad56e687fadbf13d047eb9420981ac6b46ae9fe8a9a6615dc0f9ad3a169fe
+933,string,string,string,string,string,0,0,473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8
+934,A triptych is a work of art that is painted on how many panels?,two,three,five,eight,1,0,d14bf3947ffcdcfe266ab4bf3f479a4e3a9ae1550e840c54ef556fdcb7b4b4e5
+935,According to a famous line from the existentialist play 'No Exit' what is hell?,oneself,other people,little made large,hued in green and blue,1,0,1106b1a14df08adb1feb9782ca16cfb133f7e0b1a00846ad737f4a3968e652d3
+936,Cheddar cheese got its name from a village in what country?,England,France,Switzerland,Denmark,0,0,e823d22e44f6fd4c9fcd7b238bcda6c280e46d60b868c20b527fc5848f828fba
+937,"According to a Yale University study, what smell is the most recognizable to American adults?",tuna,laundry,popcorn,coffee,3,0,e7793358f6806e4a442a21f4be5265ebfd931e4f36ba52d1eab35bb26dd66bb7
+938,"According to Greek mythology, who was Apollo's twin sister?",Aphrodite,Artemis,Venus,Athena,1,0,e31d0fa6e4cc74c523b48685a0660d61a3d86741aac2be7d11b03efbef607510
+939,"According to legend, if you give someone the 'evil eye' what are you doing?",cursing them,blessing a child,counting money,passing time,0,0,a27baf91e3710c7af084e9f7c8a07aa620c5623cedb588bbc76cb3630e53da64
+940,"According to legend, in what country are you most likely to meet a leprechaun?",Ireland,Poland,Greenland,Scotland,0,0,0d74c244cea6d1cc488a57a81a0bd34098cd6bbaaa27bb33287b552012d23626
+941,"According to the American Kennel Club, what is the most popular breed of dog in the US as of 1999?",Poodle,Beagle,German shepherd,Labrador retriever,3,0,1414688997d1584cf3cc84651c70d3a9e2f86f7a4ce102ba4fd80f2537bf3c9f
+942,"According to the Bible, Moses and Aaron had a sister named what?",Jochebed,Ruth,Leah,Miriam,3,0,df6d7ac8a334cef216b84eb8b976bb8382f52625f702c77d80075f2da31c9066
+943,"According to the children's nursery rhyme, what type of ocean did Columbus sail in 1492?",calm,blue,windy,really big,1,0,1af9c943937f72234f1d867c13ffe6e331e9d8b84e9f4859f858cdf2f1860848
+944,"According to folklore, the 'jackalope' is an antlered version of what animal?",chicken,rabbit,moose,snake,1,0,14bbb50b8bbed37b837349a63f5b069dc703189a4d9940d1b55e4d9f7a100319
+945,In what forest did Robin Hood live?,Black Forest,Petrified Forest,Nottingham Forest,Sherwood Forest,3,0,f27d4a17de00684b58dc48b065de270d9f5fffdec93e07f37ed20dc8ab3b520e
+946,Cheese is a necessary ingredient in which of these dishes?,sushi,french fries,veal parmigiano,chicken pot pie,2,0,6112d9c0ed2f9188670d7994bb33904a35d4121887a7151147a93f98504133c2
+990,What do you call a young cow?,mare,lamb,kid,calf,3,0,e0bbd3478f497a99806696ebd3b6108ee419dca2290b49c0e520db546fbac9e3
+947,During which war did US troops fight the Battle of New Orleans?,American Revolution,Civil War,Mexican War,War of 1812,3,0,616a269e2d3922e4cf63ec21908241a36b572cf31a05d93ac1ae2e096df1de0e
+948,How many stars are on the American flag?,13,48,50,51,2,0,c89412fe82bc4f91adeaa977ff2f036516966a5b24dd0109aa322e4140627709
+949,How many spikes are on the Statue of Liberty's crown?,five,seven,nine,thirteen,1,0,b8bedaaefc146fd46c321e9ee5ce3009ebdae71fda49598c0b4f16f4990dec4e
+950,How many ships did Columbus set sail with on his initial voyage to the New World?,Two,Three,Five,Ten,1,0,c0e1e396a4441f178ee5664b4d933ece09d95754fca7617b5f5a7c87e6e1f664
+951,How many ribs are there in the human body?,18,24,30,42,1,0,d23ba0b761462d286a098ea8f6c2f6e8f85a867752423a95bc219a3d0e483ee8
+952,How many quarts are there in a gallon?,one,two,three,four,3,0,8f687e79f0c3b69f36c4f0fe84792761ad1e3cc9a045dc3494827edd7bbc21fa
+953,How many periods are there in an ice hockey game?,One,Two,Three,Four,2,0,83f5cc736208b2b181c6d6ec65e2d51010694d4ff6459934819676a5591dde1f
+954,How many ounces are in a pound?,4,12,16,32,2,0,3a19b994e8c94ca20e397fd270be5da68985622ac501ef76090e6463540910cc
+955,How many men has actress Elizabeth Taylor been divorced from?,five,six,seven,eight,2,0,52bc56bfb0c76f1a235b64859da69f224b2d3b6a5a1d9855ae9ef09ab2d975a0
+956,How many keys are on a standard piano?,20,54,88,100,2,0,6bbf17cab810bb64cea6b77711551db56b73e3c99dcccfbb252297e4630422a3
+957,How many innings are there in a regular Major League Baseball game?,seven,eight,nine,ten,2,0,268857a9b9b29f3a41ceafb36c7e86abd999940c0630dbe5d40c5bb4471c2c16
+958,How many eyes does a Giraffe have?,one,two,three,four,1,0,bed43330498f4ee44511154657d964c7092d946baeaffe670a76077d6e079b5f
+959,How many digits are in a standard Visa credit card number?,12,15,16,20,2,0,b7ab0a94f09352c0c767229aa080e32675f563eca5c16e9a8889813a7ace69ea
+960,How many axles does a standard automobile have?,one,two,four,eight,1,0,6973a63690c9d96ff5ff042bc8a88b73ea9c1cb32368521066c83bc9726e2391
+961,How many $100 bills does it take to equal one million dollars?,one thousand,five thousand,ten thousand,one hundred thousand,2,0,2f3f627a4cd7b2fb71f55b8f1a71d5e2277ce36a1c49d9d78cfecb74984cbba0
+962,How long is the time on an NBA shot clock?,18 seconds,24 seconds,30 seconds,35 seconds,1,0,319a296500879556abaf8938d6d62f8a26d5f84ef84acba40ca933f4841b6eab
+963,How long is a single term in the US Senate?,two years,four years,six years,eight years,2,0,95a9ce6d3d6d86c2e29f98148dd8ef88a8466a0791a6e584cb5f5318d00438c2
+964,How is the word 'ambulance' normally written on the front of American ambulances?,in French,in reverse,in braille,in gibberish,1,0,299a0d7023125f920ae9010630fcb63009fa0f13359c321ad34815b6f837e74a
+965,"Each year in pro baseball, the player voted as the best fielder at his position wins what?",a brand new car,the Gold Glove,the Silver Bat,the Brass Baseball,1,0,3feec9725fe64ed7524b5465b8d67325893636fea441c23d7ae289f9a95afc55
+966,Elephant tusks are made of what material?,coral,ivory,bone,calcium,1,0,e2b0a32414939e8591aa832ea8d8cb1f5045438bab7556cdbf87b8cc94d3e7b2
+967,"Excluding wisdom teeth, how many adult teeth do humans have?",28,32,35,40,0,0,23ca72ab0d55eb1da0d845f550f9849f652a655a9e9021911fca4d2cfb154b0f
+968,"For a man and woman on a date, 'dutch treat' means what?",the man pays,the woman pays,the Dutch pay,each pays their own way,3,0,404636e4c63896780ef627991ab48079857c616e797328eefcd0cfd1806399e5
+969,For what purpose would you use an awl?,to shoot ducks,to polish floors,to make holes,to weigh fruit,2,0,9de8a9b9291a514772949f4b18c76bcfd2df305fc2140a694fe5a67136131ef9
+970,"From 1971 to 1997, the Democratic Republic of Congo was known as what?",Zaire,Angola,Rhodesia,Belgian Congo,0,0,41d58b951564467ea4b8aa836dc87c2c42f623db48e4b34555b5a7ffd8678c93
+971,During what war did Francis Scott Key write the words to 'The Star-Spangled Banner'?,American Revolution,War of 1812,Civil War,World War I,1,0,f576dc12f113657274f34a17d147a1e98054dc9caa6870ac2d67c7d205fc1c6f
+972,From what language does the term 'R.S.V.P.' originate?,Russian,Italian,Portuguese,French,3,0,0d11b11ba78ea9b13faca2a777e430e027c7a5a8f7019c343e5c910e08cf2545
+973,Gerry Adams is the president of what organization?,Greenpeace,NASCAR,Sinn Fein,PLO,2,0,923cca82ed88d889baa638037e9062b5474010f50d1e00bdbc9c2ff4a6b7b2d7
+974,Girls of what religious community traditionally wear bonnets?,Amish,Sikh,Roman Catholic,Christian,0,0,abe6d4158479ede2c5e569748df5be18521c52d9e5512cae615f776ddda3a6d2
+975,How are actors Charlie Sheen and Emilio Estevez related?,they're cousins,they're brothers,they're father and son,they're uncle and nephew,1,0,f5f5499a244a08f915fe275d1cad8be1eb2e5a8969b70fc89233d4bea713a9e1
+976,How do you express 3/4 as a decimal?,.25,.50,.75,.90,2,0,5f202c9f467164bf5f1d32158649fba39c26ca455fe03183c6ec6db8d72fc407
+977,How is 4:00 pm expressed in military time?,1600,004,0400 ,4:00,0,0,841f608cc9b9887c086dedf224b39a9440feece9780abf474ca91ec2aeaaf12c
+978,How is the Arabic numeral for '2' written?,2,II,I,ii,0,0,cfe94f64810eff45aee172a2a7d9b6d4a041ecd7f85f9f6d76cb444304fa2d78
+979,From whom does the Lutheran Church get its name?,Martin Luther King Jr,Martin Luther,Luther Vandross,Lex Luthor,1,0,070222f55a30a5b157460d2b08b184d58416315851900436c1f5af72d75043d8
+980,What is the last letter of the Greek alphabet?,omicron,omega,upsilon,zeta,1,0,337b5b6e2b09a4cc9b806b1ee9f899198a4d7ddac376d58d4d589b2b49bdcead
+981,In what restaurant can you order a Grand Slam breakfast?,Denny's,McDonald's,Burger King,Hardee's,0,0,2d8b0f7f19dc9db107a1ebe0fd0453dea1fa94545da088cad49142219f7212c2
+982,In what sport do you find 'steel cage' matches?,boxing,fencing,pro wrestling,college basketball,2,0,1286cba94523fd64576dfa193eda7362b722ba1a9847fc7e7942f9b2a9b77d65
+983,What does the 'ROM' in CD-ROM stand for?,Really Obscure Memory,Run-Other Memory,Random Object Memory,Read-Only Memory,3,0,c28030ceae7fcd9977f6010404c29770e5bcea671086c25a650684ddb353cec7
+984,What does the Latin phrase 'e pluribus unum' mean?,What a crazy life.,In God we trust.,"from many, one",for the greater good,2,0,ae61082de1379189d0e0814ab3ea13e116a5db9e66a634d067ebb0e59c59d3f6
+985,What does the acronym 'REM' stand for?,random energy module,rapid eye movement,red entertainment machine,really energetic music,1,0,a21317be4f753b29b78e366dc4b55d46b4dca1403d9760a300719ef4435e04f7
+986,What does it mean to work 'pro bono'?,work overtime,work without pay,work as your own boss,not work at all,1,0,c7e94f6ea54abd1a97043ce51108306c35f5f46cb47bcddb85625f2100c53b28
+989,What do you call three consecutive strikes in bowling?,yahtzee,mulligan,turkey,ace,2,0,31ead7991c035f01a4512567a43cb289e8f1fbab500ec0cb49bb0a4de2e7439f
+991,What do the initials 'E. E.' in poet E. E. Cummings' name stand for?,Edward Estlin,Edmund Earl,Ernest Eakins,Eugene Evan,0,0,32e49b0f02dc7a4b94e2ba021960c8f4a8b3d307d4804f7b0aa78bff05a6c187
+992,What disease is sometimes referred to as the 'royal disease'?,rickets,measles,hemophilia,tuberculosis,2,0,91c76193d7b741ffcdd5627d5bb1e7409342c5c0419a0e67e1954136d178c14b
+993,What disease is characterized by a body's inability to properly metabolize glucose?,Influenza,Septicemia,Diabetes,Arthritis,2,0,fad95cbe4774dce463900c350678772d8a845951765bbfdae6708ff5e56d3f94
+994,What disease does a carcinogen cause?,cancer,influenza,emphysema,heart disease,0,0,c3bca8cab2dfb6b49bcbd6f26bb091481794e799da4de751676b75e8e43f6877
+995,What day of the week is sometimes called 'hump day'?,Wednesday,Thursday,Friday,Saturday,0,0,39ade6b783e70273a48a666b1e9f8138dc514e3c8cf453b4a708a29669d28741
+996,What country was once ruled by shoguns?,China,Japan,North Korea,Taiwan,1,0,be56d69639271261d5b23d773fb4e2ffa5d9e81900ce440a95e6125802a08bbe
+997,What does the Yiddish word 'meshuga' mean?,crazy,sacred,stingy,sweet,0,0,9da5ac1731c2a4b5013300c2f0566af9c20bebe9a234add1dc3a1b7c68c85b1f
+998,What country is the rock group U2 from?,England,Ireland,Belgium,Germany,1,0,ac52297ccf2af223fdbace35f79b183dbd6aaeaf344ff83d47e2cd217de868fd
+999,What country gave us the fashionable headgear called the beret?,Switzerland,China,Mexico,France,3,0,dfadbd9aa5cf9c39655336ba9971fa554cc3b44d1db10f20ccb2cf2d446933d7
+1000,What country does Bordeaux wine come from?,France,Spain,Australia,United States,0,0,773cbf49eb42e016b0f4fd93695f19d13e55a3f5c5d5956a5a5a21e7fbb70956
+1001,What corporation was founded by a candlemaker and a soapmaker?,Simon & Schuster,Procter & Gamble,Johnson & Johnson,Smith & Wesson,1,0,5fee3d500ce3067563e1f349a729a5b2c564540901a2dfffea145f259629e4d7
+1002,What condition is caused by malfunctioning sebaceous glands?,bad breath,shingles,acne,carpal tunnel syndrome,2,0,67eb4f4ff0d8deeae69ded52c593731a3b5c7e506242406de0d767bb340a56ad
+1003,What company makes perfumes called 'Beautiful' and 'Pleasures'?,Estee Lauder,Ralph Lauren,Elizabeth Arden,Calvin Klein,0,0,0a7a2349ef904698a091bf8c2f814c5df2ad0cb1cb2c15b6456d50d3f93e3f1b
+1004,What company makes Oreo cookies?,General Mills,Nabisco,Keebler,Kraft,1,0,d6853fb09787c1facd2baadad62300f723cde05f8358864ef7817695965dde98
+1005,What color is Pepto-Bismol liquid?,pink,blue,clear,green,0,0,a1073c26e0f63397f214957cc015bc237f6574e7b119b9f922dfa6793bd072db
+1006,What colors are the two circles in the MasterCard logo?,pink and orange,blue and green,black and white,red and yellow,3,0,2755a3b24844bc490fca57ee0d7fce7e3f12a1b05ef0877f9ee6bca3e93581b7
+1007,What color is Uncle Sam's goatee?,brown,black ,white,dishwater blond,2,0,c98b9e3c36171551db30da1161ebc2c02ccf6a3633ebd9c522f52946e9f03bbf
+1008,What color is the masthead of USA Today's 'Life' section?,green,purple,red,blue,1,0,0f4bbcc6f4afd71771ce0e9b2f601c42a7a33e829e82f31a6470be90a1e00815
+1009,What color is cartoon character Marge Simpson's hair?,yellow,purple,blue,brown,2,0,3b0184f7af3b4f276dbaeaae9323d342f4e8e3368f07c0a761f32536683d0456
+1010,What color is a ruby?,red,black,yellow,blue,0,0,7f0308fbdbb12224393eeebfcae82639b9e5a6cabcfd210264f41a870f361686
+1011,What city's residents are known as 'Knickerbockers'?,Boston,Philadelphia,New York City,London,2,0,ec67770845474910b2a3484266226930401c1d2b998c95432c532602614c516c
+1012,What city's airport uses the code ORD?,Chicago,Orlando,New York City,Portland,0,0,6e962aa39ec1ae8e239d6dc1ff57b8afd66d359ded7b0d404dd90753ebb8821e
+1013,What country is famous for making wooden shoes?,Russia,Thailand,The Netherlands,Australia,2,0,3abc357550c3cf57b8ccae2573cfb3571929d5b2ac9c45aefdb45e3c9a109ab7
+1014,What exercise apparatus is used during a 'Spinning' class?,stationary bicycle,treadmill,rowing machine,barbells,0,0,69e8f31baa15762ff35d3829659749eb20e1c93939c5a1f5f877bda8d93ca940
+1015,What famous folksinger founded the Institute for the Study of Non-Violence in 1965?,Bob Dylan,Woody Guthrie,Joan Baez,Peter Yarrow,2,0,9da2afb38bb75516be1093d35ea22ca89887f4c78e1c0c4fabde7576378225e6
+1016,What famous radio personality was also the voice of Shaggy on the cartoon 'Scooby-Doo'?,Rush Limbaugh,Casey Kasem,Larry King,Howard Stern,1,0,534052bd5cd4f7be2daf958dce92be29cba9cf88fc0e900e995307985627a7b0
+1017,What is the largest city in Pennsylvania?,Philadelphia,Stewartsville,Harrisburg,Pittsburgh,0,0,ce2764eb7242ce4e963f80c0a5744ebc3a9c96b23a91e7a162a0bd6446d4fc43
+1018,What is the largest animal ever to live on Earth?,blue whale,giant squid,woolly mammoth,Tyrannosaurus,0,0,0cac4060e59fb6c580fa9632e22fab556bc6f20fb26dda104ae72394b4fe22a6
+1019,What is the final word of the Pledge of Allegiance?,America,stands,indivisible,all,3,0,6e230bd7af1407c23e1bd2e9adaeef8a8eff7fdef879359c49e024add986d18d
+1020,What is the colored part of the eye called?,iris,pupil,retina,cochlea,0,0,0588e35b929cc84cc1b861db1cada1411ba30e101f5152af29f57c1aedef79a1
+1021,What is the chemical process wherein a solid is turned to a liquid via the application of heat?,distillation,photosynthesis,freezing,melting,3,0,364d0bf124aeeade9037e37941e051ac0732a825f7ea636c32d981575322ff82
+1022,What is the capital of North Dakota?,Bismarck,Fargo,Sioux Falls,Pierre,0,0,d4b06f2fe2577d3c61c4aa2316fefbde8a5791e8f3d05229729b8f94c16439de
+1023,What is the capital of New Zealand?,Sydney,Wellington,Auckland,Melbourne,1,0,4c091c223e16ba31726b97b0b4a5011d56748237dd9652a3cce4cba5152f7a94
+1024,What is the birthstone for the month of January?,topaz,garnet,opal,diamond,1,0,bcf95007fcd03267f8356466b409825c527e7aca09c6cdf765810adedc7a2f9f
+1025,What is the baseball term for a batter who substitutes for another batter?,switchhitter,shadow hitter,clip hitter ,pinch hitter,3,0,c4d4d1883960b8d9b51e415d1797e36b181bf32b9197efc4bbeb32cb23adba81
+1026,What is the art of elegant handwriting called?,calligraphy,engraving,decoupage,lithography,0,0,7e5abdb7f463e9e3d825ff9d917c1ccd57ce97dc4e85d8e961b59f92ddc4b969
+1027,What is the approximate speed of light?,165 miles per hour,"122,000 miles per hour","186,000 miles per second","293,000 miles per second",2,0,5accb4060f710331f7c8d11ef796d51effa44132e56f880d6619290fe165c96a
+1028,What is the 7-Eleven company's trademarked name for its super-large sodas?,Big Slurp,Big Gulp,Big Drink,Big Sip,1,0,dd0213ca89dc8eecc19cfc11bfef0e7fe85966cd60b672733f7ee929507f8e0a
+1029,What is produced during photosynthesis?,hydrogen,nylon,oxygen,light,2,0,b4eb0440f73a2a4548e815812060e383adff7867bbe64b2059de9aa5a9c24602
+1030,What is New Mexico's nickname?,'The Desert State','Gateway to Paradise','Land of Enchantment','The Garden State',2,0,04eb5728dd9c0e8b9842d4494d5c22d62299811f035f8d11e2f57fd1beaa5b0c
+1031,What is Delta Burke's character's job on the sitcom 'Designing Women'?,fashion designer,graphic designer,interior designer,website designer,2,0,5d3436eef3439db8b948e70e3b0b5f9830c55f312288b08fff70433e0dc8aefb
+1032,What is considered the proper way to address a duke?,'Your Majesty','Your Eminence','Your Excellency','Your Grace',3,0,56d158b221fde1dc99b5ee56ae41366da4c0d916ea95a6b745e585f6f1b39879
+1033,What is called a 'lorry' in Britain?,a toaster,a truck,a babysitter,an elevator,1,0,c171c174a89fe9ed784e8353954a9b5788f6abaad39c6a4730d7a2161ed686bf
+1034,What fictional character claims to be 'smarter than the average bear'?,Paddington Bear,Fozzie Bear,Smokey Bear,Yogi Bear,3,0,4d31a90f28073d897f04b0d4f33da23d3306e77b718648902126fba34f7d0b06
+1035,What French city is home to a famous international film festival each spring?,Cannes,Marseille,Dijon,Lyon,0,0,3a3e50821c4f88f1cce862da6f6661d321fbe5b89acc9e3e1e3b33ca22ef3265
+1036,What force causes an ice cream cone to fly off of a spinning merry-go-round?,centrifugal,vehicular,gravitational,torsal,0,0,97f3b466220d4c6635525a510b376d7d3184dd133efe09274c5abea9540559a7
+1037,What former 'Today' show personality played a neighbor on the TV sitcom 'The Hogan Family'?,Jane Pauley,Willard Scott,Deborah Norville,Joe Garagiola,1,0,65e5b504dcc9da2452c469066a92ac271bd4ba70c27a07d2dac84920da3d935e
+1038,What Greek poet wrote 'The Iliad' and 'The Odyssey'?,Sophocles,Plato,Homer,Socrates,2,0,ee9355c61f6309cb8147c93b3b60b79db5383b01e67ba65e2fc7d7a1e4fe92e8
+1039,What high school does the gang from the 'Archie' comic strip attend?,Ridgemont High,Riverdale High,Rumson High,Riker's Island High,1,0,5f2ce6003bec34aad0c73d2eda1e56daeded1c41b0ae0a833c5da3e803e0747b
+1040,What city is known as 'the rubber capital of the world'?,"Omaha, Nebraska","Rockford, Illinois","Grand Rapids, Michigan","Akron, Ohio",3,0,ee738934edfd9c414658d85daca995bf763b560e579a63545c066b772cdb8029
+1041,What important food crop is grown in fields called paddies?,wheat,rye,corn,rice,3,0,eacdd64aa72649a5d64a559946617c72d08768a30613236d5e9277c20ce17642
+1042,What is a balalaika?,musical instrument,Russian peasant,type of hat,breed of shark,0,0,032e71d00e97a5fed8bec65b5815c824f6acc6f05ec010eb3566cffdd15016bb
+1043,What is a Dutch oven?,a toaster oven,a microwave,a kettle pot,a sauna,2,0,cd4bc702a8b98d70f8b1c1f0b8f4fb2398381f0255dbb0e12f1383edff115981
+1044,What is actor Antonio Banderas native language?,Spanish,Russian,German,French,0,0,9ed2c2051cd2ad891512052a055e320a9eceb6d2f60e04b3c47da2050787400c
+1045,What is an alternate name for the food dish 'Beijing duck'?,Shanghai duck,Peking duck,Hong Kong duck,Brooklyn duck,1,0,8c691ae942b38ad8c9f2144be34d6989e1692fd5e46ab64ee5c268f272841cf3
+1046,What is another name for the camelopard?,circus,giraffe,cantaloupe,oasis,1,0,22c93d026e5ea78266502d89e1f99fd05942d9cb86647c72d7ced11287cd5eaf
+1047,What is another way of writing 'six feet'?,6',6,6'',6#,0,0,a2f1ddfa1eec991cb89311dbb707979d88438800da6671aa089245a238fb43d0
+1048,What internet company goes by the acronym AOL?,America Over Lines,America Online,Americans On Links,Americans On LOR,1,0,2d03bcaba523de67ea8d5f0bc374ccf984f8f27d601732b34c945daa278ce3d8
+1049,What city did the Beatles originally call home?,London,Leeds,Liverpool,Manchester,2,0,6f457506c55753a2fcec99edd8983674de6ea7169955b5fbf3d5286844ace760
+1050,What children's TV character is known as 'Da Niao' in China?,Barney,Big Bird,Mickey Mouse,Tinky Winky,1,0,bb04403f8c0d55bc91d5a53c8da613624dfb35c95274b71e3a0356dab1d65d7a
+1051,What children's storybook character believes that the sky is falling?,Chicken Little,Curious George,Jack Sprat,Tom Thumb,0,0,77a78ea4bd386ba39d69a1b23824a28782c9d101b94f8d2d2c478c3179a7ac85
+1052,The 'Arkansas toothpick' is better known by what name?,Scottie Pippen,spare rib,pinkie finger,Bowie knife,3,0,c21586ddc7e3f9188e1ca868a66b6892d9024590106ec9700084acf7ae625d67
+1053,The Original Apple iMac computer was available in all of the following colors except which?,Tangerine,Strawberry,Kiwi,Grape,2,0,40288217b78fc3faa4ae03bc4cbfa6e641737e20d0721e110fd0766933d40674
+1054,"The American patriot Paul Revere was named for his father, whose original name was what?",John Paul Revere,Paul Silver,Apollos Rivoire,Paolo Reverini,2,0,eda1e02fda4338f613e0e48f87b2693e8dfc83d23acd4c623b06b293b0708f50
+1055,Stevie Wonder and Michael Jackson have both recorded duets with which former Beatle?,Paul McCartney,John Lennon,George Harrison,Ringo Starr,0,0,6c52a7d986a278464bc697372c6753754da8aa249d8b13390b075dafad258b60
+1056,Someone would most likely contract salmonella poisoning from eating which of the following?,carrots,chicken,tofu,rice,1,0,377c50d888ade7f6b43a5233e3b03fc9a94d7d7eb83c23c0790fa25560088321
+1057,Pop icon Tiny Tim was famous for playing what musical instrument?,ukulele,kazoo,accordion,fiddle,0,0,10ed792401a87888ea73bab3fd0fca7b7e7974d3577b7e2c8c9f43281c32adc3
+1058,"Phoebe, Dione and Helene are moons of what planet?",Jupiter,Saturn,Neptune,Pluto,1,0,015a9566b8e757e66963a85f670935f98ec68dd5a8efcc9e18f38285e91f227e
+1059,People are supposed to drive on the left-hand side of the road in which country?,France,Italy,England,Germany,2,0,066dbe38eae2b2c15a5d41daa578142be0de7c727a4a0519e14a516dab61f8a5
+1060,"Paper will burn at approximately what temperature, in Fahrenheit?",98.6 degrees,212.5 degrees,398.5 degrees,451 degrees,3,0,7c3c4c4b4e1a3614a9feb749fc320d288e911ea53d7372c3b030bb6b9fc9d3d7
+1061,On which part of a car would you find the 'caliper'?,battery,engine,radiator,brakes,3,0,72375b8a402575db58e6f84c4ec1a3a782af6d7e703d8ed4d069590e0af56587
+1062,On what body part should you wear a babushka?,head,hands,foot,legs,0,0,b8071213f42e316e291063558999d9b97a5aa6233cf69ca9753924ded5c28481
+1063,On what continent can you find tigers in the wild?,Africa,Asia,Europe,South America,1,0,60065956ae01904efc96550bc484edb6d848afb0b37fc9fafc5f5d7a88cf56be
+1064,"On Valentine's Day 2000, NASA's NEAR spacecraft began a yearlong orbit of what asteroid?",Eros,Cupid,Aphrodite,Venus,0,0,cf14995a56a47487bd4410604df9623bfe0415ca8c3276c1dda544a03a8a7579
+1065,On TV's 'Seinfeld' what type of doctor did Mr. Costanza go to when he sat on 'fusilli Jerry'?,ophthalmologist,cardiologist,neurologist,proctologist,3,0,49b29831bd77c3e06801d01ffaf3f7634c6739a4335be4dba9a9e13635a73281
+1066,On the TV show 'Hill Street Blues' what is Joyce Davenport's nickname for Captain Frank Furillo?,Furry Monster,Pizza Man,Snookums,Baby Cakes,1,0,710dab3b8b18e60256f285b645b5653f04add7454e343485aa47db32f74f9835
+1067,On the TV show 'CHiPs' what was Officer Frank Poncherello's nickname?,Franky,Ponch,Chipper,Hot Dog,1,0,988144832af25df6626604da700ec0e8c72d5ab454443530b453b0350249380e
+1068,"On average, what length of time passes between high tides?","3 hours, 25 minutes","6 hours, 25 minutes","12 hours, 25 minutes","24 hours, 25 minutes",2,0,b10a1e043158fe4d54409ed3dba486818d953a12afa7554a24cd25ae2b1904ee
+1069,In what state is the 1999 movie 'Magnolia' set?,California,South Carolina,Georgia,Texas,0,0,640b8817ed4e21f96f89e0c4e53db6729899650912fb3fe35547717533246638
+1070,In what U.S. city can you find the Basketball Hall of Fame?,"Canton, Ohio","Cooperstown, New York","Springfield, Massachusetts","Lawrence, Kansas",2,0,3c14d0421380d6532083b9303e74cd49ec6ce9fddbc1f064098ce834323a8e14
+1071,In what year did the Great Depression begin?,1884,1929,1953,1975,1,0,0615da09713d45c61a0676adde9033f0d587e45ef077eec597402294c88595ae
+1072,In what year did the United States last win an Olympic gold medal in men's ice hockey?,1976,1980,1984,1988,1,0,323eeaca3c02fbbf30646cacd54e72103a96948d40e330af9e4d964cbab83412
+1073,In which of the following bands did Jimmy Page not play guitar?,Bad Company,The Firm,Led Zeppelin,The Yardbirds,0,0,b7615e226b6e3193c32f762991dada8dfe418b50be8df69a33af5784d9e31655
+1074,In which of these sports do competitors use a 'funny car'?,supercross,dogsledding,gymnastics,drag racing,3,0,31918802cabdb621a68731921c6dc87fda90e6698415c2b3363e334da84555e0
+1075,The British dish 'bangers and mash' is made up of sausage and what?,eggs,bacon,liver,potatoes,3,0,4df25207ae38704c94d2f83e210f26211e0a741c6963bff3a314e75e004f2892
+1076,In what war did Joan of Arc fight?,Hundred Years' War,Franco-Prussian War,French Revolution,French and Indian War,0,0,7b4e789228a63cb10598e30e279a775494d5c579f26941e6345aca3e66be0673
+1077,Into what body of water does the Rhone River flow?,Atlantic Ocean,Caspian Sea,North Sea,Mediterranean Sea,3,0,84b83091eeb8996b5b429f0555c84480cd3290a774e7b00d44114ef775ff3cb1
+1078,John D. Rockefeller made his fortune in what industry?,automobile ,oil,steel,railroad,1,0,e407942dfb32ef27039b087e018bcabbf3eb3d0d97eca967aa71dff91cca6a00
+1079,Modern computer microchips are primarily composed of what element?,Sodium,Silicon,Aluminum,Silver,1,0,b509d6e760066c03c10ec21881e70a38388d89b08d368798a165cd3b102e75e1
+1080,Mohair is made from the fleece of what animal?,camel,llama,goat,mole,2,0,388bc74ca46b3caa9e3e76192883203e2209a834c5d8a08d3b23aa17b195530f
+1081,"'Nature, Mr. Allnut, is what we are put in this world to rise above' is a line from what film?",'Citizen Kane','The African Queen','The Deer Hunter','Adam's Rib',1,0,150851e76973a20337ad1182e3737a3be62f4b2c65437ffefca4072094047cbf
+1082,"On a set of jumper cables, what color designates the negative connector?",black,red,orange,blue,0,0,73cef23f5befacff3903246c3b1f98d065d57f29914829227356b5fca438e6c3
+1083,"Including the bottom, how many sides are on a square-based pyramid?",three,four,five,six,2,0,b6b5ea62b566e02c711a5ec933c9a479c863833451ee2967c62155d97f9dbcd8
+1084,In what sport do athletes compete for the Walker Cup?,cricket,tennis,squash,golf,3,0,a30964c9b2d0fea0e36205921b456568c69c2ba716b8e328f23b272a613a6955
+1085,The common term for someone who has difficulty seeing objects in the distance is what?,farsighted,nearsighted,hindsighted,hypermetropic,1,0,21b93b2ac1654e52259eae8f2fec4a2ae2efe50d7a436ce9f93722bd332e0546
+1086,The disco band ABBA comes from what country?,Norway,Sweden,Switzerland,The Netherlands,1,0,8f3fe649a1bf72fe9c0b97cbcc21f76f9801f45ecbf9926551eebdbe71fe8e39
+1087,What chemical do people frequently use to bleach hair?,folic acid,hydrogen peroxide,sodium chloride,nitrous oxide,1,0,a536430d35cc1479116deae2be987f83440d1e59082b330699d34c8edf91b6d7
+1088,What character did Woody replace on the TV show 'Cheers'?,Coach,Diane,Norm,Frasier,0,0,b16ea45fdd1bd1d5e54b52408f24c6e0e93a7be9edce3d0e27020c51964f2190
+1089,What cartoon character traveled in a time machine with Mr. Peabody?,Rocky,Jonny Quest,Underdog,Sherman,3,0,72325492a0b0da6456e3e5d88dc2bf331cebf22b7e48228c4a94862094acee20
+1090,What car company once manufactured and sold the 'Datsun' line of automobiles?,Nissan,Mazda,Toyota,Daihatsu,0,0,bef3de8615ff8a25e49c24a71af2c64046a550708872d0691c9c00ef62bf0453
+1091,What biological process replicates DNA?,molting,mitosis,diffusion,peristalsis,1,0,6531a5ca7c33796d54e70d7e47f00bef443c91450324e16a21b8c8e0d0eb9fa0
+1092,What automobile company makes the Sonata?,Toyota,Honda,Subaru,Hyundai,3,0,bae2181647e0f0b174598f5d38016c121a2f6675855836ec017955f34f4e8184
+1093,What article of clothing best describes a 'pashmina'?,shoes,pants,scarf,underwear,2,0,6dcbe8a995535733b81b733e2a23714245a6eeb9e838dfaf7e2498eb185bbadd
+1094,What are the Smothers Brothers' first names?,Frank and Bill,Tom and Dick,Dave and George,Ed and Pete,1,0,19a7d331f9e239b5dc6591a17651a179220a5008dc7ef5f41e0749cc8d19df2a
+1095,What are the plastic boxes that hold compact discs called?,frame cases,jewel cases,slip cases,wafer boxes,1,0,2c27a28d4c41a6bac1ab484546c1cb236b9aee37d5439e9a866ca1b0e2d4faf3
+1096,What are the names of the two primary M&M's spokes-candies?,Peanut and Plain,Red and Yellow,Mort and Marty,They don't have names,1,0,53e0a8c3d553047eda51eb912dcea4c889a2cdd721d25b3ec491d99da4caf5ed
+1097,What are the names of Donald Duck's three nephews?,"Quick, Quack, Quock","Alvin, Simon, Theodore","Robbie, Chip, Ernie","Huey, Dewey, Louie",3,0,cfdc5aa8e2556daaca80abc7c7a44bb42d68d06412dda4dc493ab30e1cdc03d0
+1098,What are the dimensions of a 'letter size' piece of paper?,3 1/2 x 5 inches,5 x 10 inches,8 1/2 x 11 inches,11 x 17 inches,2,0,9ed413048634f1ef2a2184ba4d6f19e7c88a55c292c2ab829be42d741274e5c2
+1099,What are fans of the TV show 'Mystery Science Theater 3000' known as?,Mysterians,MiSTies,'Bot Brigade,Gizmonics,1,0,b533c3af1f6434ea3b55219813331d83f0345488c75f1d9dc4177cbc9af33b80
+1100,What animated character has a crush on the Little Red Haired Girl?,Richie Rich,Charlie Brown,Bugs Bunny,Jonny Quest,1,0,e68bb6bcd96fc95f849d69cea2c5fa0ca95cfb35b08519a95bb50d31394f3f8c
+1101,What animal represents the year 2000 on the Chinese calendar?,dragon,rabbit,tiger,monkey,0,0,97eb1e69d6a9f9e28140bd348ff51bed61df93b59afd9b0b0ace4b70dcb3e7b7
+1102,What animal is used to make lard?,pig,cow,snake,chicken,0,0,a3856476f1626c0d43443e294f5af5c5dc99e4abf5bc9051f7d5051edc2fb133
+1103,What animal is considered sacred in India?,sheep,cow,chicken,dog,1,0,28cb525a309b6b71458460a1ae1e741b67a47777a75c58b125d9aabb9ade0db1
+1104,The film 'Stand By Me' is based on a novel by what author?,Anne Proulx,Stephen King,Dean Koontz,Frank McCourt,1,0,bc4caab4a0708888a1e0daa36118951e01431028c5e53970405a92c9943f752d
+1105,The first commercial radio station was located in what city?,Chicago,Austin,Pittsburgh,Cleveland,2,0,891a7e5f0f745fa0e4ab8be2612d7b7105c6fbc658d9d6d1b05b2c9a1a8fade6
+1106,The first sound recording to be made and reproduced was a recitation of what nursery rhyme?,'Humpty Dumpty','Mary Had a Little Lamb','Jack Be Nimble',"'Home, Sweet Home'",1,0,96eb3003a883dae32ab95abf06a411669f2269fb3752f8d6c1712b7270368151
+1107,The majority of calcium in the human body is found where?,hair,blood,bones,digestive tract,2,0,6d07680c3b0c8f4096f7dab9b9eaf56faa96e7657015e65523341913e7895267
+1108,The phrase 'hospital corners' refers to what?,bed sheets,paint,landscaping,scissors,0,0,2714594c968a28b7f5ff2a0ff125eeeb89f48a0179327aee07ea3fd1f0944530
+1109,The process of drilling holes in the skull is called what?,bifurcation,trepanation,aeronomy,skullduggery,1,0,c9a4ebbe945d17a7876cede53b329d4d460f579bfd5834d7202220921606be46
+1110,The dance known as the 'fandango' is of what origin?,Australian,African,Native American,Spanish,3,0,ea2250592a12d5185307c3687c238f28b6f7312ed7f7c0380f5894c5fdd2bc50
+1111,The sport of judo comes from what Asian country?,Japan,Vietnam,Laos,Philippines,0,0,1e2bd684e9bf11ff5e9842e804b52da33456d367248a8b27883b2ad6e0521643
+1112,The term 'chili con carne' refers to chili with what?,beans ,meat,cheese,chili peppers,1,0,ca2ec92e1b14d0b4543bff52b6c9477cd000f34f6882ef473c36b1e46bdd63dd
+1113,The TV show 'House of Style' airs on what network?,E,WB,MTV,Home Shopping Network,2,0,5a027a43e73ce0faf5849747f4ffbd12df2cf7bf0463fb3ce378edd4e499c4ab
+1114,"To create a tapestry, one must traditionally engage in what activity?",weaving,sculpting,baking,singing,0,0,90323341035f2dbd99cd11176b058ffa1763dc7cd51f7aff5026abb8846213b7
+1115,"To make an international telephone call from within the US, what are the first numbers you should dial?",011,101,888,911,0,0,cbfa08e4efa1452942c9f5386e9cb1d0bb954a6afb1160c1826d3a381f0b6c90
+1116,"To ward off bad luck, what do many people do to wood?",knock on it,kiss it,thank it,scratch it,0,0,57c570921e2bc0f2b1c7bdb535e05a7e0da9704cbc32a954f93818fb3bb0bc14
+1117,What actress starred on 'Charlie's Angels' for the show's entire run?,Cheryl Ladd,Farrah Fawcett,Jaclyn Smith,Kate Jackson,2,0,7b56ef88dd8d57cd985e8dbbfeb264f190d7a48e10df8a5e3349ad083431cf83
+1118,The Strauss family of composers popularized what dance?,waltz,tango,fox-trot,square dance,0,0,56ef383c9cef722a8fd52a5cebc6c2a1c97d28e4e8d7cbc1f6b89d35eeb76658
+1119,Which latitude passes through the middle of India?,Equator,Tropic of Cancer,Tropic of Capricorn,Arctic Circle,1,0,ce06ee14f96ef4c7048222c38fdb4b3d55ea3e00c5f0bd1d1d5d80a569c474c1
+1120,Which is the longest river of the world?,Thames,Ganga,Nile,Brahamputa,2,0,0e4e6bf492858a16bbed26327b7136b42d11005ea4d81530dd9d98322abf207b

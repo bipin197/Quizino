@@ -1,0 +1,1 @@
+.\question_db_setup.ps1 -ContainerName "q-server" -User bks -DBName "ques_db" -DBUser "ques_user" -DBPass "ques_user" -SchemaName "ques_schema" -SqlScriptPath "question.sql"

@@ -1,0 +1,23 @@
+{
+    "name": "postgres-connector",
+    "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "database.hostname": "172.17.0.3",
+      "database.port": "5432",
+      "database.user": "bks",
+      "database.password": "bks123",
+      "database.dbname": "qzn",
+      "database.server.name": "qzn",
+      "table.include.list": "public.question",
+      "plugin.name": "pgoutput",
+      "transforms": "route",
+      "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
+      "transforms.route.regex": "([^.]+)\\.([^.]+)\\.([^.]+)",
+      "transforms.route.replacement": "question-change",
+      "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "key.converter.schemas.enable": "false",
+      "value.converter.schemas.enable": "false"
+    }
+  }
+  

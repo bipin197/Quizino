@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  postgres1:
+    image: postgres:latest
+    container_name: qs-ser
+    environment:
+      POSTGRES_USER: qs_user
+      POSTGRES_PASSWORD: qs_user
+      POSTGRES_DB: qs_db
+    volumes:
+      - ./qs-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - qzn_network
+
+  postgres2:
+    image: postgres:latest
+    container_name: qz-ser
+    environment:
+      POSTGRES_USER: qz_user
+      POSTGRES_PASSWORD: qz_user
+      POSTGRES_DB: qz_db
+    volumes:
+      - ./qz-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    networks:
+      - qzn_network
+
+  postgres3:
+    image: postgres:latest
+    container_name: qsr-ser
+    environment:
+      POSTGRES_USER: qsr_user
+      POSTGRES_PASSWORD: qsr_user
+      POSTGRES_DB: qsr_db
+    volumes:
+      - ./qsr-init:/docker-entrypoint-initdb.d
+    ports:
+      - "5434:5432"
+    networks:
+      - qzn_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: qzn-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: bipin.singh@quizino.com
+      PGADMIN_DEFAULT_PASSWORD: qzn123#
+    networks:
+      - qzn_network
+    ports:
+      - "8080:80"
+  redis:
+    networks:
+      - qzn_network
+    image: redis:latest
+    container_name: qzn-redis
+    ports:
+      - "6379:6379"
+  rabbitmq:
+    networks:
+      - qzn_network
+    image: rabbitmq:management
+    container_name: qzn-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+networks:
+  qzn_network:
+    driver: bridge

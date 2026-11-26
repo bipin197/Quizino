@@ -1,0 +1,1 @@
+.\quiz_db_setup.ps1 -ContainerName "q-server" -User bks -DBName "quiz_db" -DBUser "quiz_user" -DBPass "quiz_user" -SchemaName "quiz_schema" -SqlScriptPath "quiz.sql"
